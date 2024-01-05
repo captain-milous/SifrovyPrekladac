@@ -8,3 +8,4 @@ C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\Sifr
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\Sifrovy Prekladac.pdb
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.exe
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.pdb
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy_Prekladac.Form1.resources

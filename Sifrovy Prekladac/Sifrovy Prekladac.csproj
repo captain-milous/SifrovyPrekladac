@@ -58,6 +58,9 @@
     <Compile Include="src\sifry\CaesarovaSifra.cs" />
     <Compile Include="src\sifry\MorseovaSifra.cs" />
     <Compile Include="src\sifry\Sifra.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
