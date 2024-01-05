@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sifrovy_Prekladac.src.myMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,30 +37,108 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="decypher"></param>
         public MorseovaSifra(string rawText, bool decypher) : base(typyMorseovky, "DEF")
         {
-
+            if (!decypher)
+            {
+                rawText = TextMethods.Simplify(rawText);
+                DecText = rawText;
+                EncText = Encrypt(rawText);
+            }
+            else
+            {
+                EncText = rawText;
+                DecText = Decrypt(rawText);
+            }
         }
         public MorseovaSifra(string rawText, string metoda, bool decypher) : base(typyMorseovky, metoda)
         {
-
+            if (!decypher)
+            {
+                rawText = TextMethods.Simplify(rawText);
+                DecText = rawText;
+                EncText = Encrypt(rawText);
+            }
+            else
+            {
+                EncText = rawText;
+                DecText = Decrypt(rawText);
+            }
         }
 
         public override string Encrypt(string text)
         {
+            string output = string.Empty;
+
             switch (TypeOfEnc)
             {
                 case "DEF":
+                    StringBuilder encryptedText = new StringBuilder();
+                    foreach (char c in text.ToUpper())
+                    {
+                        if (MorseABC.ContainsKey(c))
+                        {
+                            encryptedText.Append(MorseABC[c]);
+                            encryptedText.Append(" | ");
+                        }
+                        else if (c == ' ')
+                        {
+                            encryptedText.Remove(encryptedText.Length - 1, 1);
+                            encryptedText.Append("| ");
+                        }
+                    }
+                    encryptedText.Remove(encryptedText.Length - 1, 1);
+                    encryptedText.Append("|| ");
 
+                    output = encryptedText.ToString();
                     break;
                 case "REV":
+                    MorseovaSifra def = new MorseovaSifra(text, false);
+                    string morseText = def.EncText;
+                    foreach (char c in morseText)
+                    {
+                        if(c == '.')
+                        {
+                            output += "-";
+                        }
+                        else if(c == '-')
+                        {
+                            output += ".";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
 
                     break;
                 case "NUM":
+                    def = new MorseovaSifra(text, false);
+                    morseText = def.EncText;
+                    foreach (char c in morseText)
+                    {
+                        if (c == '.')
+                        {
+                            output += "0";
+                        }
+                        else if (c == '-')
+                        {
+                            output += "1";
+                        }
+                        else if (c == '|')
+                        {
+                            output += "";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
 
                     break;
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
-            return base.Encrypt(text);
+
+            return output;
         }
 
         public override string Decrypt(string text) 

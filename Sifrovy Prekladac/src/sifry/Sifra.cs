@@ -17,15 +17,15 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <summary>
         /// Klíč, kterým se dá zadaný text zašifrovat, nebo i rozšifrovat
         /// </summary>
-        public string TypeOfEnc { get; private set; }
+        public string TypeOfEnc { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string DecText { get; private set; }
+        public string DecText { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string EncText { get; private set; }
+        public string EncText { get; set; }
         #endregion
         #region Konstruktory
         /// <summary>
