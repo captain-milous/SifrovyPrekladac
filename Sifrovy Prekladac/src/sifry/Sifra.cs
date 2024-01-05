@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sifrovy_Prekladac.src.myMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +14,9 @@ namespace Sifrovy_Prekladac.src.sifry
     {
         #region Proměnné
         /// <summary>
-        /// Abeceda, která je použita v některých šifrách
-        /// </summary>
-        public static char[] abeceda = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-        /// <summary>
-        /// Text, který je rozšifrovaný
-        /// </summary>
-        protected string decText;
-        /// <summary>
-        /// Text, který je zašifrovaný
-        /// </summary>
-        protected string encText;
-        /// <summary>
         /// Klíč, kterým se dá zadaný text zašifrovat, nebo i rozšifrovat
         /// </summary>
-        protected List<string> keys = new List<string>();
+        protected List<string> encMethods = new List<string>();
         /// <summary>
         /// 
         /// </summary>
@@ -47,6 +36,19 @@ namespace Sifrovy_Prekladac.src.sifry
             EncText = string.Empty;
         }
         public Sifra(string rawText, bool decypher)
+        {
+            if (!decypher)
+            {
+                rawText = TextMethods.Simplify(rawText);
+                DecText = rawText;
+                EncText = Encrypt(rawText);
+            }
+            else
+            {
+                EncText = rawText;
+                DecText = Decrypt(rawText);
+            }
+        }
         #endregion
         #region ToString()
         /// <summary>
@@ -55,7 +57,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <returns></returns>
         public override string ToString()
         {
-            return base.ToString();
+            return DecText + " => " + EncText;
         }
         #endregion
         #region Encrypt/Decrypt methods
@@ -64,7 +66,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public string Encrypt(string text)
+        protected string Encrypt(string text)
         {
             string output = text;
 
@@ -75,7 +77,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public string crypt(string text)
+        protected string Decrypt(string text)
         {
             string output = text;
 
