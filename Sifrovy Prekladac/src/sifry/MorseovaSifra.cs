@@ -49,6 +49,12 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rawText"></param>
+        /// <param name="metoda"></param>
+        /// <param name="decypher"></param>
         public MorseovaSifra(string rawText, string metoda, bool decypher) : base(typyMorseovky, metoda)
         {
             if (!decypher)
@@ -63,7 +69,12 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public override string Encrypt(string text)
         {
             string output = string.Empty;

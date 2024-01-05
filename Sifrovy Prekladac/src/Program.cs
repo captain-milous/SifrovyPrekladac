@@ -21,6 +21,13 @@ namespace Sifrovy_Prekladac
             Console.WriteLine(test.ToString());
             test = new MorseovaSifra("Miloš Tesař", "NUM", false);
             Console.WriteLine(test.ToString());
+            CaesarovaSifra test2 = new CaesarovaSifra("ABCDEFGHIJKLMNOPQ", 2, false);
+            Console.WriteLine(test2);
+            test2 = new CaesarovaSifra("CDEFGHIJKLMNOPQRS", 2, true);
+            Console.WriteLine(test2);
+
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

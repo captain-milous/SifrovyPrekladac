@@ -55,6 +55,7 @@
     <Compile Include="src\myMethods\TextMethods.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\sifry\CaesarovaSifra.cs" />
     <Compile Include="src\sifry\MorseovaSifra.cs" />
     <Compile Include="src\sifry\Sifra.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

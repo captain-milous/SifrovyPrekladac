@@ -49,6 +49,11 @@ namespace Sifrovy_Prekladac.src.sifry
             DecText = string.Empty;
             EncText = string.Empty;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rawText"></param>
+        /// <param name="decypher"></param>
         public Sifra(string rawText, bool decypher)
         {
             TypeOfEnc = "DEF";
