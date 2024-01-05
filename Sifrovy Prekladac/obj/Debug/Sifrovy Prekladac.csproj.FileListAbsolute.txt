@@ -1,0 +1,5 @@
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.csproj.AssemblyReference.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.csproj.SuggestedBindingRedirects.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy_Prekladac.Properties.Resources.resources
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.csproj.GenerateResource.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\Sifrovy Prekladac.csproj.CoreCompileInputs.cache

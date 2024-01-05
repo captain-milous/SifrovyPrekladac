@@ -13,10 +13,11 @@ namespace Sifrovy_Prekladac.src.sifry
     public class Sifra
     {
         #region Proměnné
+        protected List<string> AllowedTypes = new List<string>();
         /// <summary>
         /// Klíč, kterým se dá zadaný text zašifrovat, nebo i rozšifrovat
         /// </summary>
-        protected List<string> encMethods = new List<string>();
+        public string TypeOfEnc { get; private set; }
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +33,25 @@ namespace Sifrovy_Prekladac.src.sifry
         /// </summary>
         public Sifra()
         {
+            TypeOfEnc = "DEF";
+            DecText = string.Empty;
+            EncText = string.Empty;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="allowed"></param>
+        /// <param name="type"></param>
+        public Sifra(string[] allowed, string type)
+        {
+            AllowedTypes = new List<string>(allowed);
+            TypeOfEnc = type;
             DecText = string.Empty;
             EncText = string.Empty;
         }
         public Sifra(string rawText, bool decypher)
         {
+            TypeOfEnc = "DEF";
             if (!decypher)
             {
                 rawText = TextMethods.Simplify(rawText);
@@ -66,7 +81,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        protected string Encrypt(string text)
+        public virtual string Encrypt(string text)
         {
             string output = text;
 
@@ -77,7 +92,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        protected string Decrypt(string text)
+        public virtual string Decrypt(string text)
         {
             string output = text;
 
