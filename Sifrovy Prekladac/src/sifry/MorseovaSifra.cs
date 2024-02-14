@@ -1,4 +1,4 @@
-﻿using Sifrovy_Prekladac.src.myMethods;
+﻿using Sifrovy_Prekladac.src.static_methods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,11 +106,11 @@ namespace Sifrovy_Prekladac.src.sifry
                     string morseText = def.EncText;
                     foreach (char c in morseText)
                     {
-                        if(c == '.')
+                        if (c == '.')
                         {
                             output += "-";
                         }
-                        else if(c == '-')
+                        else if (c == '-')
                         {
                             output += ".";
                         }
@@ -152,7 +152,7 @@ namespace Sifrovy_Prekladac.src.sifry
             return output;
         }
 
-        public override string Decrypt(string text) 
+        public override string Decrypt(string text)
         {
             switch (TypeOfEnc)
             {
@@ -168,7 +168,7 @@ namespace Sifrovy_Prekladac.src.sifry
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
-            return base.Decrypt(text); 
+            return base.Decrypt(text);
         }
     }
 }

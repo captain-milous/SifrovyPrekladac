@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.myMethods
+namespace Sifrovy_Prekladac.src.static_methods
 {
     /// <summary>
     /// 

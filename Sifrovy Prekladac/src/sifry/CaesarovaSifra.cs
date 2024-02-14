@@ -1,4 +1,4 @@
-﻿using Sifrovy_Prekladac.src.myMethods;
+﻿using Sifrovy_Prekladac.src.static_methods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Sifrovy_Prekladac.src.sifry
     {
         public int Posun { get; set; }
 
-        public CaesarovaSifra(string rawText,  int posun, bool decypher) : base()
+        public CaesarovaSifra(string rawText, int posun, bool decypher) : base()
         {
             Posun = posun;
             if (!decypher)
@@ -83,7 +83,7 @@ namespace Sifrovy_Prekladac.src.sifry
             return rozdilPismen;
         }
 
-        private string UpravText(string text,char[] posunutaAbeceda)
+        private string UpravText(string text, char[] posunutaAbeceda)
         {
             char[] rozsifrovanyText = new char[text.Length];
             for (int i = 0; i < text.Length; i++)
