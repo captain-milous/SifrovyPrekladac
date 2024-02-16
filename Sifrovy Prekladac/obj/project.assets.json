@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\Sifrovy Prekladac.csproj",
-      "projectName": "Sifrovy Prekladac",
-      "projectPath": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\Sifrovy Prekladac.csproj",
+      "projectUniqueName": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\SifrovyPrekladac.csproj",
+      "projectName": "SifrovyPrekladac",
+      "projectPath": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\SifrovyPrekladac.csproj",
       "packagesPath": "C:\\Users\\milda\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\obj\\",
       "projectStyle": "PackageReference",

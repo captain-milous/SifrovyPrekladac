@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,9 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="src\log\" />
+    <Folder Include="src\logs\" />
     <Folder Include="src\conf\" />
     <Folder Include="src\UI\" />
+    <Folder Include="src\UserHandler"/>
+    <Folder Include="src\sifry"/>
+    <Folder Include="static_methods"/>
   </ItemGroup>
 
 </Project>

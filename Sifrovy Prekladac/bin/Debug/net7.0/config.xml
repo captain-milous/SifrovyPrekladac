@@ -1,0 +1,6 @@
+<Configuration>
+  <InputFilePath>data\input.txt</InputFilePath>
+  <OutputFilePath>data\output.txt</OutputFilePath>
+  <LogFilePath>log\system.log</LogFilePath>
+  <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
+</Configuration>
