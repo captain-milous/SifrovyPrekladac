@@ -13,8 +13,21 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class CaesarovaSifra : Sifra
     {
-        public int Posun { get; set; }
-
+        private int _posun;
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Posun
+        {
+            get { return _posun; }
+            set { _posun = value; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rawText"></param>
+        /// <param name="posun"></param>
+        /// <param name="decypher"></param>
         public CaesarovaSifra(string rawText, int posun, bool decypher) : base()
         {
             Posun = posun;
@@ -30,7 +43,19 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return DecText + " (+" + Posun + ") => " + EncText;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public override string Encrypt(string text)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -47,7 +72,11 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return UpravText(text, posunutaAbeceda);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public override string Decrypt(string text)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -64,7 +93,11 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return UpravText(text, posunutaAbeceda);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="posun"></param>
+        /// <returns></returns>
         private int RozdilPismen(int posun)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -82,7 +115,12 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return rozdilPismen;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="posunutaAbeceda"></param>
+        /// <returns></returns>
         private string UpravText(string text, char[] posunutaAbeceda)
         {
             char[] rozsifrovanyText = new char[text.Length];

@@ -25,9 +25,9 @@ namespace Sifrovy_Prekladac.src.UI
             if (run)
             {
                 Console.WriteLine(Oddelovac);
-                Console.WriteLine("Vítejte v programu ***!");
+                Console.WriteLine("Vítejte v programu Šifrový Překladač!");
                 Console.WriteLine("Autor: Miloš Tesař C4b");
-                Console.WriteLine("Verze: 1.0");
+                Console.WriteLine("Verze: 3.0");
                 Console.WriteLine(Oddelovac);
                 Console.WriteLine("Zmáčkněte Enter pro start.");
                 Console.ReadLine();
