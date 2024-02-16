@@ -15,4 +15,9 @@
     <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
     <Role>User</Role>
   </User>
+  <User>
+    <Username>test</Username>
+    <Password>4B6E9AE8B1D84DCD1F4A1C82F33E93E93637E04A</Password>
+    <Role>User</Role>
+  </User>
 </ArrayOfUser>

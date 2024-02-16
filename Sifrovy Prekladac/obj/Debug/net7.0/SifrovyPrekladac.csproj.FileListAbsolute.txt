@@ -1,0 +1,15 @@
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\SifrovyPrekladac.exe
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\SifrovyPrekladac.deps.json
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\SifrovyPrekladac.runtimeconfig.json
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\SifrovyPrekladac.dll
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\SifrovyPrekladac.pdb
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.csproj.AssemblyReference.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.AssemblyInfoInputs.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.AssemblyInfo.cs
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.csproj.CoreCompileInputs.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.dll
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\refint\SifrovyPrekladac.dll
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.pdb
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.genruntimeconfig.cache
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\ref\SifrovyPrekladac.dll
