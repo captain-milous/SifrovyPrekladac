@@ -1,4 +1,4 @@
-﻿using LoginTest.src.logs;
+﻿using Sifrovy_Prekladac.src.logs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginTest.src.UserHandler
+namespace Sifrovy_Prekladac.src.UserHandler
 {
     /// <summary>
     /// Obsahuje operace pro práci s kolekcí uživatelů.

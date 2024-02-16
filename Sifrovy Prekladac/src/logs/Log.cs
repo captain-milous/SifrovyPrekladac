@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginTest.src.logs
+namespace Sifrovy_Prekladac.src.logs
 {
     /// <summary>
     /// Třída reprezentující záznam v logu obsahující informace o zprávě, autorovi a datu záznamu.

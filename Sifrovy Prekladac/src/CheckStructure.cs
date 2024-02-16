@@ -1,13 +1,13 @@
-﻿using LoginTest.src.conf;
-using LoginTest.src.logs;
-using LoginTest.src.UserHandler;
+﻿using Sifrovy_Prekladac.src.conf;
+using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginTest.src
+namespace Sifrovy_Prekladac.src
 {
     /// <summary>
     /// Obsahuje metody pro kontrolu struktury systému.

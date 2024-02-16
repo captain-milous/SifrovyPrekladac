@@ -9,12 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="static_methods\**" />
+    <EmbeddedResource Remove="static_methods\**" />
+    <None Remove="static_methods\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="src\logs\" />
     <Folder Include="src\conf\" />
     <Folder Include="src\UI\" />
-    <Folder Include="src\UserHandler"/>
-    <Folder Include="src\sifry"/>
-    <Folder Include="static_methods"/>
+    <Folder Include="src\UserHandler" />
+    <Folder Include="src\sifry" />
   </ItemGroup>
 
 </Project>

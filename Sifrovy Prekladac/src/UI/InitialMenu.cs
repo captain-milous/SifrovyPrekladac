@@ -1,11 +1,11 @@
-﻿using LoginTest.src.UserHandler;
+﻿using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginTest.src.UI
+namespace Sifrovy_Prekladac.src.UI
 {
     /// <summary>
     /// Obsahuje přihlašovací menu aplikace.

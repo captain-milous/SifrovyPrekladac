@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginTest.src.UserHandler
+namespace Sifrovy_Prekladac.src.UserHandler
 {
     /// <summary>
     /// Reprezentuje role v systému.
