@@ -19,7 +19,6 @@
     <Folder Include="src\conf\" />
     <Folder Include="src\UI\" />
     <Folder Include="src\UserHandler" />
-    <Folder Include="src\sifry" />
   </ItemGroup>
 
 </Project>

@@ -9,21 +9,42 @@ using Sifrovy_Prekladac.src.static_methods;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// 
+    /// Dodělat!
     /// </summary>
     public class MezerovaSifra : Sifra
     {
         #region Proměnné
         /// <summary>
-        /// Mezi dvojicí písmen se ukrývá zašifrované písmeno
+        /// 
         /// </summary>
-        private static List<string> MezAbc = new List<string>()
+        private static Dictionary<char,string> MezAbc = new Dictionary<char, string>() 
         {
-            "ZB","AC","BD","CE","DF",
-            "EG","FH","GI","HJ","IK",
-            "JL","KM","LN","MO","NP",
-            "OQ","PR","QS","RT","SU",
-            "TV","UW","VX","WY","XZ","YA"
+            {'A', "ZB"}, 
+            {'B', "AC"}, 
+            {'C', "BD"}, 
+            {'D', "CE"},
+            {'E', "DF"},
+            {'F', "EG"}, 
+            {'G', "FH"}, 
+            {'H', "GI"}, 
+            {'I', "HJ"}, 
+            {'J', "IK"},
+            {'K', "JL"}, 
+            {'L', "KM"}, 
+            {'M', "LN"}, 
+            {'N', "MO"}, 
+            {'O', "NP"},
+            {'P', "OQ"}, 
+            {'Q', "PR"}, 
+            {'R', "QS"}, 
+            {'S', "RT"}, 
+            {'T', "SU"},
+            {'U', "TV"}, 
+            {'V', "UW"}, 
+            {'W', "VX"}, 
+            {'X', "WY"}, 
+            {'Y', "XZ"},
+            {'Z', "YA"}
         };
         #endregion
         #region Konstruktory
@@ -70,12 +91,9 @@ namespace Sifrovy_Prekladac.src.sifry
                 case "DEF":
                     foreach (char c in text)
                     {
-                        if (TextMethods.Abeceda.Contains(c))
-                        {
-                            int index = TextMethods.FindIndexInAlphabet(c);
-                            encryptedText.Append(MezAbc[index]);
-                            encryptedText.Append(' ');
-                        }
+                        string eChar = MezAbc[c];
+                        encryptedText.Append(eChar);
+                        encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
 
@@ -99,7 +117,6 @@ namespace Sifrovy_Prekladac.src.sifry
             {
                 case "DEF":
 
-                    
                     return decryptedText.ToString();
 
                 default:
