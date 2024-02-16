@@ -1,5 +1,6 @@
 ﻿using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.sifry;
+using Sifrovy_Prekladac.src.static_methods;
 using Sifrovy_Prekladac.src.UI;
 using Sifrovy_Prekladac.src.UserHandler;
 
@@ -17,7 +18,7 @@ namespace Sifrovy_Prekladac.src
         static void Main(string[] args)
         {
             // Test
-            CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?",-3,false);
+            CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", TextMethods.Abeceda.Length, false);
             Console.WriteLine(test);
             test = new CaesarovaSifra("DKRM PLFKDOH MDN VH GQHVND PDV",3,true);
             Console.WriteLine(test);

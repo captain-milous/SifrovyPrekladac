@@ -9,25 +9,47 @@ using static System.Net.Mime.MediaTypeNames;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// 
+    /// Třída reprezentující Caesarovu šifru, odvozená od základní třídy Sifra.
     /// </summary>
     public class CaesarovaSifra : Sifra
     {
         private int _posun;
         /// <summary>
-        /// 
+        /// Posunutí znaků při šifrování/dešifrování.
         /// </summary>
         public int Posun
         {
             get { return _posun; }
-            set { _posun = value; }
+            set 
+            { 
+                if(value >= 0 && value < TextMethods.Abeceda.Length)
+                {
+                    _posun = (int)value;
+                } 
+                else
+                {
+                    int assistValue = (int)value;
+                    while(!(assistValue >= 0 && assistValue < TextMethods.Abeceda.Length))
+                    {
+                        if (assistValue < 0)
+                        {
+                            assistValue += TextMethods.Abeceda.Length;
+                        }
+                        else if(assistValue >= TextMethods.Abeceda.Length) 
+                        { 
+                            assistValue -= TextMethods.Abeceda.Length;
+                        }
+                    }
+                    _posun = assistValue;
+                }
+            }
         }
         /// <summary>
-        /// 
+        /// Konstruktor pro vytvoření instance Caesarovy šifry.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="posun"></param>
-        /// <param name="decypher"></param>
+        /// <param name="rawText">Text k zašifrování nebo dešifrování.</param>
+        /// <param name="posun">Počet míst, o které se mají znaky posunout.</param>
+        /// <param name="decypher">Určuje, zda se má provést dešifrování.</param>
         public CaesarovaSifra(string rawText, int posun, bool decypher) : base()
         {
             Posun = posun;
@@ -44,18 +66,18 @@ namespace Sifrovy_Prekladac.src.sifry
             }
         }
         /// <summary>
-        /// 
+        /// Přetížená metoda ToString pro vrácení textové reprezentace instance Caesarovy šifry.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Dešifrovaný text (+posun) a zašifrovaný text.</returns>
         public override string ToString()
         {
             return DecText + " (+" + Posun + ") => " + EncText;
         }
         /// <summary>
-        /// 
+        /// Metoda pro šifrování textu pomocí Caesarovy šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Text k zašifrování.</param>
+        /// <returns>Šifrovaný text.</returns>
         public override string Encrypt(string text)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -73,10 +95,10 @@ namespace Sifrovy_Prekladac.src.sifry
             return UpravText(text, posunutaAbeceda);
         }
         /// <summary>
-        /// 
+        /// Metoda pro dešifrování textu pomocí Caesarovy šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Text k dešifrování.</param>
+        /// <returns>Dešifrovaný text.</returns>
         public override string Decrypt(string text)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -94,10 +116,10 @@ namespace Sifrovy_Prekladac.src.sifry
             return UpravText(text, posunutaAbeceda);
         }
         /// <summary>
-        /// 
+        /// Metoda pro dešifrování textu pomocí Caesarovy šifry.
         /// </summary>
-        /// <param name="posun"></param>
-        /// <returns></returns>
+        /// <param name="text">Text k dešifrování.</param>
+        /// <returns>Dešifrovaný text.</returns>
         private int RozdilPismen(int posun)
         {
             char[] abeceda = TextMethods.Abeceda;
@@ -116,11 +138,10 @@ namespace Sifrovy_Prekladac.src.sifry
             return rozdilPismen;
         }
         /// <summary>
-        /// 
+        /// Metoda pro získání rozdílu mezi znaky abecedy.
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="posunutaAbeceda"></param>
-        /// <returns></returns>
+        /// <param name="posun">Počet míst, o které se mají znaky posunout.</param>
+        /// <returns>Rozdíl mezi znaky abecedy.</returns>
         private string UpravText(string text, char[] posunutaAbeceda)
         {
             char[] rozsifrovanyText = new char[text.Length];
