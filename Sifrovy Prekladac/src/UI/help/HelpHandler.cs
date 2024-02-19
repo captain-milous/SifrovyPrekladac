@@ -18,11 +18,13 @@ namespace Sifrovy_Prekladac.src.UI.help
         private static Dictionary<Commands, string> description = new Dictionary<Commands, string>()
         {
             //{ Commands.help, "Zobrazí seznam možných komandů." },
+            { Commands.activesifry, "Zobrazí seznam šifer, které tato verze programu podporuje." },
             { Commands.sifrovani, "Šifruje/dešifruje zadaný text." },
             { Commands.historie, "Zobrazí vaší historii šifrování." },
             { Commands.favourites, "Zobrazí vaše oblíbené šifry." },
             { Commands.activeusers, "Zobrazí seznam aktivních uživatelů." },
             { Commands.journal, "Zobrazí logy." },
+            { Commands.clear, "Vyčistí command linku." },
             { Commands.logout, "Odhlásí uživatele" },
             { Commands.exit, "Ukončí program" }
         };
@@ -30,8 +32,10 @@ namespace Sifrovy_Prekladac.src.UI.help
         public static Dictionary<Commands, Role> Authorization = new Dictionary<Commands, Role>() 
         {
             { Commands.exit, Role.Anonymous },
+            { Commands.clear, Role.Anonymous },
             { Commands.logout, Role.Anonymous },
             { Commands.sifrovani, Role.Anonymous },
+            { Commands.activesifry, Role.Anonymous },
             { Commands.historie, Role.User },
             { Commands.favourites, Role.User },
             { Commands.activeusers, Role.Admin },
@@ -47,7 +51,7 @@ namespace Sifrovy_Prekladac.src.UI.help
             {
                 if(user.Role == Role.Admin)
                 {
-                    if (Authorization[command] != Role.User)
+                    if (Authorization[command] != Role.User && command != Commands.sifrovani && command != Commands.activesifry)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }

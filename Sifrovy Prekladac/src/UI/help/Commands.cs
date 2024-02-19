@@ -13,7 +13,10 @@ namespace Sifrovy_Prekladac.src.UI.help
     {
         def,
         help,
-        sifrovani,
+        clear,
+        cmdsifrovani,
+        filesifrovani,
+        activesifry,
         historie,
         favourites,
         journal,
