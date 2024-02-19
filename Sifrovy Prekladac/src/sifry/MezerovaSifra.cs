@@ -13,7 +13,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class MezerovaSifra : Sifra
     {
-        #region Proměnné
+        #region Slovník
         /// <summary>
         /// Abecední mapování znaků pro Mezerovou šifru.
         /// </summary>

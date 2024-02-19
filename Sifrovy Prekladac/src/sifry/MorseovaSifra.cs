@@ -12,6 +12,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class MorseovaSifra : Sifra
     {
+        #region Slovník a List
         /// <summary>
         /// 
         /// </summary>
@@ -30,6 +31,8 @@ namespace Sifrovy_Prekladac.src.sifry
             {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."},
             {'9', "----."}
         };
+        #endregion 
+        #region Konstruktory
         /// <summary>
         /// 
         /// </summary>
@@ -69,6 +72,8 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
+        #endregion 
+        #region Zašifrování
         /// <summary>
         /// 
         /// </summary>
@@ -151,7 +156,14 @@ namespace Sifrovy_Prekladac.src.sifry
 
             return output;
         }
-
+        #endregion 
+        #region Rozšifrování
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public override string Decrypt(string text)
         {
             switch (TypeOfEnc)
@@ -170,5 +182,6 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return base.Decrypt(text);
         }
+        #endregion 
     }
 }

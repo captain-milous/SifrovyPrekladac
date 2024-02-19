@@ -12,7 +12,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class KlavesnicovaSifra : Sifra
     {
-        #region Konstruktory
+        #region Slovníky a Listy
         /// <summary>
         /// Pole typů klávesnice.
         /// </summary>
