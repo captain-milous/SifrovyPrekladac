@@ -9,13 +9,13 @@ using Sifrovy_Prekladac.src.static_methods;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// Dodělat!
+    /// Třída reprezentující Mezerovou šifru, odvozená od třídy Sifra.
     /// </summary>
     public class MezerovaSifra : Sifra
     {
         #region Proměnné
         /// <summary>
-        /// 
+        /// Abecední mapování znaků pro Mezerovou šifru.
         /// </summary>
         private static Dictionary<char,string> MezAbc = new Dictionary<char, string>() 
         {
@@ -49,19 +49,19 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Konstruktory
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci MezeroveSifry se zadaným nešifrovaným textem.
         /// </summary>
-        /// <param name="rawText"></param>
+        /// <param name="rawText">Nešifrovaný text.</param>
         public MezerovaSifra(string rawText) : base()
         {
             DecText = TextMethods.WithoutSpaces(TextMethods.Simplify(rawText));
             EncText = Encrypt(DecText);
         }
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci MezeroveSifry se zadaným textem a určením, zda se má text zašifrovat nebo dešifrovat.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="decipher"></param>
+        /// <param name="rawText">Vstupní text.</param>
+        /// <param name="decipher">True, pokud se má provést dešifrování; jinak false.</param>
         public MezerovaSifra(string rawText, bool decipher) : base()
         {
             if (!decipher)
@@ -78,11 +78,11 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Zašifrování
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text Mezerovou šifrou.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Text k zašifrování.</param>
+        /// <returns>Zašifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         public override string Encrypt(string text)
         {
             StringBuilder encryptedText = new StringBuilder();
@@ -105,11 +105,11 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Rozšifrování
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text Mezerovou šifrou.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Zašifrovaný text.</param>
+        /// <returns>Dešifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
@@ -117,6 +117,12 @@ namespace Sifrovy_Prekladac.src.sifry
             {
                 case "DEF":
 
+                    string[] encryptedChars = text.Trim().Split(' ');
+                    foreach (string eChar in encryptedChars)
+                    {
+                        char originalChar = MezAbc.FirstOrDefault(x => x.Value == eChar).Key;
+                        decryptedText.Append(originalChar);
+                    }
                     return decryptedText.ToString();
 
                 default:
