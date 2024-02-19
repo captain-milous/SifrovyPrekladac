@@ -77,7 +77,14 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <returns>Dešifrovaný text a zašifrovaný text oddělené " => ".</returns>
         public override string ToString()
         {
-            return DecText + " => " + EncText;
+            if (TypeOfEnc == "DEF")
+            {
+                return DecText + " => " + EncText;
+            }
+            else
+            {
+                return DecText + "(" + TypeOfEnc +") => " + EncText;
+            }
         }
         #endregion
         #region Encrypt/Decrypt methods
