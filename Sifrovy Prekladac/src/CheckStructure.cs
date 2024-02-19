@@ -63,6 +63,10 @@ namespace Sifrovy_Prekladac.src
                                     LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
                                 }
                             }
+                            if (u.Role == Role.Admin)
+                            {
+                                u.SetPassword(ConfigHandler.Config.AdminPassword);
+                            }
                         }
                     }
                 }

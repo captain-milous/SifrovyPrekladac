@@ -27,7 +27,8 @@ namespace Sifrovy_Prekladac.src.UI
             { "ex", "exit" },
             { "exi", "exit" },
             { "out", "logout" },
-            { "sif", "sifrovani" },
+            { "cmd", "cmdsifrovani" },
+            { "fil", "filesifrovani" },
             { "fav", "favourites" },
             { "his", "historie" },
             { "jor", "journal" },
@@ -85,9 +86,21 @@ namespace Sifrovy_Prekladac.src.UI
                         // Zobrazí dostupné příkazy pro daného uživatele
                         HelpHandler.Start(user);
                         break;
-                    case Commands.sifrovani:
+                    case Commands.cmdsifrovani:
                         // UI pro zašifrovaní/rozšifrovaní textu
                         if(user.Role != Role.Admin)
+                        {
+                            SifrovaniUI.Start(user);
+                        }
+                        else
+                        {
+                            Console.Write("K tomuto příkazu nemáte oprávnění. ");
+                            Console.WriteLine("Napište 'help' pro nápovědu.\n");
+                        }
+                        break;
+                    case Commands.filesifrovani:
+                        // UI pro zašifrovaní/rozšifrovaní textu
+                        if (user.Role != Role.Admin)
                         {
                             SifrovaniUI.Start(user);
                         }

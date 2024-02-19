@@ -19,7 +19,8 @@ namespace Sifrovy_Prekladac.src.UI.help
         {
             //{ Commands.help, "Zobrazí seznam možných komandů." },
             { Commands.activesifry, "Zobrazí seznam šifer, které tato verze programu podporuje." },
-            { Commands.sifrovani, "Šifruje/dešifruje zadaný text." },
+            { Commands.cmdsifrovani, "Šifruje/dešifruje zadaný text z klávesnice." },
+            { Commands.filesifrovani, "Šifruje/dešifruje zadaný text z textového souboru." },
             { Commands.historie, "Zobrazí vaší historii šifrování." },
             { Commands.favourites, "Zobrazí vaše oblíbené šifry." },
             { Commands.activeusers, "Zobrazí seznam aktivních uživatelů." },
@@ -34,7 +35,8 @@ namespace Sifrovy_Prekladac.src.UI.help
             { Commands.exit, Role.Anonymous },
             { Commands.clear, Role.Anonymous },
             { Commands.logout, Role.Anonymous },
-            { Commands.sifrovani, Role.Anonymous },
+            { Commands.cmdsifrovani, Role.Anonymous },
+            { Commands.filesifrovani, Role.Anonymous },
             { Commands.activesifry, Role.Anonymous },
             { Commands.historie, Role.User },
             { Commands.favourites, Role.User },
@@ -51,7 +53,7 @@ namespace Sifrovy_Prekladac.src.UI.help
             {
                 if(user.Role == Role.Admin)
                 {
-                    if (Authorization[command] != Role.User && command != Commands.sifrovani && command != Commands.activesifry)
+                    if (Authorization[command] != Role.User && command != Commands.cmdsifrovani && command != Commands.filesifrovani && command != Commands.activesifry)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }
