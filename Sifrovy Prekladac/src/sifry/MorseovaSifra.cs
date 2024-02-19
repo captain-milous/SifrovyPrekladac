@@ -53,9 +53,9 @@ namespace Sifrovy_Prekladac.src.sifry
         /// 
         /// </summary>
         /// <param name="rawText"></param>
-        /// <param name="metoda"></param>
+        /// <param name="type"></param>
         /// <param name="decypher"></param>
-        public MorseovaSifra(string rawText, string metoda, bool decypher) : base(typyMorseovky, metoda)
+        public MorseovaSifra(string rawText, string type, bool decypher) : base(typyMorseovky, type)
         {
             if (!decypher)
             {
