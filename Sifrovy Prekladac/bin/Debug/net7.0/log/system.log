@@ -3,3 +3,23 @@
 16.02.2024 9:44:10 (system): test se úspěšně přihlásit do aplikace.
 16.02.2024 9:44:24 (system): test se úspěšně přihlásit do aplikace.
 16.02.2024 9:44:31 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:48:08 (system): milos se úspěšně přihlásit do aplikace.
+19.02.2024 17:48:33 (system): milos se odhlásil.
+19.02.2024 17:48:44 (system): admin se pokusil přihlásit.
+19.02.2024 17:48:48 (system): admin se úspěšně přihlásit do aplikace.
+19.02.2024 17:49:29 (system): admin se odhlásil.
+19.02.2024 17:49:42 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:50:44 (system): Anonymous ukončil program.
+19.02.2024 17:51:48 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:51:53 (system): Anonymous ukončil program.
+19.02.2024 17:53:38 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:53:43 (system): Anonymous ukončil program.
+19.02.2024 17:55:20 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:56:16 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:56:20 (system): Anonymous ukončil program.
+19.02.2024 17:57:44 (system): Anonymous se úspěšně přihlásit do aplikace.
+19.02.2024 17:57:47 (system): Anonymous ukončil program.
+19.02.2024 17:59:55 (system): milos se úspěšně přihlásit do aplikace.
+19.02.2024 18:45:44 (system): Nastala neočekávaná chyba při čtení z users\ActiveUsers.xml: There is an error in XML document (0, 0).
+19.02.2024 18:46:09 (system): Admin se úspěšně přihlásit do aplikace.
+19.02.2024 18:46:11 (system): Admin ukončil program.

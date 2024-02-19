@@ -37,19 +37,31 @@ namespace Sifrovy_Prekladac.src
                     ListOfUsers.LoadUsers();
                     if (ListOfUsers.GetAll().Count == 0)
                     {
-                        throw new Exception("Neexistuje defaultní administrátorský profil.");
+                        try
+                        {
+                            User admin = new User("Admin", ConfigHandler.Config.AdminPassword);
+                            admin.SetRole(Role.Admin);
+                            ListOfUsers.Add(admin);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception($"Chyba při vytváření administrátorské role. {ex.Message}");
+                        }
                     }
-                    if (ListOfUsers.GetAll().Count() > 0)
+                    else if (ListOfUsers.GetAll().Count() > 0)
                     {
                         foreach (User u in ListOfUsers.GetAll())
                         {
                             string uPath = "users\\" + u.Username;
                             if (!Directory.Exists(uPath))
                             {
-                                Directory.CreateDirectory(uPath);
-                                Directory.CreateDirectory(uPath + "\\historie");
-                                Directory.CreateDirectory(uPath + "\\favourites");
-                                LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
+                                if(u.Role != Role.Admin)
+                                {
+                                    Directory.CreateDirectory(uPath);
+                                    Directory.CreateDirectory(uPath + "\\historie");
+                                    Directory.CreateDirectory(uPath + "\\favourites");
+                                    LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
+                                }
                             }
                         }
                     }

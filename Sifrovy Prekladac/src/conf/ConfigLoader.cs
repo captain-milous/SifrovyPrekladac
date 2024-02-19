@@ -27,8 +27,11 @@ namespace Sifrovy_Prekladac.src.conf
             try
             {
                 XDocument doc = XDocument.Load(filePath);
+                newConfig.AdminPassword = GetValueFromXml(doc, "AdminPassword");
                 newConfig.LogFilePath = GetValueFromXml(doc, "LogFilePath");
                 newConfig.ListOfUsersFilePath = GetValueFromXml(doc, "ListOfUsersFilePath");
+                newConfig.InputFile = GetValueFromXml(doc, "InputFile");
+                newConfig.OutputFile = GetValueFromXml(doc, "OutputFile");
             }
             catch (Exception ex)
             {

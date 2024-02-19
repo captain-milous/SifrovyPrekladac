@@ -1,6 +1,13 @@
 <Configuration>
-  <InputFilePath>data\input.txt</InputFilePath>
-  <OutputFilePath>data\output.txt</OutputFilePath>
+  <!-- Default users passwords -->
+  <AdminPassword>Heslo123*</AdminPassword>
+  
+  <!-- Important File Path -->
   <LogFilePath>log\system.log</LogFilePath>
   <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
+  
+  <!-- Upload and Download File Location -->
+  <InputFile>data</InputFile>
+  <OutputFile>data</OutputFile>
+  
 </Configuration>

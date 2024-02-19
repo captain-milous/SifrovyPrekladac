@@ -11,8 +11,11 @@ namespace Sifrovy_Prekladac.src.conf
     /// </summary>
     public class Config
     {
+        public string AdminPassword { get; set; }
         public string LogFilePath { get; set; }
         public string ListOfUsersFilePath { get; set; }
+        public string InputFile { get; set; }
+        public string OutputFile { get; set; }
 
         /// <summary>
         /// Inicializuje novou instanci třídy Config bez parametrů.

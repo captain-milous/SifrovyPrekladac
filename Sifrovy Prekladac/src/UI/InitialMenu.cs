@@ -36,25 +36,28 @@ namespace Sifrovy_Prekladac.src.UI
             {
                 Console.Clear();
                 Console.WriteLine(Oddelovac);
-                Console.WriteLine("MENU\n1 - Registrace\n2 - Přihlášení\n3 - Anonymní režim\n4 - Konec");
+                Console.WriteLine("MENU\n1 - Přihlášení\n2 - Registrace\n3 - Anonymní režim\n4 - Konec");
                 Console.Write("Vyberte možnost: ");
                 int input = SelectOption(Console.ReadLine());
                 Console.WriteLine();
                 switch (input)
                 {
                     case 1:
-                        RegistrationUI.Start();
+                        LoginUI.Start();
                         break;
                     case 2:
-                        LoginUI.Start();
+                        RegistrationUI.Start();
                         break;
                     case 3:
                         MainMenu.Start(new User());
                         break;
                     case 4:
                         Console.WriteLine("Ukončil/a jste program.");
+                        Console.WriteLine(Oddelovac);
                         Thread.Sleep(1000);
+                        Console.Clear();
                         run = false;
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine("Vyberte prosím validní možnost!");

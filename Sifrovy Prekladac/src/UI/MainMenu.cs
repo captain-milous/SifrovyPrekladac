@@ -1,4 +1,6 @@
-﻿using Sifrovy_Prekladac.src.logs;
+﻿using Sifrovy_Prekladac.src.conf;
+using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.UI.help;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,21 @@ namespace Sifrovy_Prekladac.src.UI
     public static class MainMenu
     {
         /// <summary>
+        /// Slovník obsahující zkratky pro příkazy.
+        /// </summary>
+        static Dictionary<string, string> Zkratky = new Dictionary<string, string>()
+        {
+            { "?", "help" },
+            { "he", "help" },
+            { "x", "exit" },
+            { "ex", "exit" },
+            { "exi", "exit" },
+            { "co" , "compress" },
+            { "de" , "decompress" },
+            { "in" , "input" },
+            { "out" , "output" },
+        };
+        /// <summary>
         /// 
         /// </summary>
         private static string Oddelovac = InitialMenu.Oddelovac;
@@ -26,50 +43,62 @@ namespace Sifrovy_Prekladac.src.UI
         {
             LogHandler.Write($"{user.Username} se úspěšně přihlásit do aplikace.");
             Console.Clear();
-            Console.WriteLine(user + " se přihlásil!");
-            Thread.Sleep(5000);
+            if(user.Role != Role.Anonymous)
+            {
+                Console.WriteLine(user + " se přihlásil!\n");
+            }
+            Console.WriteLine("Napište 'help' pro nápovědu.");
+            Console.WriteLine(Oddelovac);
             bool run = true;
             while (run)
             {
-                Console.Clear();
-                Console.WriteLine(Oddelovac);
-                switch (user.Role)
-                {
-                    case Role.Admin:
-
-                        break;
-                    case Role.User:
-
-                        break;
-                    case Role.Anonymous:
-
-                        break;
-                    default:
-                        throw new Exception("Tato situace by nikdy neměla nastat");
-                }
-                Console.WriteLine("Havní menu\n1 - Registrace\n2 - Přihlášení\n3 - Anonymní režim\n4 - Konec");
-                Console.Write("Vyberte možnost: ");
-                int input = SelectOption(Console.ReadLine());
+                #region Input from user
+                string lineStartText = user + "> ";
+                Console.Write(lineStartText);
+                string input = Console.ReadLine().ToLower();
                 Console.WriteLine();
-                switch (input)
+                if (input.Length < 4)
                 {
-                    case 1:
-                        RegistrationUI.Start();
+                    if (Zkratky.TryGetValue(input, out string hodnota))
+                    {
+                        input = hodnota;
+                    }
+                }
+
+                Commands userCommand = Commands.def;
+                try
+                {
+                    userCommand = (Commands)Enum.Parse(typeof(Commands), input, true);
+                }
+                catch
+                {
+                    LogHandler.Write($"{user.Username} použil neexistující příkaz.");
+                }
+                #endregion
+                switch (userCommand)
+                {
+                    case Commands.help:
+                        HelpHandler.Start(user);
                         break;
-                    case 2:
-                        LoginUI.Start();
+                    case Commands.journal:
+                        //string text = FileHandler.ReadFromFile("log\\LogFile.txt");
+                        //Console.WriteLine(text);
                         break;
-                    case 3:
-                        MainMenu.Start(new User());
-                        break;
-                    case 4:
-                        Console.WriteLine("Ukončil/a jste program.");
-                        Thread.Sleep(1000);
+                    case Commands.logout:
+                        LogHandler.Write($"{user.Username} se odhlásil.");
                         run = false;
                         break;
-                    default:
-                        Console.WriteLine("Vyberte prosím validní možnost!");
+                    case Commands.exit:
+                        Console.WriteLine("Ukončil/a jste program.");
+                        Console.WriteLine(Oddelovac);
+                        LogHandler.Write($"{user.Username} ukončil program.");
                         Thread.Sleep(1000);
+                        Console.Clear();
+                        run = false;
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Napište 'help' pro nápovědu.");
                         break;
                 }
             }

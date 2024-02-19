@@ -18,11 +18,12 @@ namespace Sifrovy_Prekladac.src
         static void Main(string[] args)
         {
             // Test
+            /*
             CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", TextMethods.Abeceda.Length, false);
             Console.WriteLine(test);
             test = new CaesarovaSifra("DKRM PLFKDOH MDN VH GQHVND PDV",3,true);
             Console.WriteLine(test);
-            /*
+            */
             bool run = true;
             // configurace
             try
@@ -35,7 +36,7 @@ namespace Sifrovy_Prekladac.src
                 LogFileWriter.WriteEmergancy();
                 run = false; 
             }
-            InitialMenu.Start(run);*/
+            InitialMenu.Start(run);
         }
     }
 }
