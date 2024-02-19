@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sifrovy_Prekladac.src.sifry
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class TelefonniSifra : Sifra
     {
         #region Proměnné  

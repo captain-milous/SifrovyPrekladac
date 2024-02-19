@@ -63,7 +63,36 @@ namespace Sifrovy_Prekladac.src.static_methods
 
             return stringBuilder.ToString();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string WithoutSpecialChar(string text)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (char c in text)
+            {
+                if (c == ' ')
+                {
+                    stringBuilder.Append(c);
+                }
+                else
+                {
+                    if (Abeceda.Contains(c))
+                    {
+                        stringBuilder.Append(c);
+                    }
+                }
+            }
 
+            return stringBuilder.ToString();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static string WithoutSpaces(string text)
         {
             StringBuilder stringBuilder = new StringBuilder();
