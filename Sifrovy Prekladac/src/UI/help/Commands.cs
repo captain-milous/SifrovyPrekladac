@@ -13,11 +13,11 @@ namespace Sifrovy_Prekladac.src.UI.help
     {
         def,
         help,
-        sifra,
+        sifrovani,
         historie,
         favourites,
         journal,
-        users,
+        activeusers,
         logout,
         exit
     }

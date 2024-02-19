@@ -18,23 +18,23 @@ namespace Sifrovy_Prekladac.src.UI.help
         private static Dictionary<Commands, string> description = new Dictionary<Commands, string>()
         {
             //{ Commands.help, "Zobrazí seznam možných komandů." },
-            { Commands.sifra, "Šifruje/dešifruje zadaný text." },
+            { Commands.sifrovani, "Šifruje/dešifruje zadaný text." },
             { Commands.historie, "Zobrazí vaší historii šifrování." },
             { Commands.favourites, "Zobrazí vaše oblíbené šifry." },
-            { Commands.users, "Zobrazí seznam aktivních uživatelů." },
+            { Commands.activeusers, "Zobrazí seznam aktivních uživatelů." },
             { Commands.journal, "Zobrazí logy." },
             { Commands.logout, "Odhlásí uživatele" },
             { Commands.exit, "Ukončí program" }
         };
 
-        private static Dictionary<Commands, Role> authorization = new Dictionary<Commands, Role>() 
+        public static Dictionary<Commands, Role> Authorization = new Dictionary<Commands, Role>() 
         {
             { Commands.exit, Role.Anonymous },
             { Commands.logout, Role.Anonymous },
-            { Commands.sifra, Role.Anonymous },
+            { Commands.sifrovani, Role.Anonymous },
             { Commands.historie, Role.User },
             { Commands.favourites, Role.User },
-            { Commands.users, Role.Admin },
+            { Commands.activeusers, Role.Admin },
             { Commands.journal, Role.Admin },
         };
         /// <summary>
@@ -47,21 +47,21 @@ namespace Sifrovy_Prekladac.src.UI.help
             {
                 if(user.Role == Role.Admin)
                 {
-                    if (authorization[command] != Role.User)
+                    if (Authorization[command] != Role.User)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }
                 }
                 else if(user.Role == Role.User) 
                 {
-                    if (authorization[command] != Role.Admin)
+                    if (Authorization[command] != Role.Admin)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }
                 }
                 else if (user.Role == Role.Anonymous)
                 {
-                    if (authorization[command] == Role.Anonymous)
+                    if (Authorization[command] == Role.Anonymous)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }

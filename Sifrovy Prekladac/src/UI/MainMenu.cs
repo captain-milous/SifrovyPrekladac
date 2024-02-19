@@ -26,19 +26,22 @@ namespace Sifrovy_Prekladac.src.UI
             { "x", "exit" },
             { "ex", "exit" },
             { "exi", "exit" },
-            { "co" , "compress" },
-            { "de" , "decompress" },
-            { "in" , "input" },
-            { "out" , "output" },
+            { "out", "logout" },
+            { "sif", "sifrovani" },
+            { "fav", "favourites" },
+            { "his", "historie" },
+            { "jor", "journal" },
+            { "au", "activeusers" },
+            { "act", "activeusers" },
         };
         /// <summary>
-        /// 
+        /// Oddělovač pro vizuální oddělení sekce.
         /// </summary>
         private static string Oddelovac = InitialMenu.Oddelovac;
         /// <summary>
         /// Přihlášení do aplikace pod určitým uživatelem
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="user">Uživatel</param>
         public static void Start(User user)
         {
             LogHandler.Write($"{user.Username} se úspěšně přihlásit do aplikace.");
@@ -64,7 +67,6 @@ namespace Sifrovy_Prekladac.src.UI
                         input = hodnota;
                     }
                 }
-
                 Commands userCommand = Commands.def;
                 try
                 {
@@ -80,9 +82,48 @@ namespace Sifrovy_Prekladac.src.UI
                     case Commands.help:
                         HelpHandler.Start(user);
                         break;
+                    case Commands.sifrovani:
+                        SifrovaniUI.Start(user);
+                        break;
+                    case Commands.favourites:
+                        if (user.Role == Role.User)
+                        {
+                            UserUI.Favourites(user);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Napište 'help' pro nápovědu.");
+                        }
+                        break;
+                    case Commands.historie:
+                        if(user.Role == Role.User)
+                        {
+                            UserUI.Historie(user);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Napište 'help' pro nápovědu.");
+                        }
+                        break;
                     case Commands.journal:
-                        //string text = FileHandler.ReadFromFile("log\\LogFile.txt");
-                        //Console.WriteLine(text);
+                        if (user.Role == Role.Admin)
+                        {
+                            AdminUI.Journal();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Napište 'help' pro nápovědu.");
+                        }
+                        break;
+                    case Commands.activeusers:
+                        if (user.Role == Role.Admin)
+                        {
+                            AdminUI.ActiveUsers();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Napište 'help' pro nápovědu.");
+                        }
                         break;
                     case Commands.logout:
                         LogHandler.Write($"{user.Username} se odhlásil.");
@@ -102,13 +143,6 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                 }
             }
-        }
-
-        private static int SelectOption(string input)
-        {
-            int output = -1;
-
-            return output;
         }
     }
 }
