@@ -13,6 +13,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class CaesarovaSifra : Sifra
     {
+        #region 
         private int _posun;
         /// <summary>
         /// Posunutí znaků při šifrování/dešifrování.
@@ -44,6 +45,8 @@ namespace Sifrovy_Prekladac.src.sifry
                 }
             }
         }
+        #endregion 
+        #region 
         /// <summary>
         /// Konstruktor pro vytvoření instance Caesarovy šifry.
         /// </summary>
@@ -65,6 +68,8 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
+        #endregion 
+        #region ToString()
         /// <summary>
         /// Přetížená metoda ToString pro vrácení textové reprezentace instance Caesarovy šifry.
         /// </summary>
@@ -73,6 +78,8 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             return DecText + " (+" + Posun + ") => " + EncText;
         }
+        #endregion 
+        #region Šifrování
         /// <summary>
         /// Metoda pro šifrování textu pomocí Caesarovy šifry.
         /// </summary>
@@ -94,6 +101,8 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return UpravText(text, posunutaAbeceda);
         }
+        #endregion 
+        #region Dešifrování
         /// <summary>
         /// Metoda pro dešifrování textu pomocí Caesarovy šifry.
         /// </summary>
@@ -115,6 +124,8 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return UpravText(text, posunutaAbeceda);
         }
+        #endregion 
+        #region Ostatní metody
         /// <summary>
         /// Metoda pro dešifrování textu pomocí Caesarovy šifry.
         /// </summary>
@@ -161,5 +172,6 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             return new string(rozsifrovanyText);
         }
+        #endregion 
     }
 }
