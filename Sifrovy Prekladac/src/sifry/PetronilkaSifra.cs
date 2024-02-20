@@ -81,7 +81,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="key">Klíčové slovo pro šifrování/dešifrování.</param>
         /// <param name="decipher">True, pokud má být prováděno dešifrování; False, pokud má být prováděno šifrování.</param>
         /// <exception cref="Exception">Výjimka je vyvolána, pokud klíčové slovo neodpovídá požadavkům.</exception>
-        public PetronilkaSifra(string rawText, string key, bool decipher) : base()
+        public PetronilkaSifra(string rawText, string key, bool decypher) : base()
         {
             KlicSlovo = key;
             if (CheckKey(KlicSlovo))
@@ -91,8 +91,16 @@ namespace Sifrovy_Prekladac.src.sifry
                 {
                     mapovaniPismen.Add(unikatniPismena[i], i);
                 }
-                DecText = TextMethods.Simplify(rawText);
-                EncText = Encrypt(DecText);
+                if (!decypher)
+                {
+                    DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
+                    EncText = Encrypt(rawText);
+                }
+                else
+                {
+                    EncText = rawText;
+                    DecText = Decrypt(rawText);
+                }
             }
             else
             {
