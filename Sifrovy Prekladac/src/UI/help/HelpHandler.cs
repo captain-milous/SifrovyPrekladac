@@ -29,7 +29,9 @@ namespace Sifrovy_Prekladac.src.UI.help
             { Commands.logout, "Odhlásí uživatele" },
             { Commands.exit, "Ukončí program" }
         };
-
+        /// <summary>
+        /// Slovník obsahující autorizační prvky pro použití příkazu. 
+        /// </summary>
         public static Dictionary<Commands, Role> Authorization = new Dictionary<Commands, Role>() 
         {
             { Commands.exit, Role.Anonymous },

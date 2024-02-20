@@ -26,7 +26,7 @@ namespace Sifrovy_Prekladac.src.sifry
                 {
                     mapovaniPismen.Add(unikatniPismena[i], i);
                 }
-                DecText = TextMethods.Simplify(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(DecText);
             }
             else
@@ -44,7 +44,7 @@ namespace Sifrovy_Prekladac.src.sifry
                 {
                     mapovaniPismen.Add(unikatniPismena[i], i);
                 }
-                DecText = TextMethods.Simplify(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(DecText);
             }
             else

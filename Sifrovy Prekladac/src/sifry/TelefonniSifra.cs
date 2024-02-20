@@ -90,7 +90,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="type"></param>
         public TelefonniSifra(string rawText, string type) : base(typyTelefonu, type)
         {
-            DecText = TextMethods.WithoutSpaces(TextMethods.Simplify(rawText));
+            DecText = TextMethods.SimplifyWithoutSpaces(rawText);
             EncText = Encrypt(DecText);
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decipher)
             {
-                DecText = TextMethods.WithoutSpaces(TextMethods.Simplify(rawText));
+                DecText = TextMethods.SimplifyWithoutSpaces(rawText);
                 EncText = Encrypt(DecText);
             }
             else

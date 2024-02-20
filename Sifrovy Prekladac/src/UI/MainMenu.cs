@@ -1,5 +1,6 @@
 ﻿using Sifrovy_Prekladac.src.conf;
 using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.sifry;
 using Sifrovy_Prekladac.src.UI.help;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
@@ -36,7 +37,22 @@ namespace Sifrovy_Prekladac.src.UI
             { "au", "activeusers" },
             { "act", "activeusers" },
         };
-        static List<string> actveSifry = new List<string>() { "Morseova šifra", "Caesarova šifra", "Mezerova šifra", "Reverzní šifra"};
+        /// <summary>
+        /// Slovník obsahující popisy aktivních šifer této verze programu.
+        /// </summary>
+        static Dictionary<ActiveSifry, string> actveSifry = new Dictionary<ActiveSifry, string>() 
+        { 
+            { ActiveSifry.Morseova_Sifra, "Popis" }, 
+            { ActiveSifry.Caesarova_Sifra, "Popis" }, 
+            { ActiveSifry.Petronilka, "Popis" }, 
+            { ActiveSifry.Mezerova_Sifra, "Popis" }, 
+            { ActiveSifry.Klavesnicova_Sifra, "Popis" },
+            { ActiveSifry.Telefonni_Sifra, "Popis" },
+            { ActiveSifry.Numericka_Sifra, "Popis" },
+            { ActiveSifry.Reverzni_Sifra, "Popis" },
+            { ActiveSifry.Obracena_ABC_Sifra, "Popis" },
+            { ActiveSifry.Prohazena_Sifra, "Popis" },
+        };
         /// <summary>
         /// Oddělovač pro vizuální oddělení sekce.
         /// </summary>
@@ -111,13 +127,13 @@ namespace Sifrovy_Prekladac.src.UI
                         }
                         break;
                     case Commands.activesifry:
-                        // List aktivních šifer
+                        // List aktivních šifer s krátkým popisem
                         if (user.Role != Role.Admin)
                         {
                             Console.WriteLine("Seznam aktivních šifer: \n");
-                            foreach(string sifra in actveSifry)
+                            foreach(ActiveSifry sifra in actveSifry.Keys)
                             {
-                                Console.WriteLine("  " + sifra);
+                                Console.WriteLine("  - " + sifra + ": " + actveSifry[sifra]);
                             }
                             Console.WriteLine("\nPodrobný popis každé z těchto šifer můžeš nalézt v dokumentaci.\n");
                         }

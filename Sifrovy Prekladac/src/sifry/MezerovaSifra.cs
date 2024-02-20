@@ -54,7 +54,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="rawText">Nešifrovaný text.</param>
         public MezerovaSifra(string rawText) : base()
         {
-            DecText = TextMethods.WithoutSpaces(TextMethods.Simplify(rawText));
+            DecText = TextMethods.SimplifyWithoutSpaces(rawText);
             EncText = Encrypt(DecText);
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decipher)
             {
-                DecText = TextMethods.WithoutSpaces(TextMethods.Simplify(rawText));
+                DecText = TextMethods.SimplifyWithoutSpaces(rawText);
                 EncText = Encrypt(DecText);
             }
             else

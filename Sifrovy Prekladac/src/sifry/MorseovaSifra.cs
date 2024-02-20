@@ -42,8 +42,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decypher)
             {
-                rawText = TextMethods.Simplify(rawText);
-                DecText = rawText;
+                DecText = TextMethods.Simplify(rawText);
                 EncText = Encrypt(rawText);
             }
             else
@@ -62,8 +61,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decypher)
             {
-                rawText = TextMethods.Simplify(rawText);
-                DecText = rawText;
+                DecText = TextMethods.Simplify(rawText);
                 EncText = Encrypt(rawText);
             }
             else
