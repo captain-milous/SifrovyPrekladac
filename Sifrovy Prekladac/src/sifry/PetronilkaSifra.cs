@@ -206,6 +206,5 @@ namespace Sifrovy_Prekladac.src.sifry
             return true;
         }
         #endregion
-
     }
 }
