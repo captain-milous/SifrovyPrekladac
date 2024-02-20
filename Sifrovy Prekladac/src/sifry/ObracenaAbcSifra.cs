@@ -51,17 +51,27 @@ namespace Sifrovy_Prekladac.src.sifry
             }
         }
         #endregion
+        #region Šifrování
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public override string Encrypt(string text)
         {
             return base.Encrypt(text);
         }
-        #region
         #endregion
+        #region dešifrování
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public override string Decrypt(string text)
         {
             return base.Decrypt(text);
         }
-        #region
         #endregion
     }
 }
