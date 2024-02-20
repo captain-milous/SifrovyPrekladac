@@ -67,3 +67,20 @@
 19.02.2024 22:21:46 (system): admin se pokusil přihlásit.
 19.02.2024 22:21:55 (system): admin se úspěšně přihlásit do aplikace.
 19.02.2024 22:23:31 (system): admin se odhlásil.
+20.02.2024 17:51:49 (system): Anonymous se úspěšně přihlásit do aplikace.
+20.02.2024 17:52:12 (system): Anonymous se odhlásil.
+20.02.2024 17:52:23 (system): Anonymous se úspěšně přihlásit do aplikace.
+20.02.2024 17:53:29 (system): Anonymous použil neexistující příkaz.
+20.02.2024 17:53:32 (system): Anonymous použil neexistující příkaz.
+20.02.2024 17:53:45 (system): Anonymous se odhlásil.
+20.02.2024 17:53:52 (system): admin se úspěšně přihlásit do aplikace.
+20.02.2024 17:54:09 (system): admin použil neexistující příkaz.
+20.02.2024 17:54:30 (system): admin se odhlásil.
+20.02.2024 17:54:37 (system): milos se úspěšně přihlásit do aplikace.
+20.02.2024 17:57:08 (system): milos použil neexistující příkaz.
+20.02.2024 17:57:11 (system): milos se odhlásil.
+20.02.2024 17:57:19 (system): admin se úspěšně přihlásit do aplikace.
+20.02.2024 17:57:22 (system): admin použil neexistující příkaz.
+20.02.2024 18:01:09 (system): Byla vytvořena složka pro uživatele test
+20.02.2024 18:01:09 (system): Byla vytvořena složka pro uživatele student
+20.02.2024 18:02:02 (system): Nastala neočekávaná chyba při čtení z users\ActiveUsers.xml: There is an error in XML document (0, 0).

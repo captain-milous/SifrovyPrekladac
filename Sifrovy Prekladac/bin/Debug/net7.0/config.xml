@@ -7,7 +7,7 @@
   <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
   
   <!-- Upload and Download File Location -->
-  <InputFile>data</InputFile>
+  <InputFile>C:\Users\milda\Desktop</InputFile>
   <OutputFile>data</OutputFile>
   
 </Configuration>
