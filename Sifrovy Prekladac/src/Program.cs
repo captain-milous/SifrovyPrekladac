@@ -47,6 +47,11 @@ namespace Sifrovy_Prekladac.src
                 Console.WriteLine(test2);
                 test2 = new MezerovaSifra("SU NP GI KM DF IK DF UW DF KM HJ JL XZ SU DF RT SU ZB GI NP IK", true);
                 Console.WriteLine(test2);
+
+                ProhazenaSifra test3 = new ProhazenaSifra("Ahoj Michale, jak se dneska máš?");
+                Console.WriteLine(test3);
+                test3 = new ProhazenaSifra("AO IHL,JKS NSAMS?A KEDE A EACMJH", true);
+                Console.WriteLine(test3);
             }            
         }
     }
