@@ -86,21 +86,21 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Konstruktory
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci TelefonniSifra s daným nešifrovaným textem a typem šifry.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="type"></param>
+        /// <param name="rawText">Nešifrovaný text.</param>
+        /// <param name="type">Typ telefonní šifry.</param>
         public TelefonniSifra(string rawText, string type) : base(typyTelefonu, type)
         {
             DecText = TextMethods.SimplifyWithoutSpaces(rawText);
             EncText = Encrypt(DecText);
         }
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci TelefonniSifra s daným textem, typem šifry a volbou provést šifrování nebo dešifrování.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="type"></param>
-        /// <param name="decipher"></param>
+        /// <param name="rawText">Vstupní text.</param>
+        /// <param name="type">Typ telefonní šifry.</param>
+        /// <param name="decipher">True, pokud se má provést dešifrování; jinak false.</param>
         public TelefonniSifra(string rawText, string type, bool decipher) : base(typyTelefonu, type)
         {
             if (!decipher)
@@ -117,11 +117,11 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Zašifrování
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text podle typu telefonní šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Text k zašifrování.</param>
+        /// <returns>Zašifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         public override string Encrypt(string text)
         {
             StringBuilder encryptedText = new StringBuilder();
@@ -155,11 +155,11 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Rozšifrování
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text podle typu telefonní šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Zašifrovaný text.</param>
+        /// <returns>Dešifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
