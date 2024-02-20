@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// 
+    /// Enumerace představující seznam aktivních  šifer, kterými lze sifrovat, či dešifrovat v této verzi aplikace.
     /// </summary>
     public enum ActiveSifry
     {

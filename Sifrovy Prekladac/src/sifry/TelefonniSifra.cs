@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// 
+    /// Třída reprezentující Telefonní šifru, odvozená od třídy Sifra.
     /// </summary>
     public class TelefonniSifra : Sifra
     {
         #region Proměnné  
         /// <summary>
-        /// 
+        /// Pole typů telefonní šifry.
+        /// TEL (Klasická telefoní klávesnice)
+        /// TEL2 (Telefoní klávesnice ve formátu dvou čísel)
         /// </summary>
         private static string[] typyTelefonu = { "TEL", "TEL2" };
         /// <summary>
-        /// 
+        /// Slovník obsahující převodní tabulku znaků na jejich numerické reprezentace v telefonní klávesnici.
         /// </summary>
         private static Dictionary<char, string> Telephone = new Dictionary<char, string>()
         {

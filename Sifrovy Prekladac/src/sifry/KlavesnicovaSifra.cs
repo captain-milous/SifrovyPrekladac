@@ -15,6 +15,8 @@ namespace Sifrovy_Prekladac.src.sifry
         #region Slovníky a Listy
         /// <summary>
         /// Pole typů klávesnice.
+        /// CZK (České rozložení klávesnice)
+        /// ENK (Anglické rozložení klávesnice)
         /// </summary>
         private static string[] typyKlavesnice = { "CZK", "ENK"};
         /// <summary>
