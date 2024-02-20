@@ -52,7 +52,7 @@ namespace Sifrovy_Prekladac.src.sifry
             {'Z', "9999"}
         };
         /// <summary>
-        /// 
+        /// Slovník obsahující převodní tabulku znaků na čísla pro přehlednější šifrování.
         /// </summary>
         private static Dictionary<char, string> Telephone2 = new Dictionary<char, string>()
         {
