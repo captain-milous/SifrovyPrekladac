@@ -51,6 +51,17 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <summary>
         /// Konstruktor pro vytvoření instance Caesarovy šifry.
         /// </summary>
+        /// <param name="rawText">Text k zašifrování.</param>
+        /// <param name="posun">Počet míst, o které se mají znaky posunout.</param>
+        public CaesarovaSifra(string rawText, int posun) : base()
+        {
+            Posun = posun;
+            DecText = TextMethods.WithoutSpecialChar(rawText);
+            EncText = Encrypt(rawText);
+        }
+        /// <summary>
+        /// Konstruktor pro vytvoření instance Caesarovy šifry.
+        /// </summary>
         /// <param name="rawText">Text k zašifrování nebo dešifrování.</param>
         /// <param name="posun">Počet míst, o které se mají znaky posunout.</param>
         /// <param name="decypher">Určuje, zda se má provést dešifrování.</param>
@@ -59,8 +70,7 @@ namespace Sifrovy_Prekladac.src.sifry
             Posun = posun;
             if (!decypher)
             {
-                rawText = TextMethods.Simplify(rawText);
-                DecText = rawText;
+                DecText = TextMethods.WithoutSpecialChar(rawText);
                 EncText = Encrypt(rawText);
             }
             else
