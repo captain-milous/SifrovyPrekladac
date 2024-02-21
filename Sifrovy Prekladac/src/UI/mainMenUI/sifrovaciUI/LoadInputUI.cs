@@ -66,11 +66,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     switch (answer)
                     {
                         case "sifrovat":
-                            SifrovaniUI.Start(rawText);
+                            SifrovaniUI.Start(rawText, false);
                             run = false;
                             break;
                         case "desifrovat":
-                            DesifrovaniUI.Start(rawText);
+                            SifrovaniUI.Start(rawText, true);
                             run = false; 
                             break;
                         case "exit":
@@ -117,11 +117,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                                 switch (answer)
                                 {
                                     case "sifrovat":
-                                        SifrovaniUI.Start(rawText);
+                                        SifrovaniUI.Start(rawText, false);
                                         run = false;
                                         break;
                                     case "desifrovat":
-                                        DesifrovaniUI.Start(rawText);
+                                        SifrovaniUI.Start(rawText, true);
                                         run = false;
                                         break;
                                     case "exit":
