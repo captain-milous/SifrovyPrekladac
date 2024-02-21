@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Sifrovy_Prekladac.src.historie;
+using Sifrovy_Prekladac.src.sifry.related;
+using Sifrovy_Prekladac.src.sifry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class PET
     {
         /// <summary>
@@ -14,7 +20,25 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Encrypt(string text)
         {
-
+            PetronilkaSifra pet = new PetronilkaSifra(text);
+            Console.WriteLine("Napište 'PETRONILKA', pokud nemáte vlastní klíč.");
+            while (true)
+            {
+                Console.Write("Zadejte desetimístný klíč pro zašifrování: ");
+                try
+                {
+                    string key = Console.ReadLine();
+                    pet = new PetronilkaSifra(text, key);
+                    break;
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("Chyba: " + ex.Message);
+                }
+            }
+            HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
+            string output = pet.EncText + "\n" + pet.KlicSlovo;
+            SaveToFileUI.Start(pet.EncText, false);
         }
         /// <summary>
         /// 
@@ -22,7 +46,25 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Decrypt(string text)
         {
-
+            PetronilkaSifra pet = new PetronilkaSifra(text, "PETRONILKA", true);
+            Console.WriteLine("Napište 'PETRONILKA', pokud nemáte vlastní klíč.");
+            while (true)
+            {
+                Console.Write("Zadejte desetimístný klíč pro zašifrování: ");
+                try
+                {
+                    string key = Console.ReadLine();
+                    pet = new PetronilkaSifra(text, key, true);
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Chyba: " + ex.Message);
+                }
+            }
+            HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
+            string output = pet.DecText + "\n" + pet.KlicSlovo;
+            SaveToFileUI.Start(output, false);
         }
     }
 }

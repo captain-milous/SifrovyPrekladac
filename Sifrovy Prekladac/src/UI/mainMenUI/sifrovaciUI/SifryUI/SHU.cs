@@ -32,7 +32,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         {
             ProhazenaSifra shu = new ProhazenaSifra(text, true);
             HistoryHandler.Write(MainMenu.LoggedInUser, shu.ToString(), ActiveSifry.Prohazena_Sifra);
-            SaveToFileUI.Start(shu.EncText, false);
+            SaveToFileUI.Start(shu.DecText, false);
 
         }
     }

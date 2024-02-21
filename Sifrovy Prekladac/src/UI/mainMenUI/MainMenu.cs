@@ -44,15 +44,15 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
         /// </summary>
         public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
         {
-            { ActiveSifry.Caesarova_Sifra, "Popis" },
+            { ActiveSifry.Caesarova_Sifra, "Posune všechna písmena o vámi zadaný počet v abecedě" },
             { ActiveSifry.Klavesnicova_Sifra, "Popis" },
             { ActiveSifry.Mezerova_Sifra, "Popis" },
             { ActiveSifry.Morseova_Sifra, "Popis" },
-            { ActiveSifry.Numericka_Sifra, "Popis" },
-            { ActiveSifry.Obracena_ABC_Sifra, "Popis" },
+            { ActiveSifry.Numericka_Sifra, "Přemění písmena na čísla, dle jejich indexu v abecedě." },
+            { ActiveSifry.Obracena_ABC_Sifra, "Změní písmena tak, aby A=Z, B=Y, atd." },
             { ActiveSifry.Petronilka, "Popis" },
-            { ActiveSifry.Prohazena_Sifra, "Popis" },
-            { ActiveSifry.Reverzni_Sifra, "Popis" },
+            { ActiveSifry.Prohazena_Sifra, "Přemění text tak ayste museli číst jak ze předu, tak zezadu." },
+            { ActiveSifry.Reverzni_Sifra, "Převrátí text tak, aby jste ho museli číst odzadu." },
             { ActiveSifry.Telefonni_Sifra, "Popis" }
         };
         /// <summary>
@@ -60,11 +60,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
         /// </summary>
         private static string Oddelovac = InitialMenu.Oddelovac;
         /// <summary>
-        /// 
+        /// Přihlášený uživatel
         /// </summary>
         private static User _user = new User();
         /// <summary>
-        /// 
+        /// Veřejný přístup k přihlášenému uživateli.
         /// </summary>
         public static User LoggedInUser { get { return _user; } private set { _user = value; } }
         /// <summary>

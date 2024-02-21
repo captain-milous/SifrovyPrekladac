@@ -69,7 +69,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
                 if (!File.Exists(fileName))
                 {
                     FileMethods.Write(fileName, text);
-                    LogHandler.Write($"{MainMenu.LoggedInUser} uložil svůj překlad do {fileName}");
+                    LogHandler.Write($"{MainMenu.LoggedInUser.Username} uložil svůj překlad do {fileName}");
                     break;
                 }
                 else

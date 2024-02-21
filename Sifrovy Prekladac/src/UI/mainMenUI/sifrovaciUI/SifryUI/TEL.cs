@@ -14,6 +14,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Encrypt(string text)
         {
+            Console.WriteLine("Prozatím mimo provoz.");
 
         }
         /// <summary>
@@ -22,6 +23,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Decrypt(string text)
         {
+            Console.WriteLine("Prozatím mimo provoz.");
 
         }
     }

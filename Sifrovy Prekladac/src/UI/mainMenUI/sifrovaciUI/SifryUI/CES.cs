@@ -61,7 +61,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             }
             CaesarovaSifra ces = new CaesarovaSifra(text, input, true);
             HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            SaveToFileUI.Start(ces.EncText, true);
+            SaveToFileUI.Start(ces.DecText, true);
 
         }
     }

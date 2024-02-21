@@ -32,7 +32,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         {
             MezerovaSifra mez = new MezerovaSifra(text, true);
             HistoryHandler.Write(MainMenu.LoggedInUser, mez.ToString(), ActiveSifry.Mezerova_Sifra);
-            SaveToFileUI.Start(mez.EncText, true);
+            SaveToFileUI.Start(mez.DecText, true);
         }
     }
 }

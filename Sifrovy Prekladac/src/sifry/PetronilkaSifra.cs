@@ -59,7 +59,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <exception cref="Exception">Výjimka je vyvolána, pokud klíčové slovo neodpovídá požadavkům.</exception>
         public PetronilkaSifra(string rawText, string key) : base()
         {
-            KlicSlovo = key;
+            KlicSlovo = key.ToUpper();
             if (CheckKey(KlicSlovo))
             {
                 string unikatniPismena = new string(KlicSlovo.Distinct().ToArray());
@@ -84,7 +84,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <exception cref="Exception">Výjimka je vyvolána, pokud klíčové slovo neodpovídá požadavkům.</exception>
         public PetronilkaSifra(string rawText, string key, bool decypher) : base()
         {
-            KlicSlovo = key;
+            KlicSlovo = key.ToUpper();
             if (CheckKey(KlicSlovo))
             {
                 string unikatniPismena = new string(KlicSlovo.Distinct().ToArray());
