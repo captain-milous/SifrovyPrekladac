@@ -14,7 +14,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class CaesarovaSifra : Sifra
     {
-        #region 
+        #region Posun
         private int _posun;
         /// <summary>
         /// Posunutí znaků při šifrování/dešifrování.
@@ -47,7 +47,7 @@ namespace Sifrovy_Prekladac.src.sifry
             }
         }
         #endregion 
-        #region 
+        #region Konstruktory
         /// <summary>
         /// Konstruktor pro vytvoření instance Caesarovy šifry.
         /// </summary>
