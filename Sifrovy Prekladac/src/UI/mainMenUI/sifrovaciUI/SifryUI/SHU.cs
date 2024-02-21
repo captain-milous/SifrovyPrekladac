@@ -30,6 +30,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Decrypt(string text)
         {
+            ProhazenaSifra shu = new ProhazenaSifra(text, true);
+            HistoryHandler.Write(MainMenu.LoggedInUser, shu.ToString(), ActiveSifry.Prohazena_Sifra);
+            SaveToFileUI.Start(shu.EncText, false);
 
         }
     }
