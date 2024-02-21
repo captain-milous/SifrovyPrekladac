@@ -23,16 +23,16 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while (run)
             {
-                Console.WriteLine("Chcete načíst ze souboru? (Ano/Ne) ");
-                Console.WriteLine("(Ano - Načtení ze souboru; Ne - Načtení z cmd; Exit - Zpět do hlavního menu)");
+                Console.WriteLine("Chcete načíst ze souboru nebo z cmd?");
+                Console.WriteLine("(Soubor - Načtení ze souboru; CMD - Načtení z cmd; Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
-                if (answer.StartsWith("n"))
+                if (answer.StartsWith("c"))
                 {
                     FromCMD();
                     run = false;
                 }
-                else if (answer.StartsWith("y") || answer.StartsWith("a"))
+                else if (answer.StartsWith("s"))
                 {
                     FromFile();
                     run = false;
@@ -213,15 +213,15 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Chcete zašifrovat text? (Ano/Ne)");
-                Console.WriteLine("(Ano - Zašifrovat; Ne - Dešifrovat; Exit - Zpět do hlavního menu)");
+                Console.WriteLine("Chcete zašifrovat/dešifrovat text?");
+                Console.WriteLine("(Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
-                if (answer.StartsWith("n"))
+                if (answer.StartsWith("s") || answer.StartsWith("s"))
                 {
                     return "sifrovat";
                 }
-                else if (answer.StartsWith("y") || answer.StartsWith("a") || answer.StartsWith("j"))
+                else if (answer.StartsWith("d"))
                 {
                     return "desifrovat";
                 }

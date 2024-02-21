@@ -39,7 +39,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         {
             Console.WriteLine();
             Console.WriteLine("Seznam aktivních šifer: \n");
-            Console.WriteLine("  Zkratka      Sifra            Popis");
+            Console.WriteLine("Zkratka   Sifra            Popis");
             foreach (ActiveSifry sifra in MainMenu.ActveSifry.Keys)
             {
                 Console.WriteLine("  (" + ZkratkySifer[sifra] + ") " + sifra + ": " + MainMenu.ActveSifry[sifra]);
@@ -48,7 +48,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while(run)
             {
-                Console.Write("Vyberte jakou sifrou chcete Váš text zašifrovat: ");
+                Console.Write("Vyberte jakou sifrou chcete Váš text zašifrovat, tím že zadáte její zkratku: ");
                 Console.ReadLine();
                 ActiveSifry Sifra = ActiveSifry.Morseova_Sifra;
                 switch (Sifra)

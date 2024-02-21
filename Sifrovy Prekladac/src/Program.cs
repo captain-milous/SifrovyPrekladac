@@ -17,7 +17,7 @@ namespace Sifrovy_Prekladac.src
         /// <param name="args">Argumenty příkazového řádku</param>
         static void Main(string[] args)
         {
-            bool testing = false;
+            bool testing = true;
             if(!testing) 
             {
                 bool run = true;
@@ -36,6 +36,15 @@ namespace Sifrovy_Prekladac.src
             }
             else
             {
+
+                MorseovaSifra mor = new MorseovaSifra("Ahoj světe! Dnes máme překrásný den!");
+                string expectedResult = ".- | .... | --- | .--- || ... | ...- | - | . || -.. | -. | . | ... || -- | -- | . || .--. | . | -.- | .-. | ... | -. || -.. | . | -. |||";
+                if (mor.EncText == expectedResult)
+                {
+                    Console.WriteLine("Fail");
+                }
+                Console.WriteLine(mor);
+                Console.WriteLine();
                 // Test
                 CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", TextMethods.Abeceda.Length, false);
                 Console.WriteLine(test);

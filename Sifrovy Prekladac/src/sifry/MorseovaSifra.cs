@@ -33,7 +33,16 @@ namespace Sifrovy_Prekladac.src.sifry
             {'9', "----."}
         };
         #endregion 
-        #region Konstruktory
+        #region Konstruktory/// <summary>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rawText"></param>
+        public MorseovaSifra(string rawText) : base(typyMorseovky, "DEF")
+        {
+            DecText = TextMethods.Simplify(rawText);
+            EncText = Encrypt(rawText);
+        }
         /// <summary>
         /// 
         /// </summary>
