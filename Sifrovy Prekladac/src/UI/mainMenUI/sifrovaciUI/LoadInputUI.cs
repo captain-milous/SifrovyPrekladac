@@ -92,28 +92,29 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 availableFiles = GetTxtFiles(ConfigHandler.Config.InputFile);
                 if (availableFiles.Count > 0)
                 {
+                    string fileName = string.Empty;
                     Console.WriteLine();
                     foreach (string filePath in availableFiles)
                     {
                         string[] fullPath = filePath.Split('\\');
-                        string fileName = fullPath[fullPath.Length - 1];
+                        fileName = fullPath[fullPath.Length - 1];
                         Console.WriteLine("  " + fileName);
                     }
                     Console.Write("\nVyberte jeden ze souborů: ");
-                    string answer = Console.ReadLine();
-                    if (!answer.EndsWith(".txt"))
+                    fileName = Console.ReadLine();
+                    if (!fileName.EndsWith(".txt"))
                     {
-                        answer += ".txt";
+                        fileName += ".txt";
                     }
-                    string path = ConfigHandler.Config.InputFile + "\\" + answer;
+                    string path = ConfigHandler.Config.InputFile + "\\" + fileName;
                     if (availableFiles.Contains(path))
                     {
                         try
                         {
-                            string rawText = FileMethods.Read(path);
+                            string rawText = FileMethods.Read(fileName);
                             if (ChceckIfCorrect(rawText))
                             {
-                                answer = ChooseSifXDesif();
+                                string answer = ChooseSifXDesif();
                                 switch (answer)
                                 {
                                     case "sifrovat":
@@ -138,7 +139,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     }
                     else
                     {
-                        Console.Write("  Chyba: " + answer + " tento soubor se neshoduje s žádnými z nabídky. ");
+                        Console.Write("  Chyba: " + fileName + " tento soubor se neshoduje s žádnými z nabídky. ");
                         Console.WriteLine("(Pokud nemůžete svůj soubor v tomto listu nalézt, podívejte se do konfiguračního souboru a podle InputFile, tedy cestě k načítacím souborům, vložte Váš soubor do příslušného adresáře.)");
                     }
                 }

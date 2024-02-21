@@ -135,3 +135,11 @@
 21.02.2024 19:43:32 (system): solim se odhlásil.
 21.02.2024 19:43:42 (system): admin se úspěšně přihlásit do aplikace.
 21.02.2024 19:44:05 (system): admin ukončil program.
+21.02.2024 20:33:39 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 20:33:43 (system): milos použil neexistující příkaz.
+21.02.2024 20:33:54 (system): Chyba při čtení ze souboru: Soubor neexistuje.
+21.02.2024 20:36:59 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 20:38:39 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 20:41:20 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 20:41:30 (system): Chyba při čtení ze souboru: Soubor je prázdný.
+21.02.2024 20:42:50 (system): milos(User) uložil svůj překlad do test2.txt

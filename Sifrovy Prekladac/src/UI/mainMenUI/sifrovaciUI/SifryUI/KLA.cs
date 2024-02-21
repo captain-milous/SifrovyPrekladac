@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class KLA
     {
         /// <summary>

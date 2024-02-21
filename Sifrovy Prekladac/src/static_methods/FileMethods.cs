@@ -64,6 +64,9 @@ namespace Sifrovy_Prekladac.src.static_methods
                     throw new Exception("Nepodporovaný typ souboru.");
                 }
                 string filePath = ConfigHandler.Config.OutputFile + "\\" + fileName;
+                Console.WriteLine();
+                Console.WriteLine(filePath);
+                Console.WriteLine();
                 if (!File.Exists(filePath))
                 {
                     throw new FileNotFoundException("Soubor neexistuje.", filePath);
