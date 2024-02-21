@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class CES
     {
         /// <summary>
@@ -34,8 +37,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             }
             CaesarovaSifra ces = new CaesarovaSifra(text, input, false);
             HistoryHandler.Write(MainMenu.LoggedInUser , ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            Console.WriteLine();
-            Console.WriteLine("Zašifrovaný text: " + ces.EncText);
+            SaveToFileUI.Start(ces.EncText);
         }
         /// <summary>
         /// 
