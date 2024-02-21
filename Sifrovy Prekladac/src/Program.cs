@@ -52,6 +52,9 @@ namespace Sifrovy_Prekladac.src
                 Console.WriteLine(test3);
                 test3 = new ProhazenaSifra("AO IHL,JKS NSAMS?A KEDE A EACMJH", true);
                 Console.WriteLine(test3);
+
+                PetronilkaSifra test4 = new PetronilkaSifra("Ahoj Michale, jak se dneska máš?");
+                Console.WriteLine(test4);
             }            
         }
     }

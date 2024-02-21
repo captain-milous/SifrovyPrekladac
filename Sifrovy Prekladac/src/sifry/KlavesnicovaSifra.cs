@@ -152,14 +152,14 @@ namespace Sifrovy_Prekladac.src.sifry
 
             }
         }
+        #endregion
+        #region Rozšifrování
         /// <summary>
         /// Dešifruje zadaný text podle klávesnice specifikované v klíči.
         /// </summary>
         /// <param name="text">Zašifrovaný text.</param>
         /// <returns>Dešifrovaný text.</returns>
         /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
-        #endregion
-        #region Rozšifrování
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
