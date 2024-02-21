@@ -217,7 +217,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 Console.WriteLine("(Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
-                if (answer.StartsWith("s") || answer.StartsWith("s"))
+                if (answer.StartsWith("s") || answer.StartsWith("z"))
                 {
                     return "sifrovat";
                 }

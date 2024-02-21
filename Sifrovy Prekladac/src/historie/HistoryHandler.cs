@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.sifry.related;
 using Sifrovy_Prekladac.src.UserHandler;
 
 namespace Sifrovy_Prekladac.src.historie
@@ -22,22 +23,26 @@ namespace Sifrovy_Prekladac.src.historie
         /// </summary>
         /// <param name="user">Uživatel, jehož historie se má aktualizovat.</param>
         /// <param name="text">Text zprávy k uložení do historie.</param>
-        public static void Write(User user, string text)
+        public static void Write(User user, string text, ActiveSifry Sifra)
         {
-            historyPath = "users\\" + user.Username + "\\historie";
-            long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            string filePath = historyPath + "\\" + timestamp.ToString() + ".txt";
-            try
+            if(user.Role == Role.User)
             {
-                if (!File.Exists(filePath))
+                historyPath = "users\\" + user.Username + "\\historie";
+                long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                string filePath = historyPath + "\\" + timestamp.ToString() + ".txt";
+                text = Sifra.ToString() + ": " + text;
+                try
                 {
-                    File.Create(filePath).Close();
+                    if (!File.Exists(filePath))
+                    {
+                        File.Create(filePath).Close();
+                    }
+                    File.AppendAllText(filePath, text);
                 }
-                File.AppendAllText(filePath, text);
-            }
-            catch
-            {
-                LogHandler.Write("Nastala chyba při zapsání do " + user.Username + " historie.");
+                catch
+                {
+                    LogHandler.Write("Nastala chyba při zapsání do " + user.Username + " historie.");
+                }
             }
         }
     }
