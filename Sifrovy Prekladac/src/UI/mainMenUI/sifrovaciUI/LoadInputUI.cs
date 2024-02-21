@@ -138,14 +138,14 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     }
                     else
                     {
-                        Console.WriteLine("  Chyba: " + answer + " tento soubor se neshoduje s žádnými z nabídky.");
-                        Console.WriteLine("  (Pokud nemůžete svůj soubor v tomto listu nalézt, podívejte se do konfiguračního souboru a podle InputFile, tedy cestě k načítacím souborům, vložte Váš soubor do příslušného adresáře.)");
+                        Console.Write("  Chyba: " + answer + " tento soubor se neshoduje s žádnými z nabídky. ");
+                        Console.WriteLine("(Pokud nemůžete svůj soubor v tomto listu nalézt, podívejte se do konfiguračního souboru a podle InputFile, tedy cestě k načítacím souborům, vložte Váš soubor do příslušného adresáře.)");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("  Chyba: V " + ConfigHandler.Config.InputFile + " není žádný podporovaný soubor.");
-                    Console.WriteLine("  (Zkontrulujte zda je Váš soubor ve adresáři, který je uvedený v konfiguračním souboru, tedy zda je cesta k souborům správně. Pokud ne, vložte soubor do příslušného adresáře, nebo ukončete program, změňte cestu v konfiguračním souboru a znovu program zapněte.)");
+                    Console.Write("  Chyba: V " + ConfigHandler.Config.InputFile + " není žádný podporovaný soubor.");
+                    Console.WriteLine("(Zkontrulujte zda je Váš soubor ve adresáři, který je uvedený v konfiguračním souboru, tedy zda je cesta k souborům správně. Pokud ne, vložte soubor do příslušného adresáře, nebo ukončete program, změňte cestu v konfiguračním souboru a znovu program zapněte.)");
                     run = false;
                 }
             }
