@@ -1,4 +1,5 @@
 ﻿using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.UI.mainMenUI;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
     /// <summary>
     /// Obsahuje uživatelské rozhraní pro přihlášení.
@@ -35,15 +36,15 @@ namespace Sifrovy_Prekladac.src.UI
                 Console.Write("Uživatelské jméno: ");
                 input = Console.ReadLine().ToLower().Replace(" ", "");
                 bool userExists = false;
-                foreach(User u in ListOfUsers.GetAll())
+                foreach (User u in ListOfUsers.GetAll())
                 {
-                    if(u.Username.ToLower() == input)
+                    if (u.Username.ToLower() == input)
                     {
                         userExists = true;
                         user = u;
                     }
                 }
-                if(input == "exit") 
+                if (input == "exit")
                 {
                     userExists = false;
                     mainRun = false;
@@ -89,7 +90,7 @@ namespace Sifrovy_Prekladac.src.UI
                 else
                 {
                     Console.WriteLine("\n  Chyba: Tento uživatel neexistuje.");
-                    strike++; 
+                    strike++;
                     if (strike < maxStrike)
                     {
                         Console.Write("  Máte " + strike + "/" + maxStrike + " striků.");

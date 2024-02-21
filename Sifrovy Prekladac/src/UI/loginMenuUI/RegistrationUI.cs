@@ -1,4 +1,5 @@
 ﻿using Sifrovy_Prekladac.src.logs;
+using Sifrovy_Prekladac.src.UI.mainMenUI;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
     /// <summary>
     /// Obsahuje uživatelské rozhraní pro registraci nového uživatele.
@@ -90,9 +91,9 @@ namespace Sifrovy_Prekladac.src.UI
                             }
                         }
                     }
-                    
+
                 }
-                else if(string.IsNullOrEmpty(input))
+                else if (string.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("\n  Chyba: Uživatelské jméno nesmí být prázdné!");
                     strike++;
@@ -108,7 +109,7 @@ namespace Sifrovy_Prekladac.src.UI
                         Thread.Sleep(1000);
                     }
                 }
-                else 
+                else
                 {
                     Console.WriteLine("\n  Chyba: Uživatel s tímto uživatelským jménem již existuje!");
                     strike++;

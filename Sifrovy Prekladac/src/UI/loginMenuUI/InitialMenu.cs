@@ -1,11 +1,12 @@
-﻿using Sifrovy_Prekladac.src.UserHandler;
+﻿using Sifrovy_Prekladac.src.UI.mainMenUI;
+using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
     /// <summary>
     /// Obsahuje přihlašovací menu aplikace.

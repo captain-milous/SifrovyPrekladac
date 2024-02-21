@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
     /// <summary>
     /// 
@@ -27,14 +27,14 @@ namespace Sifrovy_Prekladac.src.UI
                 }
                 Console.WriteLine();
             }
-            catch 
+            catch
             {
                 Console.WriteLine("  Nepovedlo se načíst z logů.");
                 LogHandler.Write("Nezdařily se přečíst logy.");
             }
         }
 
-        public static void ActiveUsers() 
+        public static void ActiveUsers()
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Sifrovy_Prekladac.src.UI
                 }
                 Console.WriteLine();
             }
-            catch 
+            catch
             {
                 Console.WriteLine("  Nezdařilo se načíst aktivní uživatele.");
                 LogHandler.Write("Nezdařilo se načíst aktivní uživatele.");
