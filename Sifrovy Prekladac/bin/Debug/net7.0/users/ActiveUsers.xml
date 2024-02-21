@@ -20,4 +20,9 @@
     <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
     <Role>User</Role>
   </User>
+  <User>
+    <Username>solim</Username>
+    <Password>79A3D57370FCC4588B8C27C1C0611401278F0277</Password>
+    <Role>User</Role>
+  </User>
 </ArrayOfUser>

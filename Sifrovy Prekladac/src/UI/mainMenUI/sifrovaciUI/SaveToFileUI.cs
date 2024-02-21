@@ -11,18 +11,26 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
 {
     /// <summary>
-    /// 
+    /// Třída pro ukládání přeložených textů do souborů.
     /// </summary>
     public static class SaveToFileUI
     {
         /// <summary>
-        /// 
+        /// Zobrazí uživateli zašifrovaný nebo dešifrovaný text a umožní mu rozhodnout se, zda jej chce uložit do souboru.
         /// </summary>
-        /// <param name="text"></param>
-        public static void Start(string text)
+        /// <param name="text">Text, který má být uložen do souboru.</param>
+        /// <param name="decypher">Určuje, zda je text dešifrován (true) nebo zašifrován (false).</param>
+        public static void Start(string text, bool decypher)
         {
             Console.WriteLine();
-            Console.WriteLine("Zašifrovaný text: " + text);
+            if(!decypher)
+            {
+                Console.WriteLine("Zašifrovaný text: " + text);
+            }
+            else
+            {
+                Console.WriteLine("Dešifrovaný text: " + text);
+            }
             while (true)
             {
                 Console.WriteLine("Chcete tento přeložený text uložit do souboru? (Ano/Ne)");
@@ -45,9 +53,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Uloží text do textového souboru.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být uložen do souboru.</param>
         private static void SaveToFile(string text)
         {
             Console.Write("\nNapište název textového souboru: ");
@@ -62,6 +70,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
                 {
                     FileMethods.Write(fileName, text);
                     LogHandler.Write($"{MainMenu.LoggedInUser} uložil svůj překlad do {fileName}");
+                    break;
                 }
                 else
                 {

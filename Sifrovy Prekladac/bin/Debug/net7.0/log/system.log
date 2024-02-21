@@ -125,3 +125,13 @@
 21.02.2024 19:36:49 (system): admin se úspěšně přihlásit do aplikace.
 21.02.2024 19:36:52 (system): admin použil neexistující příkaz.
 21.02.2024 19:37:49 (system): admin se odhlásil.
+21.02.2024 19:40:29 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 19:41:42 (system): milos(User) uložil svůj překlad do testik.txt
+21.02.2024 19:41:45 (system): milos(User) uložil svůj překlad do .txt
+21.02.2024 19:42:32 (system): Byl vytvořen nový uživatel solim.
+21.02.2024 19:42:32 (system): Byla vytvořena složka pro uživatele solim
+21.02.2024 19:42:32 (system): solim se úspěšně přihlásit do aplikace.
+21.02.2024 19:43:27 (system): solim(User) uložil svůj překlad do Ahoj.txt
+21.02.2024 19:43:32 (system): solim se odhlásil.
+21.02.2024 19:43:42 (system): admin se úspěšně přihlásit do aplikace.
+21.02.2024 19:44:05 (system): admin ukončil program.
