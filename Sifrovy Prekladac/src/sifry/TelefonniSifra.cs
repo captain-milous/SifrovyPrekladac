@@ -16,10 +16,10 @@ namespace Sifrovy_Prekladac.src.sifry
         #region Proměnné  
         /// <summary>
         /// Pole typů telefonní šifry.
-        /// TEL (Klasická telefoní klávesnice)
-        /// TEL2 (Telefoní klávesnice ve formátu dvou čísel)
+        /// DEF (Klasická telefoní klávesnice)
+        /// BTR (Telefoní klávesnice ve formátu dvou čísel)
         /// </summary>
-        private static string[] typyTelefonu = { "TEL", "TEL2" };
+        private static string[] typyTelefonu = { "DEF", "BTR" };
         /// <summary>
         /// Slovník obsahující převodní tabulku znaků na jejich numerické reprezentace v telefonní klávesnici.
         /// </summary>
@@ -128,7 +128,7 @@ namespace Sifrovy_Prekladac.src.sifry
             StringBuilder encryptedText = new StringBuilder();
             switch (TypeOfEnc)
             {
-                case "TEL":
+                case "DEF":
 
                     foreach (char c in text)
                     {
@@ -138,7 +138,7 @@ namespace Sifrovy_Prekladac.src.sifry
                     }
                     return encryptedText.ToString();
 
-                case "TEL2":
+                case "BTR":
 
                     foreach (char c in text)
                     {
@@ -166,7 +166,7 @@ namespace Sifrovy_Prekladac.src.sifry
             StringBuilder decryptedText = new StringBuilder();
             switch (TypeOfEnc)
             {
-                case "TEL":
+                case "DEF":
 
                     string[] encryptedChars = text.Trim().Split(' ');
                     foreach (string eChar in encryptedChars)
@@ -176,7 +176,7 @@ namespace Sifrovy_Prekladac.src.sifry
                     }
                     return decryptedText.ToString();
 
-                case "TEL2":
+                case "BTR":
 
                     encryptedChars = text.Trim().Split(' ');
                     foreach (string eChar in encryptedChars)
