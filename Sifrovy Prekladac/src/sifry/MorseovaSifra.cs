@@ -40,7 +40,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="rawText"></param>
         public MorseovaSifra(string rawText) : base(typyMorseovky, "DEF")
         {
-            DecText = TextMethods.Simplify(rawText);
+            DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
             EncText = Encrypt(rawText);
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decypher)
             {
-                DecText = TextMethods.Simplify(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(rawText);
             }
             else
@@ -71,7 +71,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decypher)
             {
-                DecText = TextMethods.Simplify(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(rawText);
             }
             else
@@ -115,7 +115,7 @@ namespace Sifrovy_Prekladac.src.sifry
                     output = encryptedText.ToString();
                     break;
                 case "REV":
-                    MorseovaSifra def = new MorseovaSifra(text, false);
+                    MorseovaSifra def = new MorseovaSifra(text);
                     string morseText = def.EncText;
                     foreach (char c in morseText)
                     {
@@ -135,7 +135,7 @@ namespace Sifrovy_Prekladac.src.sifry
 
                     break;
                 case "NUM":
-                    def = new MorseovaSifra(text, false);
+                    def = new MorseovaSifra(text);
                     morseText = def.EncText;
                     foreach (char c in morseText)
                     {
@@ -174,21 +174,82 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <exception cref="Exception"></exception>
         public override string Decrypt(string text)
         {
+            StringBuilder decryptedText = new StringBuilder();
             switch (TypeOfEnc)
             {
                 case "DEF":
+                    string[] words = text.Split(new string[] { "||" }, StringSplitOptions.None);
 
-                    break;
+                    foreach (string word in words)
+                    {
+                        string[] letters = word.Split(new string[] { "| " }, StringSplitOptions.None);
+                        foreach (string letter in letters)
+                        {
+                            string[] codes = letter.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (string code in codes)
+                            {
+                                foreach (KeyValuePair<char, string> kvp in MorseABC)
+                                {
+                                    if (code == kvp.Value)
+                                    {
+                                        decryptedText.Append(kvp.Key);
+                                        break;
+                                    }
+                                }
+                            }
+                            decryptedText.Append(" ");
+                        }
+                        decryptedText.Remove(decryptedText.Length - 1, 1); // Odstranění poslední mezery za slovem
+                        decryptedText.Append(" ");
+                    }
+                    decryptedText.Remove(decryptedText.Length - 1, 1); // Odstranění poslední mezery za větou
+
+                    return decryptedText.ToString();
+
                 case "REV":
+                    string output = string.Empty;
+                    foreach (char c in text)
+                    {
+                        if (c == '.')
+                        {
+                            output += "-";
+                        }
+                        else if (c == '-')
+                        {
+                            output += ".";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
+                    MorseovaSifra def = new MorseovaSifra(output, true);
 
-                    break;
+                    return def.DecText;
+                    
                 case "NUM":
+                    output = string.Empty;
+                    foreach (char c in text)
+                    {
+                        if (c == '0')
+                        {
+                            output += ".";
+                        }
+                        else if (c == '1')
+                        {
+                            output += "-";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
 
-                    break;
+                    return "Prozatím mimo provoz.";
+
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
-            return base.Decrypt(text);
         }
         #endregion 
     }
