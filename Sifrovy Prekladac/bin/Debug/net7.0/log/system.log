@@ -84,3 +84,15 @@
 20.02.2024 18:01:09 (system): Byla vytvořena složka pro uživatele test
 20.02.2024 18:01:09 (system): Byla vytvořena složka pro uživatele student
 20.02.2024 18:02:02 (system): Nastala neočekávaná chyba při čtení z users\ActiveUsers.xml: There is an error in XML document (0, 0).
+21.02.2024 16:23:56 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 16:28:19 (system): milos použil neexistující příkaz.
+21.02.2024 16:28:21 (system): milos použil neexistující příkaz.
+21.02.2024 16:28:33 (system): milos ukončil program.
+21.02.2024 16:28:45 (system): milos se pokusil přihlásit.
+21.02.2024 16:28:48 (system): milos se úspěšně přihlásit do aplikace.
+21.02.2024 16:29:30 (system): milos ukončil program.
+21.02.2024 16:30:23 (system): Anonymous se úspěšně přihlásit do aplikace.
+21.02.2024 16:30:37 (system): Anonymous použil neexistující příkaz.
+21.02.2024 16:34:45 (system): Anonymous ukončil program.
+21.02.2024 16:35:47 (system): Anonymous se úspěšně přihlásit do aplikace.
+21.02.2024 16:38:04 (system): Anonymous ukončil program.

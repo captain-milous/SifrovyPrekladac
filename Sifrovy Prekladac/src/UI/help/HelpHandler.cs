@@ -53,7 +53,7 @@ namespace Sifrovy_Prekladac.src.UI.help
             {
                 if(user.Role == Role.Admin)
                 {
-                    if (Authorization[command] != Role.User && command != Commands.cmdsifrovani && command != Commands.filesifrovani && command != Commands.activesifry)
+                    if (Authorization[command] != Role.User && command != Commands.sifrovani && command != Commands.activesifry)
                     {
                         Console.WriteLine("   - " + command.ToString() + ": " + description[command].ToString());
                     }

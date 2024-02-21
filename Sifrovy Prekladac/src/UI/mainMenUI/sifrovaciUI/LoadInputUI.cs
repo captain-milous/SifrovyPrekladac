@@ -1,5 +1,6 @@
 ﻿using Sifrovy_Prekladac.src.conf;
 using Sifrovy_Prekladac.src.static_methods;
+using Sifrovy_Prekladac.src.UI.loginMenuUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// </summary>
         public static void Start()
         {
+            Console.WriteLine(InitialMenu.Oddelovac);
             bool run = true;
             while (run)
             {
-                Console.WriteLine();
-                Console.Write("Chcete načíst ze souboru? (A/n) ");
+                Console.WriteLine("Chcete načíst ze souboru? (Ano/Ne) ");
                 Console.WriteLine("(Ano - Načtení ze souboru; Ne - Načtení z cmd; Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
@@ -45,8 +46,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     run = true;
                     Console.WriteLine("Neplatná volba!");
                 }
+                Console.WriteLine();
             }
-            Console.WriteLine();
+            Console.WriteLine(InitialMenu.Oddelovac);
         }
         /// <summary>
         /// 
@@ -56,7 +58,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while (run)
             {
-                Console.Write("Zadejte text: ");
+                Console.Write("\nZadejte text: ");
                 string rawText = Console.ReadLine();
                 if (ChceckIfCorrect(rawText))
                 {
@@ -136,14 +138,14 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     }
                     else
                     {
-                        Console.WriteLine(answer + " tento soubor se neshoduje s žádnými z nabídky.");
-                        Console.WriteLine("Pokud nemůžete svůj soubor v tomto listu nalézt, podívejte se do konfiguračního souboru a podle InputFile, tedy cestě k načítacím souborům, vložte Váš soubor do příslušného adresáře.");
+                        Console.WriteLine("  Chyba: " + answer + " tento soubor se neshoduje s žádnými z nabídky.");
+                        Console.WriteLine("  (Pokud nemůžete svůj soubor v tomto listu nalézt, podívejte se do konfiguračního souboru a podle InputFile, tedy cestě k načítacím souborům, vložte Váš soubor do příslušného adresáře.)");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("V " + ConfigHandler.Config.InputFile + " není žádný podporovaný soubor.");
-                    Console.WriteLine("Zkontrulujte zda je Váš soubor ve adresáři, který je uvedený v konfiguračním souboru, tedy zda je cesta k souborům správně. (Pokud ne, vložte soubor do příslušného adresáře, nebo ukončete program, změňte cestu v konfiguračním souboru a znovu program zapněte).");
+                    Console.WriteLine("  Chyba: V " + ConfigHandler.Config.InputFile + " není žádný podporovaný soubor.");
+                    Console.WriteLine("  (Zkontrulujte zda je Váš soubor ve adresáři, který je uvedený v konfiguračním souboru, tedy zda je cesta k souborům správně. Pokud ne, vložte soubor do příslušného adresáře, nebo ukončete program, změňte cestu v konfiguračním souboru a znovu program zapněte.)");
                     run = false;
                 }
             }
@@ -155,11 +157,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <returns></returns>
         static bool ChceckIfCorrect(string text)
         {
-            Console.WriteLine(text);
+            Console.WriteLine();
+            Console.WriteLine("'" + text + "'");
             while (true)
             {
-                Console.WriteLine();
-                Console.WriteLine("Je toto spravný text? (A/n)");
+                Console.WriteLine("Je toto spravný text? (Ano/Ne)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
                 if (answer.StartsWith("n"))
@@ -174,6 +176,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 {
                     Console.WriteLine("Neplatná volba!");
                 }
+                Console.WriteLine();
             }
         }
         /// <summary>
@@ -210,7 +213,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Chcete zašifrovat text? (A/n)");
+                Console.WriteLine("Chcete zašifrovat text? (Ano/Ne)");
                 Console.WriteLine("(Ano - Zašifrovat; Ne - Dešifrovat; Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();

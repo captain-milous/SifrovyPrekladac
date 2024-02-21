@@ -17,7 +17,7 @@ namespace Sifrovy_Prekladac.src
         /// <param name="args">Argumenty příkazového řádku</param>
         static void Main(string[] args)
         {
-            bool testing = true;
+            bool testing = false;
             if(!testing) 
             {
                 bool run = true;
