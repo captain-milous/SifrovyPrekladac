@@ -64,7 +64,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             }
             HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
             string output = pet.DecText + "\n" + pet.KlicSlovo;
-            SaveToFileUI.Start(output, false);
+            SaveToFileUI.Start(output, true);
         }
     }
 }

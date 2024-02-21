@@ -32,7 +32,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         {
             ObracenaAbcSifra oas = new ObracenaAbcSifra(text, true);
             HistoryHandler.Write(MainMenu.LoggedInUser, oas.ToString(), ActiveSifry.Obracena_ABC_Sifra);
-            SaveToFileUI.Start(oas.EncText, true);
+            SaveToFileUI.Start(oas.DecText, true);
         }
     }
 }
