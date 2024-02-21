@@ -42,7 +42,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
         /// <summary>
         /// Slovník obsahující popisy aktivních šifer této verze programu.
         /// </summary>
-        static Dictionary<ActiveSifry, string> actveSifry = new Dictionary<ActiveSifry, string>()
+        public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
         {
             { ActiveSifry.Morseova_Sifra, "Popis" },
             { ActiveSifry.Caesarova_Sifra, "Popis" },
@@ -130,9 +130,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         if (LoggedInUser.Role != Role.Admin)
                         {
                             Console.WriteLine("Seznam aktivních šifer: \n");
-                            foreach (ActiveSifry sifra in actveSifry.Keys)
+                            foreach (ActiveSifry sifra in ActveSifry.Keys)
                             {
-                                Console.WriteLine("  - " + sifra + ": " + actveSifry[sifra]);
+                                Console.WriteLine("  - " + sifra + ": " + ActveSifry[sifra]);
                             }
                             Console.WriteLine("\nPodrobný popis každé z těchto šifer můžeš nalézt v dokumentaci.\n");
                         }
