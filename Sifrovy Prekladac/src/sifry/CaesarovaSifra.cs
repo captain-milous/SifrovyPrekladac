@@ -56,7 +56,7 @@ namespace Sifrovy_Prekladac.src.sifry
         public CaesarovaSifra(string rawText, int posun) : base()
         {
             Posun = posun;
-            DecText = TextMethods.WithoutSpecialChar(rawText);
+            DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
             EncText = Encrypt(rawText);
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Sifrovy_Prekladac.src.sifry
             Posun = posun;
             if (!decypher)
             {
-                DecText = TextMethods.WithoutSpecialChar(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(rawText);
             }
             else
