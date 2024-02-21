@@ -20,19 +20,19 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Konstruktory
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci ObracenaAbcSifra s daným nešifrovaným textem.
         /// </summary>
-        /// <param name="rawText"></param>
+        /// <param name="rawText">Nešifrovaný text.</param>
         public ObracenaAbcSifra(string rawText) : base()
         {
             DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
             EncText = Encrypt(DecText);
         }
         /// <summary>
-        /// 
+        /// Inicializuje novou instanci ObracenaAbcSifra s daným textem a volbou provést šifrování nebo dešifrování.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="decypher"></param>
+        /// <param name="rawText">Vstupní text.</param>
+        /// <param name="decypher">True, pokud se má provést dešifrování; jinak false.</param>
         public ObracenaAbcSifra(string rawText, bool decypher) : base()
         {
             if (!decypher)
@@ -49,10 +49,11 @@ namespace Sifrovy_Prekladac.src.sifry
         #endregion
         #region Šifrování
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text podle pravidel pro obrácenou abecední šifru.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Text k zašifrování.</param>
+        /// <returns>Zašifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         public override string Encrypt(string text)
         {
             StringBuilder encryptedText = new StringBuilder();
@@ -118,10 +119,11 @@ namespace Sifrovy_Prekladac.src.sifry
         }
         #endregion
         /// <summary>
-        /// Najde index písmenka v abecedě, která je pozpátku. Pokud ale není v této abecedě, tak vrátí -1
+        /// Dešifruje zadaný text podle pravidel pro obrácenou abecední šifru.
         /// </summary>
-        /// <param name="input">Písmeno v abecedě</param>
-        /// <returns>Index písmena</returns>
+        /// <param name="text">Zašifrovaný text.</param>
+        /// <returns>Dešifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka v případě nepodporovaného typu šifrování.</exception>
         private int FindIndexInRevAlphabet(char input)
         {
             string letter = input.ToString().ToUpper();

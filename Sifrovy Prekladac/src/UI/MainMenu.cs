@@ -58,16 +58,25 @@ namespace Sifrovy_Prekladac.src.UI
         /// </summary>
         private static string Oddelovac = InitialMenu.Oddelovac;
         /// <summary>
+        /// 
+        /// </summary>
+        private static User _user = new User();
+        /// <summary>
+        /// 
+        /// </summary>
+        public static User LoggedInUser { get { return _user; } private set { _user = value; } }
+        /// <summary>
         /// Přihlášení do aplikace pod určitým uživatelem
         /// </summary>
         /// <param name="user">Uživatel</param>
         public static void Start(User user)
         {
-            LogHandler.Write($"{user.Username} se úspěšně přihlásit do aplikace.");
+            LoggedInUser = user;
+            LogHandler.Write($"{LoggedInUser.Username} se úspěšně přihlásit do aplikace.");
             Console.Clear();
-            if(user.Role != Role.Anonymous)
+            if(LoggedInUser.Role != Role.Anonymous)
             {
-                Console.WriteLine(user + " se přihlásil!\n");
+                Console.WriteLine(LoggedInUser + " se přihlásil!\n");
             }
             Console.WriteLine("Napište 'help' pro nápovědu.");
             Console.WriteLine(Oddelovac);
@@ -100,13 +109,13 @@ namespace Sifrovy_Prekladac.src.UI
                 {
                     case Commands.help:
                         // Zobrazí dostupné příkazy pro daného uživatele
-                        HelpHandler.Start(user);
+                        HelpHandler.Start(LoggedInUser);
                         break;
                     case Commands.cmdsifrovani:
                         // UI pro zašifrovaní/rozšifrovaní textu
-                        if(user.Role != Role.Admin)
+                        if(LoggedInUser.Role != Role.Admin)
                         {
-                            SifrovaniUI.Start(user);
+                            SifrovaniUI.Start(LoggedInUser);
                         }
                         else
                         {
@@ -116,9 +125,9 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.filesifrovani:
                         // UI pro zašifrovaní/rozšifrovaní textu
-                        if (user.Role != Role.Admin)
+                        if (LoggedInUser.Role != Role.Admin)
                         {
-                            SifrovaniUI.Start(user);
+                            SifrovaniUI.Start(LoggedInUser);
                         }
                         else
                         {
@@ -128,7 +137,7 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.activesifry:
                         // List aktivních šifer s krátkým popisem
-                        if (user.Role != Role.Admin)
+                        if (LoggedInUser.Role != Role.Admin)
                         {
                             Console.WriteLine("Seznam aktivních šifer: \n");
                             foreach(ActiveSifry sifra in actveSifry.Keys)
@@ -145,9 +154,9 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.favourites:
                         // Zobrazení oblíbených šifer pro uživatele
-                        if (user.Role == Role.User)
+                        if (LoggedInUser.Role == Role.User)
                         {
-                            UserUI.Favourites(user);
+                            UserUI.Favourites(LoggedInUser);
                         }
                         else
                         {
@@ -157,9 +166,9 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.historie:
                         // Zobrazení Historie šifrování pro uživatele
-                        if(user.Role == Role.User)
+                        if(LoggedInUser.Role == Role.User)
                         {
-                            UserUI.Historie(user);
+                            UserUI.Historie(LoggedInUser);
                         }
                         else
                         {
@@ -169,7 +178,7 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.journal:
                         // Zobrazení logů pro Admina
-                        if (user.Role == Role.Admin)
+                        if (LoggedInUser.Role == Role.Admin)
                         {
                             AdminUI.Journal();
                         }
@@ -181,7 +190,7 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.activeusers:
                         // Zobrazení Aktivních uživatelů pro Admina
-                        if (user.Role == Role.Admin)
+                        if (LoggedInUser.Role == Role.Admin)
                         {
                             AdminUI.ActiveUsers();
                         }
@@ -197,14 +206,14 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.logout:
                         // Odhlášení uživatele
-                        LogHandler.Write($"{user.Username} se odhlásil.");
+                        LogHandler.Write($"{LoggedInUser.Username} se odhlásil.");
                         run = false;
                         break;
                     case Commands.exit:
                         // Ukončení Programu
                         Console.WriteLine("Ukončil/a jste program.");
                         Console.WriteLine(Oddelovac);
-                        LogHandler.Write($"{user.Username} ukončil program.");
+                        LogHandler.Write($"{LoggedInUser.Username} ukončil program.");
                         Thread.Sleep(1000);
                         Console.Clear();
                         run = false;

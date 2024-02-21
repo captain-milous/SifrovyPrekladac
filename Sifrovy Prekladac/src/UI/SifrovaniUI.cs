@@ -23,6 +23,26 @@ namespace Sifrovy_Prekladac.src.UI
         /// 
         /// </summary>
         /// <param name="user"></param>
+        public static void StartCMD(User user)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        public static void StartFile(User user)
+        {
+
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
         public static void Start(User user)
         {
             bool run = true;
