@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Caesarovy šifry.
     /// </summary>
     public static class CES
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Caesarovy šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {   
             int input = 0;
@@ -37,12 +37,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             }
             CaesarovaSifra ces = new CaesarovaSifra(text, input, false);
             HistoryHandler.Write(MainMenu.LoggedInUser , ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            SaveToFileUI.Start(ces.EncText);
+            SaveToFileUI.Start(ces.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Caesarovy šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             int input = 0;
@@ -61,6 +61,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             }
             CaesarovaSifra ces = new CaesarovaSifra(text, input, true);
             HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
+            SaveToFileUI.Start(ces.EncText, true);
 
         }
     }
