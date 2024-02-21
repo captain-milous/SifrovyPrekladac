@@ -129,20 +129,25 @@ namespace Sifrovy_Prekladac.src.sifry
         public override string Encrypt(string text)
         {
             StringBuilder encryptedText = new StringBuilder();
-
-            foreach (char znak in text)
+            switch (TypeOfEnc)
             {
-                if (mapovaniPismen.ContainsKey(znak))
-                {
-                    encryptedText.Append(mapovaniPismen[znak]);
-                }
-                else
-                {
-                    encryptedText.Append(znak);
-                }
-            }
+                case "DEF":
+                    foreach (char znak in text)
+                    {
+                        if (mapovaniPismen.ContainsKey(znak))
+                        {
+                            encryptedText.Append(mapovaniPismen[znak]);
+                        }
+                        else
+                        {
+                            encryptedText.Append(znak);
+                        }
+                    }
+                    return encryptedText.ToString();
 
-            return encryptedText.ToString();
+                default:
+                    throw new Exception("Nepodporovaný typ šifrování.");
+            }
         }
         /// <summary>
         /// Metoda pro dešifrování vstupního textu.
@@ -154,23 +159,29 @@ namespace Sifrovy_Prekladac.src.sifry
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
-            foreach (char znak in text)
+            switch (TypeOfEnc)
             {
-                if (char.IsDigit(znak))
-                {
-                    // Pokud je znak číslo, zjistíme jeho pozici v klíčovém slově a nahradíme ho odpovídajícím písmenem
-                    int position = int.Parse(znak.ToString());
-                    char decryptedChar = mapovaniPismen.FirstOrDefault(x => x.Value == position).Key;
-                    decryptedText.Append(decryptedChar);
-                }
-                else
-                {
-                    // Pokud znak není číslo, ponecháme ho beze změny
-                    decryptedText.Append(znak);
-                }
-            }
+                case "DEF":
+                    foreach (char znak in text)
+                    {
+                        if (char.IsDigit(znak))
+                        {
+                            // Pokud je znak číslo, zjistíme jeho pozici v klíčovém slově a nahradíme ho odpovídajícím písmenem
+                            int position = int.Parse(znak.ToString());
+                            char decryptedChar = mapovaniPismen.FirstOrDefault(x => x.Value == position).Key;
+                            decryptedText.Append(decryptedChar);
+                        }
+                        else
+                        {
+                            // Pokud znak není číslo, ponecháme ho beze změny
+                            decryptedText.Append(znak);
+                        }
+                    }
+                    return decryptedText.ToString();
 
-            return decryptedText.ToString();
+                default:
+                    throw new Exception("Nepodporovaný typ šifrování.");
+            }
         }
         #endregion
         #region Metody

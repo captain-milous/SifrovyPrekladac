@@ -20,7 +20,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <param name="rawText">Text k zašifrování.</param>
         public ReverzniSifra(string rawText) : base()
         {
-            DecText = TextMethods.Simplify(rawText);
+            DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
             EncText = Encrypt(DecText);
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             if (!decipher)
             {
-                DecText = TextMethods.Simplify(rawText);
+                DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
                 EncText = Encrypt(DecText);
             }
             else

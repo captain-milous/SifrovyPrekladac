@@ -13,7 +13,7 @@ namespace Sifrovy_Prekladac.src.sifry
     /// </summary>
     public class ObracenaAbcSifra : Sifra
     {
-        #region Proměnné
+        #region List
         /// <summary>
         /// Obrácená Abeceda
         /// </summary>
