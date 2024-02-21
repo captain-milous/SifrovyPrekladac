@@ -44,16 +44,16 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
         /// </summary>
         public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
         {
-            { ActiveSifry.Morseova_Sifra, "Popis" },
             { ActiveSifry.Caesarova_Sifra, "Popis" },
-            { ActiveSifry.Petronilka, "Popis" },
-            { ActiveSifry.Mezerova_Sifra, "Popis" },
             { ActiveSifry.Klavesnicova_Sifra, "Popis" },
-            { ActiveSifry.Telefonni_Sifra, "Popis" },
+            { ActiveSifry.Mezerova_Sifra, "Popis" },
+            { ActiveSifry.Morseova_Sifra, "Popis" },
             { ActiveSifry.Numericka_Sifra, "Popis" },
-            { ActiveSifry.Reverzni_Sifra, "Popis" },
             { ActiveSifry.Obracena_ABC_Sifra, "Popis" },
+            { ActiveSifry.Petronilka, "Popis" },
             { ActiveSifry.Prohazena_Sifra, "Popis" },
+            { ActiveSifry.Reverzni_Sifra, "Popis" },
+            { ActiveSifry.Telefonni_Sifra, "Popis" }
         };
         /// <summary>
         /// Oddělovač pro vizuální oddělení sekce.

@@ -19,13 +19,30 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <summary>
         /// 
         /// </summary>
+        public static Dictionary<ActiveSifry, string> ZkratkySifer = new Dictionary<ActiveSifry, string>()
+        {
+            { ActiveSifry.Morseova_Sifra, "MOR" },
+            { ActiveSifry.Caesarova_Sifra, "CES" },
+            { ActiveSifry.Petronilka, "PET" },
+            { ActiveSifry.Mezerova_Sifra, "MEZ" },
+            { ActiveSifry.Klavesnicova_Sifra, "KLA" },
+            { ActiveSifry.Telefonni_Sifra, "TEL" },
+            { ActiveSifry.Numericka_Sifra, "NUM" },
+            { ActiveSifry.Reverzni_Sifra, "REV" },
+            { ActiveSifry.Obracena_ABC_Sifra, "OAS" },
+            { ActiveSifry.Prohazena_Sifra, "SHU" },
+        };
+        /// <summary>
+        /// 
+        /// </summary>
         public static void Start(string InputText)
         {
             Console.WriteLine();
             Console.WriteLine("Seznam aktivních šifer: \n");
+            Console.WriteLine("  Zkratka      Sifra            Popis");
             foreach (ActiveSifry sifra in MainMenu.ActveSifry.Keys)
             {
-                Console.WriteLine("  - " + sifra + ": " + MainMenu.ActveSifry[sifra]);
+                Console.WriteLine("  (" + ZkratkySifer[sifra] + ") " + sifra + ": " + MainMenu.ActveSifry[sifra]);
             }
             Console.WriteLine();
             bool run = true;

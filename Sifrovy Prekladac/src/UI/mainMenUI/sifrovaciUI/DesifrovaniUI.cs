@@ -15,7 +15,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             Console.WriteLine("Seznam aktivních šifer: \n");
             foreach (ActiveSifry sifra in MainMenu.ActveSifry.Keys)
             {
-                Console.WriteLine("  - " + sifra + ": " + MainMenu.ActveSifry[sifra]);
+                Console.WriteLine("  (" + SifrovaniUI.ZkratkySifer[sifra] + ") " + sifra + ": " + MainMenu.ActveSifry[sifra]);
             }
             Console.WriteLine();
             bool run = true;
