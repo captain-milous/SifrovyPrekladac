@@ -1,6 +1,6 @@
 ﻿using Sifrovy_Prekladac.src.conf;
 using Sifrovy_Prekladac.src.logs;
-using Sifrovy_Prekladac.src.sifry;
+using Sifrovy_Prekladac.src.sifry.related;
 using Sifrovy_Prekladac.src.UI.help;
 using Sifrovy_Prekladac.src.UI.loginMenuUI;
 using Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI;
@@ -117,7 +117,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         // UI pro zašifrovaní/rozšifrovaní textu
                         if (LoggedInUser.Role != Role.Admin)
                         {
-                            OptionsUI.InputFromCmdOrFile();
+                            LoadInputUI.Start();
                         }
                         else
                         {

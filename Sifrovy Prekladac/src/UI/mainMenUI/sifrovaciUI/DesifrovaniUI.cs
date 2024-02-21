@@ -8,5 +8,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
 {
     public static class DesifrovaniUI
     {
+        public static void Start(string InputText)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Sifrovy_Prekladac.src.static_methods;
+﻿using Sifrovy_Prekladac.src.sifry.related;
+using Sifrovy_Prekladac.src.static_methods;
 using System;
 using System.Collections.Generic;
 using System.Linq;

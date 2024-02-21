@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.sifry
+namespace Sifrovy_Prekladac.src.sifry.related
 {
     /// <summary>
     /// Enumerace představující seznam aktivních  šifer, kterými lze sifrovat, či dešifrovat v této verzi aplikace.

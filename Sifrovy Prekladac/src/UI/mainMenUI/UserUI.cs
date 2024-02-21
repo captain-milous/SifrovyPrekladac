@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.UserHandler;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
     /// <summary>
     /// 
@@ -87,7 +87,7 @@ namespace Sifrovy_Prekladac.src.UI
                     if (allLines.Length > 0)
                     {
                         string firstLine = allLines[0];
-                        Console.WriteLine("  "+ File.GetCreationTime(hist) + ": "+ firstLine);
+                        Console.WriteLine("  " + File.GetCreationTime(hist) + ": " + firstLine);
                     }
                     else
                     {
