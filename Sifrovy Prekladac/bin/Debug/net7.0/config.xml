@@ -1,4 +1,5 @@
 <Configuration>
+  
   <!-- Default users passwords -->
   <AdminPassword>Heslo123*</AdminPassword>
   
@@ -7,7 +8,8 @@
   <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
   
   <!-- Upload and Download File Location -->
-  <InputFile>C:\Users\milda\Desktop</InputFile>
+  <InputFile>data</InputFile>
   <OutputFile>data</OutputFile>
+  <!-- <InputFile>C:\Users\milda\Desktop</InputFile> -->
   
 </Configuration>

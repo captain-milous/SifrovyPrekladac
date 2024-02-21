@@ -35,7 +35,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                     Console.WriteLine("Zadaná Hodnota musí být integer!");
                 }
             }
-            CaesarovaSifra ces = new CaesarovaSifra(text, input, false);
+            CaesarovaSifra ces = new CaesarovaSifra(text, input);
             HistoryHandler.Write(MainMenu.LoggedInUser , ces.ToString(), ActiveSifry.Caesarova_Sifra);
             SaveToFileUI.Start(ces.EncText, false);
         }
