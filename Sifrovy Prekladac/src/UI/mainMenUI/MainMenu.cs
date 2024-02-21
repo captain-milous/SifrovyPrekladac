@@ -2,6 +2,8 @@
 using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.sifry;
 using Sifrovy_Prekladac.src.UI.help;
+using Sifrovy_Prekladac.src.UI.loginMenuUI;
+using Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
     /// <summary>
     /// Tato třída reprezentuje Aplikaci do které se chcete přihlásit.
@@ -40,12 +42,12 @@ namespace Sifrovy_Prekladac.src.UI
         /// <summary>
         /// Slovník obsahující popisy aktivních šifer této verze programu.
         /// </summary>
-        static Dictionary<ActiveSifry, string> actveSifry = new Dictionary<ActiveSifry, string>() 
-        { 
-            { ActiveSifry.Morseova_Sifra, "Popis" }, 
-            { ActiveSifry.Caesarova_Sifra, "Popis" }, 
-            { ActiveSifry.Petronilka, "Popis" }, 
-            { ActiveSifry.Mezerova_Sifra, "Popis" }, 
+        static Dictionary<ActiveSifry, string> actveSifry = new Dictionary<ActiveSifry, string>()
+        {
+            { ActiveSifry.Morseova_Sifra, "Popis" },
+            { ActiveSifry.Caesarova_Sifra, "Popis" },
+            { ActiveSifry.Petronilka, "Popis" },
+            { ActiveSifry.Mezerova_Sifra, "Popis" },
             { ActiveSifry.Klavesnicova_Sifra, "Popis" },
             { ActiveSifry.Telefonni_Sifra, "Popis" },
             { ActiveSifry.Numericka_Sifra, "Popis" },
@@ -74,7 +76,7 @@ namespace Sifrovy_Prekladac.src.UI
             LoggedInUser = user;
             LogHandler.Write($"{LoggedInUser.Username} se úspěšně přihlásit do aplikace.");
             Console.Clear();
-            if(LoggedInUser.Role != Role.Anonymous)
+            if (LoggedInUser.Role != Role.Anonymous)
             {
                 Console.WriteLine(LoggedInUser + " se přihlásil!\n");
             }
@@ -113,7 +115,7 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.sifrovani:
                         // UI pro zašifrovaní/rozšifrovaní textu
-                        if(LoggedInUser.Role != Role.Admin)
+                        if (LoggedInUser.Role != Role.Admin)
                         {
                             OptionsUI.InputFromCmdOrFile();
                         }
@@ -128,7 +130,7 @@ namespace Sifrovy_Prekladac.src.UI
                         if (LoggedInUser.Role != Role.Admin)
                         {
                             Console.WriteLine("Seznam aktivních šifer: \n");
-                            foreach(ActiveSifry sifra in actveSifry.Keys)
+                            foreach (ActiveSifry sifra in actveSifry.Keys)
                             {
                                 Console.WriteLine("  - " + sifra + ": " + actveSifry[sifra]);
                             }
@@ -154,7 +156,7 @@ namespace Sifrovy_Prekladac.src.UI
                         break;
                     case Commands.historie:
                         // Zobrazení Historie šifrování pro uživatele
-                        if(LoggedInUser.Role == Role.User)
+                        if (LoggedInUser.Role == Role.User)
                         {
                             UserUI.Historie(LoggedInUser);
                         }

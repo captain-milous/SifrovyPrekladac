@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sifrovy_Prekladac.src.sifry
+namespace Sifrovy_Prekladac.src.sifry.related
 {
     /// <summary>
     /// Třída pro šifrování a dešifrování textu.
@@ -83,7 +83,7 @@ namespace Sifrovy_Prekladac.src.sifry
             }
             else
             {
-                return DecText + "(" + TypeOfEnc +") => " + EncText;
+                return DecText + "(" + TypeOfEnc + ") => " + EncText;
             }
         }
         #endregion

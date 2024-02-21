@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Sifrovy_Prekladac.src.UI
+namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
 {
     /// <summary>
     /// 
@@ -18,12 +18,7 @@ namespace Sifrovy_Prekladac.src.UI
         /// <summary>
         /// 
         /// </summary>
-        static bool decipher = false;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        public static void StartCMD(User user)
+        public static void Start(string InputText)
         {
 
         }
@@ -32,18 +27,7 @@ namespace Sifrovy_Prekladac.src.UI
         /// 
         /// </summary>
         /// <param name="user"></param>
-        public static void StartFile(User user)
-        {
-
-        }
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        public static void Start(User user)
+        public static void OldStart(User user)
         {
             bool run = true;
             while (run)
@@ -59,10 +43,10 @@ namespace Sifrovy_Prekladac.src.UI
                 else if (answer.StartsWith("y") || answer.StartsWith("a") || answer.StartsWith("j"))
                 {
                     List<string> availableFiles = GetTxtFiles(ConfigHandler.Config.InputFile);
-                    if(availableFiles.Count > 0)
+                    if (availableFiles.Count > 0)
                     {
                         Console.WriteLine();
-                        foreach (string filePath in availableFiles) 
+                        foreach (string filePath in availableFiles)
                         {
                             string[] fullPath = filePath.Split('\\');
                             string fileName = fullPath[fullPath.Length - 1];
@@ -70,14 +54,14 @@ namespace Sifrovy_Prekladac.src.UI
                         }
                         Console.Write("\nVyberte jeden ze souborů: ");
                         answer = Console.ReadLine();
-                        if(availableFiles.Contains(answer))
+                        if (availableFiles.Contains(answer))
                         {
                             try
                             {
                                 string rawText = FileMethods.Read(answer);
                                 ChceckIfCorrect(rawText);
                             }
-                            catch(Exception ex) 
+                            catch (Exception ex)
                             {
                                 Console.WriteLine("Chyba: " + ex.Message);
                             }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sifrovy_Prekladac.src.static_methods;
+using Sifrovy_Prekladac.src.sifry.related;
 
 namespace Sifrovy_Prekladac.src.sifry
 {
