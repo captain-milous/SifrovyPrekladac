@@ -166,14 +166,12 @@ namespace Sifrovy_Prekladac.src.sifry
                     {
                         if (char.IsDigit(znak))
                         {
-                            // Pokud je znak číslo, zjistíme jeho pozici v klíčovém slově a nahradíme ho odpovídajícím písmenem
                             int position = int.Parse(znak.ToString());
                             char decryptedChar = mapovaniPismen.FirstOrDefault(x => x.Value == position).Key;
                             decryptedText.Append(decryptedChar);
                         }
                         else
                         {
-                            // Pokud znak není číslo, ponecháme ho beze změny
                             decryptedText.Append(znak);
                         }
                     }
