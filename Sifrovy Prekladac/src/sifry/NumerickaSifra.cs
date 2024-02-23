@@ -22,8 +22,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// ROM (Římské číslice): Tato metoda převádí každý znak vstupního textu na odpovídající římskou číslici, pokud je znak platným indexem v dictionary RimskaCisla. Výsledné římské číslice jsou odděleny mezerami. 
         /// SPI (Spirálová ABC, neboli Random): Zde se každý znak vstupního textu převádí na číslo podle pozice v abecedě (opět s přičtením jedna), a k tomuto číslu je přičten náhodný počet násobků délky abecedy. Pokud je výsledné číslo větší nebo rovno 100, je odečtena délka abecedy. Čísla jsou oddělena mezerami.
         /// </summary>
-        private static string[] typySifry = { "DEF", "BTR", "ROM", "SPI" };
-
+        private static string[] typySifry = { "DEF", "BTR", "ROM", "HEX", "SPI" };
         /// <summary>
         /// Slovník obsahující převodní tabulku čísel na římské číslice.
         /// </summary>
@@ -55,6 +54,38 @@ namespace Sifrovy_Prekladac.src.sifry
             {24, "XXIV"},
             {25, "XXV"},
             {26, "XXVI"}
+        };
+        /// <summary>
+        /// Slovník obsahující převodní tabulku čísel na hexadecimalní číslice.
+        /// </summary>
+        private Dictionary<int, string> HexCisla = new Dictionary<int, string>()
+        {
+            {1, "01"},
+            {2, "02"},
+            {3, "03"},
+            {4, "04"},
+            {5, "05"},
+            {6, "06"},
+            {7, "07"},
+            {8, "08"},
+            {9, "09"},
+            {10, "0A"},
+            {11, "0B"},
+            {12, "0C"},
+            {13, "0D"},
+            {14, "0E"},
+            {15, "0F"},
+            {16, "10"},
+            {17, "11"},
+            {18, "12"},
+            {19, "13"},
+            {20, "14"},
+            {21, "15"},
+            {22, "16"},
+            {23, "17"},
+            {24, "18"},
+            {25, "19"},
+            {26, "1A"}
         };
         #endregion
         #region Konstrukrory
@@ -115,7 +146,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return encryptedText.ToString();
-
                 case "BTR":
                     foreach (char c in text)
                     {
@@ -140,7 +170,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return encryptedText.ToString();
-
                 case "ROM":
                     foreach (char c in text)
                     {
@@ -149,7 +178,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
-
                 case "SPI":
                     foreach (char c in text)
                     {
@@ -171,14 +199,19 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return encryptedText.ToString();
-
+                case "HEX":
+                    foreach (char c in text)
+                    {
+                        string eChar = HexCisla[c];
+                        encryptedText.Append(eChar);
+                        encryptedText.Append(' ');
+                    }
+                    return encryptedText.ToString();
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
-        #region Dešifrování
         /// <summary>
         /// Dešifruje zadaný text podle typu šifry.
         /// </summary>
@@ -203,7 +236,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return decryptedText.ToString();
-
                 case "BTR":
                     string[] numbersBTR = text.Trim().Split(' ');
                     foreach (string num in numbersBTR)
@@ -217,7 +249,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return decryptedText.ToString();
-
                 case "ROM":
                     string[] romans = text.Trim().Split(' ');
                     foreach (string roman in romans)
@@ -233,7 +264,21 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return decryptedText.ToString();
-
+                case "HEX":
+                    string[] hexNums = text.Trim().Split(' ');
+                    foreach (string hexNum in hexNums)
+                    {
+                        foreach (var kvp in RimskaCisla)
+                        {
+                            if (kvp.Value == hexNum)
+                            {
+                                int index = kvp.Key;
+                                decryptedText.Append(TextMethods.Abeceda[index - 1]);
+                                break;
+                            }
+                        }
+                    }
+                    return decryptedText.ToString();
                 case "SPI":
                     string[] numbersSPI = text.Trim().Split(' ');
                     foreach (string number in numbersSPI)
@@ -246,11 +291,9 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     return decryptedText.ToString();
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
         }
-        #endregion
     }
 }

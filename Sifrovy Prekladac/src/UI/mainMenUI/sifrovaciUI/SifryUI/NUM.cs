@@ -25,7 +25,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             {
                 bool wrong = false;
                 Console.WriteLine("Vyberte na jaká čísla chcete aby se text zašifrovat:");
-                Console.WriteLine("  DEF - Defaultní (Dle indexu abecedy +1); \n  BTR - Lepší (čísla 1 - 9, mají před sebou 0); \n  ROM - Římské číslice \n  SPI - Spirálové šifrování (čisla 1 - 99)");
+                Console.WriteLine("  DEF - Defaultní (Dle indexu abecedy +1); \n  BTR - Lepší (čísla 1 - 9, mají před sebou 0); \n  ROM - Římské číslice \n  SPI - Spirálové šifrování (čisla 1 - 99) \n  HEX - Hexadecimální čísla");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToUpper();
                 switch (answer)
@@ -40,6 +40,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                         num = new NumerickaSifra(text, answer);
                         break;
                     case "SPI":
+                        num = new NumerickaSifra(text, answer);
+                        break;
+                    case "HEX":
                         num = new NumerickaSifra(text, answer);
                         break;
                     default:
@@ -81,6 +84,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                         num = new NumerickaSifra(text, answer, true);
                         break;
                     case "SPI":
+                        num = new NumerickaSifra(text, answer, true);
+                        break;
+                    case "HEX":
                         num = new NumerickaSifra(text, answer, true);
                         break;
                     default:
