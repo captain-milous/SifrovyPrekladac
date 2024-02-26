@@ -2,7 +2,11 @@
 
 ## Autor: Miloš Tesař
 
-### 1. Popis produktu
+### Úvod
+
+Toto je základní přehled mé aplikace. Pro další informace o použití a instalaci si prosím přečtěte dokumentaci v souboru [MANUAL.md](MANUAL.md).
+
+### Popis Aplikace
 
 Šifrový Překladač je inovativní konzolová aplikace v jazyce C#, která umožňuje šifrování a dešifrování textu pomocí různých kryptografických metod. Vznikla jako odpověď na rostoucí poptávku po nástroji, který uživatelům poskytne snadný a bezplatný překlad textu do různých šifer a zpět v jedné aplikaci. Především byla vytvořena pro táborovou skupinu Paprsek, ale je přístupná pro všechny uživatele a navržena tak, aby byla intuitivní a snadno použitelná.
 
@@ -34,7 +38,7 @@
 3. **Platforma:**
    - Šifrový Překladač je určen pro běh na operačním systému Windows.
 
-### 3. Funkce produktu (Použité šifry)
+### Funkce produktu (Použité šifry)
 
 #### Morseova šifra
 
@@ -108,6 +112,3 @@ První písmenko zůstává, druhé jde na poslední pozici, třetí na druhou p
 **Ukázka:**
 "ABCDEF" zašifrujeme na "ACEFDB"
 
-### Závěr
-
-Toto je základní přehled mého projektu v C#. Pro další informace o použití a instalaci si prosím přečtěte dokumentaci v souboru [MANUAL.md](MANUAL.md).

@@ -2,16 +2,11 @@
 
 ## Instalace
 
-Pro spuštění Šifrového Překladače na vašem počítači postupujte následovně:
+Instalace pro [Windows](INSTALACE-WINDOWS.md).
 
-1. **Stáhněte si zdrojový kód:**
-   - Stažení zdrojového kódu můžete provést pomocí příkazu `git clone` z [repozitáře](https://github.com/captain-milous/SifrovyPrekladac) na GitHubu.
+Instalace pro [Linux](INSTALACE-LINUX.md).
 
-2. **Otevřete projekt ve Visual Studiu:**
-   - Otevřete stažený projekt ve vývojovém prostředí Visual Studio.
-
-3. **Sestavení a spuštění:**
-   - Zvolte možnost sestavení a spuštění projektu v Visual Studiu.
+Instalace pro [Mac OS](INSTALACE-MACOS.md).
 
 ## Použití
 
@@ -32,7 +27,7 @@ Po úspěšné instalaci a spuštění můžete používat Šifrový Překladač
 
 ## Podpora
 
-V případě potřeby podpory nebo pokud máte jakékoliv dotazy ohledně použití Šifrového Překladače, neváhejte nás kontaktovat na našem [webu](https://www.sifrovy-prekladac.cz) nebo vytvořte [issue](https://url-repozitare/issues) na GitHubu.
+V případě potřeby podpory nebo pokud máte jakékoliv dotazy ohledně použití Šifrového Překladače, neváhejte nás kontaktovat prostřednictvím [emailu](mailto:milos@ltpaprsek.cz) nebo vytvořte [issue](https://github.com/captain-milous/SifrovyPrekladac/issues) na GitHubu.
 
 ## Licence
 
