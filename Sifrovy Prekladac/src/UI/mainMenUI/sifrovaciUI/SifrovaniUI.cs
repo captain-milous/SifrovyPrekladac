@@ -39,12 +39,13 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <param name="InputText">Vstupní text k šifrování.</param>
         public static void Start(string InputText, bool decypher)
         {
+            Console.Clear();
             Console.WriteLine();
             Console.WriteLine("Seznam aktivních šifer: \n");
-            Console.WriteLine("Zkratka   Šifra            Popis");
-            foreach (ActiveSifry sifra in MainMenu.ActveSifry.Keys)
+            Console.WriteLine("Zkratka   Šifra");
+            foreach (ActiveSifry sifra in ZkratkySifer.Keys)
             {
-                Console.WriteLine("  (" + ZkratkySifer[sifra] + ") " + sifra + ": " + MainMenu.ActveSifry[sifra]);
+                Console.WriteLine("  (" + ZkratkySifer[sifra] + ") " + sifra);
             }
             ActiveSifry Sifra = ActiveSifry.Morseova_Sifra;
             bool run = true;

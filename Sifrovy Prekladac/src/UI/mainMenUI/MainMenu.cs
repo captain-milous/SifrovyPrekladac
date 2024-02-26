@@ -118,6 +118,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         if (LoggedInUser.Role != Role.Admin)
                         {
                             LoadInputUI.Start();
+                            Console.Clear() ;
                         }
                         else
                         {

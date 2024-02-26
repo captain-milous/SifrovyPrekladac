@@ -19,21 +19,23 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// </summary>
         public static void Start()
         {
-            Console.WriteLine(InitialMenu.Oddelovac);
             bool run = true;
             while (run)
             {
+                Console.Clear();
                 Console.WriteLine("Chcete načíst ze souboru nebo z cmd?");
                 Console.WriteLine("(Soubor - Načtení ze souboru; CMD - Načtení z cmd; Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
                 if (answer.StartsWith("c"))
                 {
+                    Console.Clear();
                     FromCMD();
                     run = false;
                 }
                 else if (answer.StartsWith("s"))
                 {
+                    Console.Clear();
                     FromFile();
                     run = false;
                 }
@@ -48,7 +50,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine(InitialMenu.Oddelovac);
         }
         /// <summary>
         /// 
@@ -58,7 +59,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while (run)
             {
-                Console.Write("\nZadejte text: ");
+                Console.Write("\nZadejte text, který chcete zašifrovat/dešifrovat: ");
                 string rawText = Console.ReadLine();
                 if (ChceckIfCorrect(rawText))
                 {
@@ -158,6 +159,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <returns></returns>
         static bool ChceckIfCorrect(string text)
         {
+            Console.Clear();
             Console.WriteLine();
             Console.WriteLine("'" + text + "'");
             while (true)
@@ -211,11 +213,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <returns></returns>
         static string ChooseSifXDesif()
         {
+            Console.Clear();
             while (true)
             {
                 Console.WriteLine();
                 Console.WriteLine("Chcete zašifrovat/dešifrovat text?");
-                Console.WriteLine("(Exit - Zpět do hlavního menu)");
+                Console.WriteLine("(Zas - Zašifrovat, Des - Dešifrovat, Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
                 if (answer.StartsWith("s") || answer.StartsWith("z"))

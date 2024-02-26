@@ -20,4 +20,9 @@
     <Password>2FC251B17B6EE87B194B0A9B95F4192B00C391ED</Password>
     <Role>User</Role>
   </User>
+  <User>
+    <Username>princezna</Username>
+    <Password>581A8242AA5CB89777FA7AF079C6CC63E306ADA8</Password>
+    <Role>User</Role>
+  </User>
 </ArrayOfUser>

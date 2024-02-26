@@ -22,6 +22,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
         /// <param name="decypher">Určuje, zda je text dešifrován (true) nebo zašifrován (false).</param>
         public static void Start(string text, bool decypher)
         {
+            Console.Clear();
             Console.WriteLine();
             if(!decypher)
             {
