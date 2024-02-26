@@ -2,11 +2,11 @@
 
 ## Instalace
 
-Instalace pro [Windows](Instalace\WINDOWS.md).
+Instalace pro [Windows](Instalace/WINDOWS.md).
 
-Instalace pro [Linux](Instalace\LINUX.md).
+Instalace pro [Linux](Instalace/LINUX.md).
 
-Instalace pro [Mac OS](Instalace\MACOS.md).
+Instalace pro [Mac OS](Instalace/MACOS.md).
 
 ## Použití
 
