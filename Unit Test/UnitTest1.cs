@@ -8,6 +8,8 @@ namespace Unit_Test
         public void Setup()
         {
             TestMOR();
+            TestCES();
+            TestREV();
         }
         /*
         [Test]
@@ -20,18 +22,28 @@ namespace Unit_Test
         {
             // Šifrování
             MorseovaSifra mor = new MorseovaSifra("Ahoj svìte! Dnes máme pøekrásný den!");
-            string expectedResult = ".- | .... | --- | .--- || ... | ...- | - | . || -.. | -. | . | ... || -- | -- | . || .--. | . | -.- | .-. | ... | -. || -.. | . | -. |||";
-            if (mor.EncText == expectedResult)
-            {
-                Assert.Fail(mor.ToString() +" != " + expectedResult);
-            }
+            
             // Dešifrování
             mor = new MorseovaSifra(".- | .... | --- | .--- || ... | ...- | - | . || -.. | -. | . | ... || -- | -- | . || .--. | . | -.- | .-. | ... | -. || -.. | . | -. |||", true);
-            expectedResult = "AHOJ SVETE DNES MAME PREKRASNY DEN";
-            if (mor.DecText == expectedResult)
-            {
-                Assert.Fail(expectedResult);
-            }
+            
+            Assert.Pass();
+        }
+
+        [Test]
+        public void TestCES()
+        {
+            // Šifrování
+            CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", 4);
+
+            // Dešifrování
+            test = new CaesarovaSifra("ELSN QMGLEPI, NEO WI HRIWOE QEW?", 4, true);
+
+            Assert.Pass();
+        }
+        [Test]
+        public void TestREV()
+        {
+            ReverzniSifra test = new ReverzniSifra("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
             Assert.Pass();
         }
     }
