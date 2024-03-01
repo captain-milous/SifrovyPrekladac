@@ -17,7 +17,7 @@ namespace Sifrovy_Prekladac.src
         /// <param name="args">Argumenty příkazového řádku</param>
         static void Main(string[] args)
         {
-            bool testing = false;
+            bool testing = true;
             if(!testing) 
             {
                 bool run = true;
@@ -46,11 +46,11 @@ namespace Sifrovy_Prekladac.src
                 Console.WriteLine(mor);
                 Console.WriteLine();
                 // Test
-                CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", TextMethods.Abeceda.Length, false);
+                CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", 4, false);
                 Console.WriteLine(test);
-                test = new CaesarovaSifra("DKRM PLFKDOH MDN VH GQHVND PDV",3,true);
+                test = new CaesarovaSifra("ELSN QMGLEPI, NEO WI HRIWOE QEW?", 4,true);
                 Console.WriteLine(test);
-
+                Console.WriteLine();
                 // Mezerova
                 MezerovaSifra test2 = new MezerovaSifra("Tohle je veliký test, ahoj!");
                 Console.WriteLine(test2);

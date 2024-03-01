@@ -25,4 +25,9 @@
     <Password>581A8242AA5CB89777FA7AF079C6CC63E306ADA8</Password>
     <Role>User</Role>
   </User>
+  <User>
+    <Username>smikovakiki</Username>
+    <Password>99A17F8406947DEE177E07C345E41F0705880D76</Password>
+    <Role>User</Role>
+  </User>
 </ArrayOfUser>

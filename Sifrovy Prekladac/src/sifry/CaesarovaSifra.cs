@@ -31,7 +31,7 @@ namespace Sifrovy_Prekladac.src.sifry
                 else
                 {
                     int assistValue = (int)value;
-                    while(!(assistValue >= 0 && assistValue < TextMethods.Abeceda.Length))
+                    while (!(assistValue >= 0 && assistValue < TextMethods.Abeceda.Length))
                     {
                         if (assistValue < 0)
                         {
@@ -42,7 +42,7 @@ namespace Sifrovy_Prekladac.src.sifry
                             assistValue -= TextMethods.Abeceda.Length;
                         }
                     }
-                    _posun = assistValue;
+                    Console.WriteLine(assistValue);
                 }
             }
         }
@@ -57,7 +57,7 @@ namespace Sifrovy_Prekladac.src.sifry
         {
             Posun = posun;
             DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-            EncText = Encrypt(rawText);
+            EncText = Encrypt(DecText);
         }
         /// <summary>
         /// Konstruktor pro vytvoření instance Caesarovy šifry.
@@ -71,12 +71,12 @@ namespace Sifrovy_Prekladac.src.sifry
             if (!decypher)
             {
                 DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-                EncText = Encrypt(rawText);
+                EncText = Encrypt(DecText);
             }
             else
             {
                 EncText = rawText;
-                DecText = Decrypt(rawText);
+                DecText = Decrypt(EncText);
             }
         }
         #endregion 

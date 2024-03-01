@@ -38,6 +38,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             CaesarovaSifra ces = new CaesarovaSifra(text, input);
             HistoryHandler.Write(MainMenu.LoggedInUser , ces.ToString(), ActiveSifry.Caesarova_Sifra);
             SaveToFileUI.Start(ces.EncText, false);
+            Thread.Sleep(10000);
         }
         /// <summary>
         /// Dešifruje zadaný text pomocí Caesarovy šifry.
