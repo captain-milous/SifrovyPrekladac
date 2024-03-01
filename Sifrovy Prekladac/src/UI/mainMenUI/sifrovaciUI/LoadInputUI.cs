@@ -23,8 +23,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             while (run)
             {
                 Console.Clear();
-                Console.WriteLine("Chcete načíst ze souboru nebo z cmd?");
-                Console.WriteLine("(Soubor - Načtení ze souboru; CMD - Načtení z cmd; Exit - Zpět do hlavního menu)");
+                Console.WriteLine("Chcete použít pro zašifrování/rozšifrování text, který si načtete ze souboru, nebo který si napíšete sami?");
+                Console.WriteLine("(Soubor - Načtení textu ze souboru; CMD - Použití textu, který si napíšete sami; Exit - Zpět do hlavního menu)");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToLower();
                 if (answer.StartsWith("c"))

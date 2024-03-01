@@ -47,13 +47,17 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         public static void Decrypt(string text)
         {
             PetronilkaSifra pet = new PetronilkaSifra(text, "PETRONILKA", true);
-            Console.WriteLine("Napište 'PETRONILKA', pokud nemáte vlastní klíč.");
+            Console.WriteLine("Pokud chcete použít klíč 'PETRONILKA', stačí zmáčknout Enter.");
             while (true)
             {
                 Console.Write("Zadejte desetimístný klíč pro zašifrování: ");
                 try
                 {
                     string key = Console.ReadLine();
+                    if(string.IsNullOrEmpty(key))
+                    {
+                        key = "PETRONILKA";
+                    }
                     pet = new PetronilkaSifra(text, key, true);
                     break;
                 }

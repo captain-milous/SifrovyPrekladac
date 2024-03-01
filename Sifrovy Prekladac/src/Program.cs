@@ -17,54 +17,19 @@ namespace Sifrovy_Prekladac.src
         /// <param name="args">Argumenty příkazového řádku</param>
         static void Main(string[] args)
         {
-            bool testing = true;
-            if(!testing) 
+            bool run = true;
+            // configurace
+            try
             {
-                bool run = true;
-                // configurace
-                try
-                {
-                    CheckStructure.Start();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    LogFileWriter.WriteEmergancy();
-                    run = false;
-                }
-                InitialMenu.Start(run);
+                CheckStructure.Start();
             }
-            else
+            catch (Exception ex)
             {
-
-                MorseovaSifra mor = new MorseovaSifra("Ahoj světe! Dnes máme překrásný den!");
-                string expectedResult = ".- | .... | --- | .--- || ... | ...- | - | . || -.. | -. | . | ... || -- | -- | . || .--. | . | -.- | .-. | ... | -. || -.. | . | -. |||";
-                if (mor.EncText == expectedResult)
-                {
-                    Console.WriteLine("Fail");
-                }
-                Console.WriteLine(mor);
-                Console.WriteLine();
-                // Test
-                CaesarovaSifra test = new CaesarovaSifra("Ahoj Michale, jak se dneska máš?", 4, false);
-                Console.WriteLine(test);
-                test = new CaesarovaSifra("ELSN QMGLEPI, NEO WI HRIWOE QEW?", 4,true);
-                Console.WriteLine(test);
-                Console.WriteLine();
-                // Mezerova
-                MezerovaSifra test2 = new MezerovaSifra("Tohle je veliký test, ahoj!");
-                Console.WriteLine(test2);
-                test2 = new MezerovaSifra("SU NP GI KM DF IK DF UW DF KM HJ JL XZ SU DF RT SU ZB GI NP IK", true);
-                Console.WriteLine(test2);
-
-                ProhazenaSifra test3 = new ProhazenaSifra("Ahoj Michale, jak se dneska máš?");
-                Console.WriteLine(test3);
-                test3 = new ProhazenaSifra("AO IHL,JKS NSAMS?A KEDE A EACMJH", true);
-                Console.WriteLine(test3);
-
-                PetronilkaSifra test4 = new PetronilkaSifra("Ahoj Michale, jak se dneska máš?");
-                Console.WriteLine(test4);
-            }            
+                Console.WriteLine(ex.Message);
+                LogFileWriter.WriteEmergancy();
+                run = false;
+            }
+            InitialMenu.Start(run);
         }
     }
 }
