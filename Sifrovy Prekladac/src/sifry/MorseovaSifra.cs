@@ -91,7 +91,6 @@ namespace Sifrovy_Prekladac.src.sifry
         public override string Encrypt(string text)
         {
             string output = string.Empty;
-
             switch (TypeOfEnc)
             {
                 case "DEF":
@@ -112,8 +111,7 @@ namespace Sifrovy_Prekladac.src.sifry
                     encryptedText.Remove(encryptedText.Length - 1, 1);
                     encryptedText.Append("|| ");
 
-                    output = encryptedText.ToString();
-                    break;
+                    return encryptedText.ToString();
                 case "REV":
                     MorseovaSifra def = new MorseovaSifra(text);
                     string morseText = def.EncText;
@@ -133,7 +131,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
 
-                    break;
+                    return output;
                 case "NUM":
                     def = new MorseovaSifra(text);
                     morseText = def.EncText;
@@ -157,12 +155,10 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
 
-                    break;
+                    return output;
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
-
-            return output;
         }
         #endregion 
         #region Rozšifrování

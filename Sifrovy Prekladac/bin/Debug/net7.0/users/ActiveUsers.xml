@@ -15,19 +15,4 @@
     <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
     <Role>User</Role>
   </User>
-  <User>
-    <Username>mejra</Username>
-    <Password>2FC251B17B6EE87B194B0A9B95F4192B00C391ED</Password>
-    <Role>User</Role>
-  </User>
-  <User>
-    <Username>princezna</Username>
-    <Password>581A8242AA5CB89777FA7AF079C6CC63E306ADA8</Password>
-    <Role>User</Role>
-  </User>
-  <User>
-    <Username>smikovakiki</Username>
-    <Password>99A17F8406947DEE177E07C345E41F0705880D76</Password>
-    <Role>User</Role>
-  </User>
 </ArrayOfUser>
