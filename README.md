@@ -40,43 +40,42 @@ Toto je základní přehled mé aplikace. Pro další informace o použití a in
 
 ### Funkce produktu (Použité šifry)
 
-#### Morseova šifra
+#### **1. Morseova šifra**
 
 Morseova šifra je způsob kódování textu pomocí kombinace krátkých a dlouhých signálů, známých jako tečky a čára.
 
 **Ukázka:**
-"PŘÍKLAD" zašifrujeme jako ".--. .-. .. -.- .-.. .- -.."
 
-#### Caesarova šifra
+
+#### **2. Caesarova šifra**
 
 Caesarova šifra je substituční šifra, která funguje na principu posunu písmen v abecedě.
 
 **Ukázka:**
-"PŘÍKLAD" s klíčem 3 zašifrujeme jako "SŮNLODG"
 
-#### Petronilka
+
+#### **3. Petronilka**
 
 Petronilka je šifra, která nahrazuje písmena podle jejich pořadí v klíčovém slově.
 
 **Ukázka:**
-"PŘÍKLAD" s klíčem "PETRONILKA" zašifrujeme jako "PŘŤĆMĚS"
 
-#### Mezerová šifra
+
+#### **4. Mezerová šifra**
 
 Mezerová šifra využívá abecedního pořadí písmen, kde každé písmeno má svého souseda před a po sobě. Každé písmeno je nahrazeno dvojicí písmen - jedním předchozím a jedním následujícím v abecedě.
 
 **Ukázka:**
-Pro každé písmeno v textu vezmi písmeno před ním a písmeno za ním, vytvářejíc tak dvojici. Např.: "AHOJ" se zašifruje jako "ZB GI NP IK"
+"AHOJ" se zašifruje jako "ZB GI NP IK"
 
-#### Klávesnicová šifra
+#### **5. Klávesnicová šifra**
 
 Klávesnicová šifra využívá stejný princip jako mezerová šifra, s tím rozdílem, že nepoužíváme abecedu, ale klávesnici. Pro zašifrování písmene použijeme písmena, které se nachází vlevo a vpravo od daného písmene. Pokud se písmeno nachází na kraji, využijeme písmeno z druhého konce řádku.
 
 **Ukázka:**
 "AHOJ" se zašifruje jako "LS GJ IP HK" 
-Můžeme využít více klávesnic Např.: QWERTY a QWERTZ, poté bude možné šifrovat slova jinak.
 
-#### Telefonní šifra
+#### **6. Telefonní šifra**
 
 Telefonní šifra přiřazuje každému písmenu určité číslo na staré telefonní klávesnici. Každé písmeno je získáno pomocí počtu stisků daného čísla na klávesnici, a to od jednoho do čtyř stisků.
 
@@ -84,31 +83,33 @@ Telefonní šifra přiřazuje každému písmenu určité číslo na staré tele
 "AHOJ" můžeme zašifrovat dvěma způsoby "2 44 666 5" nebo "12 24 36 15" 
 (První způsob ukazuje jak přesně byste měl vyťukat číslo, druhá je zkrácená, kde první číslo značí počet stisků a druhé značí které číslo.)
 
-#### Numerická šifra
+#### **7. Numerická šifra**
 
 Numerická šifra nahrazuje písmena za čísla, podle jejich pořadí v abecedě. Písmena se nahradí za čísla, podle toho kolikátá se vyskytují v abecedě.
 
 **Ukázka:**
 "AHOJ" může být "1 8 15 10" nebo "01 08 15 10" nebo "01 08 0F 0A" nebo "I VIII XV X" nebo "00001 01000 01111 01010"
 
-#### Reverzní šifra
+#### **8. Reverzní šifra**
 
 Reverzní šifra jednoduše obrátí text a je napsaný pozpátku.
 
 **Ukázka:**
 "AHOJ" je "JOHA"
 
-#### Obrácená abeceda
+#### **9. Obrácená abeceda**
 
 Obrácená abeceda nahrazuje písmenka textu písmenkama abecedy, která jde pozpátku.
 
 **Ukázka:**
 "AHOJ" šifrujeme jako "ZSLQ"
 
-#### Proházená šifra
+#### **10. Proházená šifra**
 
 První písmenko zůstává, druhé jde na poslední pozici, třetí na druhou pozici, čtvrté na předposlední, páté jde na třetí atd.
 
 **Ukázka:**
 "ABCDEF" zašifrujeme na "ACEFDB"
+
+
 
