@@ -27,7 +27,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                 Console.Write("Zadejte desetimístný klíč pro zašifrování: ");
                 try
                 {
-                    string key = Console.ReadLine();
+                    string key = Console.ReadLine().ToUpper();
+                    if (string.IsNullOrEmpty(key))
+                    {
+                        key = "PETRONILKA";
+                    }
                     pet = new PetronilkaSifra(text, key);
                     break;
                 }
@@ -53,8 +57,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                 Console.Write("Zadejte desetimístný klíč pro zašifrování: ");
                 try
                 {
-                    string key = Console.ReadLine();
-                    if(string.IsNullOrEmpty(key))
+                    string key = Console.ReadLine().ToUpper();
+                    if (string.IsNullOrEmpty(key))
                     {
                         key = "PETRONILKA";
                     }
