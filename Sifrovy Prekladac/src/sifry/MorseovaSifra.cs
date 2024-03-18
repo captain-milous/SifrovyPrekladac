@@ -17,20 +17,16 @@ namespace Sifrovy_Prekladac.src.sifry
         /// <summary>
         /// Pole obsahující typy Morseovy šifry.
         /// </summary>
-        private static string[] typyMorseovky = { "DEF", "REV", "NUM" };
+        private static string[] typyMorseovky = { "DEF", "REV", "NUM", "ABC" };
         /// <summary>
         /// Slovník obsahující přiřazení znaků k jejich Morseově kódům.
         /// </summary>
         private static Dictionary<char, string> MorseABC = new Dictionary<char, string>()
         {
-            {'A', ".-"}, {'B', "-..."}, {'C', "-.-."}, {'D', "-.."}, {'E', "."},
-            {'F', "..-."}, {'G', "--."}, {'H', "...."}, {'I', ".."}, {'J', ".---"},
-            {'K', "-.-"}, {'L', ".-.."}, {'M', "--"}, {'N', "-."}, {'O', "---"},
-            {'P', ".--."}, {'Q', "--.-"}, {'R', ".-."}, {'S', "..."}, {'T', "-"},
-            {'U', "..-"}, {'V', "...-"}, {'W', ".--"}, {'X', "-..-"}, {'Y', "-.--"},
-            {'Z', "--.."}, {'0', "-----"}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"},
-            {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."},
-            {'9', "----."}
+            {'A', ".-"}, {'B', "-..."}, {'C', "-.-."}, {'D', "-.."}, {'E', "."}, {'F', "..-."}, {'G', "--."}, {'H', "...."}, {'I', ".."}, {'J', ".---"},
+            {'K', "-.-"}, {'L', ".-.."}, {'M', "--"}, {'N', "-."}, {'O', "---"}, {'P', ".--."}, {'Q', "--.-"}, {'R', ".-."}, {'S', "..."}, {'T', "-"},
+            {'U', "..-"}, {'V', "...-"}, {'W', ".--"}, {'X', "-..-"}, {'Y', "-.--"}, {'Z', "--.."}, {'0', "-----"}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"},
+            {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."}, {'9', "----."}
         };
         #endregion
         #region Konstruktory/// <summary>
@@ -65,7 +61,7 @@ namespace Sifrovy_Prekladac.src.sifry
         /// Konstruktor pro vytvoření instance Morseovy šifry s možností volby typu šifrování a dešifrování.
         /// </summary>
         /// <param name="rawText">Vstupní text, který má být zašifrován nebo dešifrován.</param>
-        /// <param name="type">Typ Morseovy šifry (DEF, REV, NUM).</param>
+        /// <param name="type">Typ Morseovy šifry (DEF, REV, NUM, ABC).</param>
         /// <param name="decypher">Určuje, zda se má provést dešifrování.</param>
         public MorseovaSifra(string rawText, string type, bool decypher) : base(typyMorseovky, type)
         {
@@ -91,6 +87,7 @@ namespace Sifrovy_Prekladac.src.sifry
         public override string Encrypt(string text)
         {
             string output = string.Empty;
+            Random rnd = new Random();
             switch (TypeOfEnc)
             {
                 case "DEF":
@@ -156,6 +153,33 @@ namespace Sifrovy_Prekladac.src.sifry
                     }
 
                     return output;
+
+                case "ABC":
+                    def = new MorseovaSifra(text);
+                    morseText = def.EncText;
+                    foreach (char c in morseText)
+                    {
+                        string rndCh = TextMethods.Abeceda[rnd.Next(0, TextMethods.Abeceda.Length)].ToString();
+                        if (c == '.')
+                        {
+                            output += rndCh.ToLower();
+                        }
+                        else if (c == '-')
+                        {
+                            output += rndCh.ToUpper();
+                        }
+                        else if (c == '|')
+                        {
+                            output += "";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
+
+                    return output;
+
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
@@ -171,6 +195,7 @@ namespace Sifrovy_Prekladac.src.sifry
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
+            string output = string.Empty;
             switch (TypeOfEnc)
             {
                 case "DEF":
@@ -203,7 +228,6 @@ namespace Sifrovy_Prekladac.src.sifry
                     return decryptedText.ToString();
 
                 case "REV":
-                    string output = string.Empty;
                     foreach (char c in text)
                     {
                         if (c == '.')
@@ -224,7 +248,6 @@ namespace Sifrovy_Prekladac.src.sifry
                     return def.DecText;
                     
                 case "NUM":
-                    output = string.Empty;
                     foreach (char c in text)
                     {
                         if (c == '0')
@@ -238,6 +261,35 @@ namespace Sifrovy_Prekladac.src.sifry
                         else if (c == ' ')
                         {
                             output += "|";
+                        }
+                        else
+                        {
+                            output += c;
+                        }
+                    }
+                    def = new MorseovaSifra(output, true);
+
+                    return def.DecText;
+
+                case "ABC":
+                    foreach (char c in text)
+                    {
+                        string Up = c.ToString().ToUpper();
+                        char UpCh = Up[0];
+                        if (c == ' ')
+                        {
+                            output += "|";
+                        }
+                        else if (TextMethods.Abeceda.Contains(UpCh))
+                        {
+                            if (c == UpCh)
+                            {
+                                output += "-";
+                            }
+                            else
+                            {
+                                output += ".";
+                            }
                         }
                         else
                         {

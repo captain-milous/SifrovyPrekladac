@@ -23,30 +23,18 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             MorseovaSifra mor = new MorseovaSifra(text);
             while (true)
             {
-                bool wrong = false;
                 Console.WriteLine("Vyberte na jaká čísla chcete aby se text zašifrovat:");
-                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka)");
+                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka); \n  ABC - Pomocí velkých a malých písmen;");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToUpper();
-                switch (answer)
+                if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
                 {
-                    case "DEF":
-                        mor = new MorseovaSifra(text);
-                        break;
-                    case "REV":
-                        mor = new MorseovaSifra(text, answer, false);
-                        break;
-                    case "NUM":
-                        mor = new MorseovaSifra(text, answer, false);
-                        break;
-                    default:
-                        Console.WriteLine("Neplatná volba.");
-                        wrong = true;
-                        break;
-                }
-                if (!wrong)
-                {
+                    mor = new MorseovaSifra(text, answer, false);
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("Neplatná volba.");
                 }
             }
             HistoryHandler.Write(MainMenu.LoggedInUser, mor.ToString(), ActiveSifry.Morseova_Sifra);
@@ -63,31 +51,18 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             MorseovaSifra mor = new MorseovaSifra(text, true);
             while (true)
             {
-                bool wrong = false;
                 Console.WriteLine("\n" +text);
-                Console.WriteLine("Vyberte na jaká čísla chcete aby se text dešifrovat:");
-                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka)");
+                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka); \n  ABC - Pomocí velkých a malých písmen;");
                 Console.Write("Vaše volba: ");
                 string answer = Console.ReadLine().ToUpper();
-                switch (answer)
+                if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
                 {
-                    case "DEF":
-                        mor = new MorseovaSifra(text, true);
-                        break;
-                    case "REV":
-                        mor = new MorseovaSifra(text, answer, true);
-                        break;
-                    case "NUM":
-                        mor = new MorseovaSifra(text, answer, true);
-                        break;
-                    default:
-                        Console.WriteLine("Neplatná volba.");
-                        wrong = true;
-                        break;
-                }
-                if (!wrong)
-                {
+                    mor = new MorseovaSifra(text, answer, true);
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("Neplatná volba.");
                 }
             }
             HistoryHandler.Write(MainMenu.LoggedInUser, mor.ToString(), ActiveSifry.Morseova_Sifra);
