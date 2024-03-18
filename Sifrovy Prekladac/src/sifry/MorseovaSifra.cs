@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.sifry
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Morseovy šifry.
     /// </summary>
     public class MorseovaSifra : Sifra
     {
         #region Slovník a List
         /// <summary>
-        /// 
+        /// Pole obsahující typy Morseovy šifry.
         /// </summary>
         private static string[] typyMorseovky = { "DEF", "REV", "NUM" };
         /// <summary>
-        /// 
+        /// Slovník obsahující přiřazení znaků k jejich Morseově kódům.
         /// </summary>
         private static Dictionary<char, string> MorseABC = new Dictionary<char, string>()
         {
@@ -32,22 +32,22 @@ namespace Sifrovy_Prekladac.src.sifry
             {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."},
             {'9', "----."}
         };
-        #endregion 
+        #endregion
         #region Konstruktory/// <summary>
         /// <summary>
-        /// 
+        /// Konstruktor pro vytvoření instance Morseovy šifry.
         /// </summary>
-        /// <param name="rawText"></param>
+        /// <param name="rawText">Vstupní text, který má být zašifrován.</param>
         public MorseovaSifra(string rawText) : base(typyMorseovky, "DEF")
         {
             DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
             EncText = Encrypt(rawText);
         }
         /// <summary>
-        /// 
+        /// Konstruktor pro vytvoření instance Morseovy šifry s možností dešifrování.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="decypher"></param>
+        /// <param name="rawText">Vstupní text, který má být zašifrován nebo dešifrován.</param>
+        /// <param name="decypher">Určuje, zda se má provést dešifrování.</param>
         public MorseovaSifra(string rawText, bool decypher) : base(typyMorseovky, "DEF")
         {
             if (!decypher)
@@ -62,11 +62,11 @@ namespace Sifrovy_Prekladac.src.sifry
             }
         }
         /// <summary>
-        /// 
+        /// Konstruktor pro vytvoření instance Morseovy šifry s možností volby typu šifrování a dešifrování.
         /// </summary>
-        /// <param name="rawText"></param>
-        /// <param name="type"></param>
-        /// <param name="decypher"></param>
+        /// <param name="rawText">Vstupní text, který má být zašifrován nebo dešifrován.</param>
+        /// <param name="type">Typ Morseovy šifry (DEF, REV, NUM).</param>
+        /// <param name="decypher">Určuje, zda se má provést dešifrování.</param>
         public MorseovaSifra(string rawText, string type, bool decypher) : base(typyMorseovky, type)
         {
             if (!decypher)
@@ -80,14 +80,14 @@ namespace Sifrovy_Prekladac.src.sifry
                 DecText = Decrypt(rawText);
             }
         }
-        #endregion 
+        #endregion
         #region Zašifrování
         /// <summary>
-        /// 
+        /// Metoda pro zašifrování vstupního textu pomocí Morseovy šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Vstupní text, který má být zašifrován.</param>
+        /// <returns>Šifrovaný text ve formátu Morseovy šifry.</returns>
+        /// <exception cref="Exception">Vyjímka, která se vyvolá, pokud je zadaný typ šifrování nepodporovaný.</exception>
         public override string Encrypt(string text)
         {
             string output = string.Empty;
@@ -160,14 +160,14 @@ namespace Sifrovy_Prekladac.src.sifry
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
         }
-        #endregion 
+        #endregion
         #region Rozšifrování
         /// <summary>
-        /// 
+        /// Metoda pro dešifrování vstupního textu zašifrovaného pomocí Morseovy šifry.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="text">Zašifrovaný text ve formátu Morseovy šifry.</param>
+        /// <returns>Dešifrovaný text.</returns>
+        /// <exception cref="Exception">Vyjímka, která se vyvolá, pokud je zadaný typ šifrování nepodporovaný.</exception>
         public override string Decrypt(string text)
         {
             StringBuilder decryptedText = new StringBuilder();
@@ -235,13 +235,18 @@ namespace Sifrovy_Prekladac.src.sifry
                         {
                             output += "-";
                         }
+                        else if (c == ' ')
+                        {
+                            output += "|";
+                        }
                         else
                         {
                             output += c;
                         }
                     }
+                    def = new MorseovaSifra(output, true);
 
-                    return "Prozatím mimo provoz.";
+                    return def.DecText;
 
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");

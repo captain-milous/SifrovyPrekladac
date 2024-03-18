@@ -58,12 +58,13 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="text"></param>
         public static void Decrypt(string text)
         {
-            Console.WriteLine("Prozatím mimo provoz.");
+            //Console.WriteLine("Prozatím mimo provoz.");
             
             MorseovaSifra mor = new MorseovaSifra(text, true);
             while (true)
             {
                 bool wrong = false;
+                Console.WriteLine("\n" +text);
                 Console.WriteLine("Vyberte na jaká čísla chcete aby se text dešifrovat:");
                 Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka)");
                 Console.Write("Vaše volba: ");
