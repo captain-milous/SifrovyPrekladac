@@ -36,7 +36,7 @@ Toto je základní přehled mé aplikace. Pro další informace o použití a in
    - Aplikace byla napsána v programovacím jazyce C#, který je silně propojený s ekosystémem Microsoftu a poskytuje vývojářům široké možnosti pro tvorbu moderních a uživatelsky příjemných aplikací.
 
 3. **Platforma:**
-   - Šifrový Překladač je určen pro běh na operačním systému Windows.
+   - Šifrový Překladač je určen pro operační systémy Windows, Linux a MacOS.
 
 ### Funkce produktu (Použité šifry)
 
