@@ -12,7 +12,7 @@ Toto je základní přehled mé aplikace. Pro další informace o použití a in
 
 #### Kontext Vzniku:
 
-Šifrový Překladač vznikl primárně pro členy LT Paprsek s vizí poskytnout jednoduchý nástroj pro šifrování a dešifrování textu v jediné aplikaci, bez potřeby hledání nebo luštění šifer v různých zdrojích.
+Šifrový Překladač vznikl primárně pro členy [LT Paprsek](https://www.ltpaprsek.cz/) s vizí poskytnout jednoduchý nástroj pro šifrování a dešifrování textu v jediné aplikaci, bez potřeby hledání nebo luštění šifer v různých zdrojích.
 
 #### Účel Aplikace:
 
