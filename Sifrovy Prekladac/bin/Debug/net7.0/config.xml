@@ -1,15 +1,15 @@
 <Configuration>
   
-  <!-- Default users passwords -->
-  <AdminPassword>Heslo123*</AdminPassword>
-  
-  <!-- Important File Path -->
+  <!-- Důležité pro chod aplikace. Neměnit pokud není potřeba!  -->
   <LogFilePath>log\system.log</LogFilePath>
   <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
   
-  <!-- Upload and Download File Location -->
+  <!-- Změna administrátorského helsa -->
+  <AdminPassword>Heslo123*</AdminPassword>
+  
+  <!-- Změna složky pro import a export textových souborů. -->
+  <!-- např.: <InputFile>C:\Users\username\Desktop</InputFile> -->
   <InputFile>data</InputFile>
   <OutputFile>data</OutputFile>
-  <!-- <InputFile>C:\Users\milda\Desktop</InputFile> -->
   
 </Configuration>
