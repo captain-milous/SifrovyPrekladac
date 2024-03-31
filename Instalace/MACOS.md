@@ -2,4 +2,4 @@
 
 ## 2. Stáhněte si [ZIP](git clone https://github.com/captain-milous/SifrovyPrekladac.git) repositáře
 
-![Download zip](/imp/DownloadZIP.png)
+![Download zip](/img/DownloadZIP.png)
