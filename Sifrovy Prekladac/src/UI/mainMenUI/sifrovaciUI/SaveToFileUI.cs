@@ -63,21 +63,35 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
             while (true)
             {
                 string fileName = Console.ReadLine();
-                if (!fileName.EndsWith(".txt"))
+                string FN = fileName.ToLower();
+                if (FN.EndsWith(".txt") || FN.EndsWith(".pdf"))
                 {
-                    fileName += ".txt";
-                }
-                if (!File.Exists(fileName))
-                {
-                    FileMethods.Write(fileName, text);
-                    LogHandler.Write($"{MainMenu.LoggedInUser.Username} uložil svůj překlad do {fileName}");
-                    break;
+                    string fullPath = ConfigHandler.Config.OutputFile + "\\" + fileName;
+                    if (!File.Exists(fullPath))
+                    {
+                        if (FN.EndsWith(".txt"))
+                        {
+                            FileMethods.Write(fileName, text);
+                        }
+                        else if (FN.EndsWith(".pdf"))
+                        {
+                            PdfMethods.SaveToPDF(fileName, text);
+                        }
+                        LogHandler.Write($"{MainMenu.LoggedInUser.Username} uložil svůj překlad do {fileName}");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tento soubor již existuje!");
+                        Console.Write("\nNapište znovu název: ");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Tento soubor již existuje!");
+                    Console.WriteLine("Tento typ souboru není podporován! (Název musí mít koncovku '.pdf' nebo '.txt')");
                     Console.Write("\nNapište znovu název: ");
                 }
+                
             }
         }
     }

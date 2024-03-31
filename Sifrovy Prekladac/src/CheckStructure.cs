@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Sifrovy_Prekladac.src
 {
@@ -22,60 +23,99 @@ namespace Sifrovy_Prekladac.src
         {
             if (!File.Exists("config.xml"))
             {
-                throw new Exception("Konfigurační soubor neexistuje.");
+                WriteNewConfig();
             }
-            else
+            try
             {
-                try
+                ConfigHandler.Load();
+                LogHandler.ChangeLogPath(ConfigHandler.Config.LogFilePath);
+                if (!Directory.Exists("users"))
                 {
-                    ConfigHandler.Load();
-                    LogHandler.ChangeLogPath(ConfigHandler.Config.LogFilePath);
-                    if (!Directory.Exists("users"))
+                    Directory.CreateDirectory("users");
+                }
+                ListOfUsers.LoadUsers();
+                if (ListOfUsers.GetAll().Count == 0)
+                {
+                    try
                     {
-                        Directory.CreateDirectory("users");
+                        User admin = new User("Admin", ConfigHandler.Config.AdminPassword);
+                        admin.SetRole(Role.Admin);
+                        ListOfUsers.Add(admin);
                     }
-                    ListOfUsers.LoadUsers();
-                    if (ListOfUsers.GetAll().Count == 0)
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            User admin = new User("Admin", ConfigHandler.Config.AdminPassword);
-                            admin.SetRole(Role.Admin);
-                            ListOfUsers.Add(admin);
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception($"Chyba při vytváření administrátorské role. {ex.Message}");
-                        }
+                        throw new Exception($"Chyba při vytváření administrátorské role. {ex.Message}");
                     }
-                    else if (ListOfUsers.GetAll().Count() > 0)
+                }
+                else if (ListOfUsers.GetAll().Count() > 0)
+                {
+                    foreach (User u in ListOfUsers.GetAll())
                     {
-                        foreach (User u in ListOfUsers.GetAll())
+                        string uPath = "users\\" + u.Username;
+                        if (!Directory.Exists(uPath))
                         {
-                            string uPath = "users\\" + u.Username;
-                            if (!Directory.Exists(uPath))
+                            if (u.Role != Role.Admin)
                             {
-                                if(u.Role != Role.Admin)
-                                {
-                                    Directory.CreateDirectory(uPath);
-                                    Directory.CreateDirectory(uPath + "\\historie");
-                                    Directory.CreateDirectory(uPath + "\\favourites");
-                                    LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
-                                }
+                                Directory.CreateDirectory(uPath);
+                                Directory.CreateDirectory(uPath + "\\historie");
+                                Directory.CreateDirectory(uPath + "\\favourites");
+                                LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
                             }
-                            if (u.Role == Role.Admin)
-                            {
-                                u.SetPassword(ConfigHandler.Config.AdminPassword);
-                            }
+                        }
+                        if (u.Role == Role.Admin)
+                        {
+                            u.SetPassword(ConfigHandler.Config.AdminPassword);
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception("Při načítání z konfigurace se něco pokazilo: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Při načítání z konfigurace se něco pokazilo: " + ex.Message);
             }
             Console.WriteLine("Konfigurace byla úspěšně načtena.");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="elementName"></param>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        static XmlElement CreateElementWithText(XmlDocument doc, string elementName, string text)
+        {
+            XmlElement element = doc.CreateElement(elementName);
+            element.InnerText = text;
+            return element;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        private static void WriteNewConfig()
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                XmlElement root = doc.CreateElement("Configuration");
+                doc.AppendChild(root);
+                XmlComment comment1 = doc.CreateComment("Důležité pro chod aplikace. Neměnit pokud není potřeba!");
+                root.AppendChild(comment1);
+                root.AppendChild(CreateElementWithText(doc, "LogFilePath", "log\\system.log"));
+                root.AppendChild(CreateElementWithText(doc, "ListOfUsersFilePath", "users\\ActiveUsers.xml"));
+                XmlComment comment2 = doc.CreateComment("Změna administrátorského helsa");
+                root.AppendChild(comment2);
+                root.AppendChild(CreateElementWithText(doc, "AdminPassword", "Heslo123*"));
+                XmlComment comment3 = doc.CreateComment("Změna složky pro import a export textových souborů. \nnapř.: <InputFile>C:\\Users\\username\\Desktop</InputFile>");
+                root.AppendChild(comment3);
+                root.AppendChild(CreateElementWithText(doc, "InputFile", "data"));
+                root.AppendChild(CreateElementWithText(doc, "OutputFile", "data"));
+                doc.Save("config.xml");
+            } 
+            catch 
+            {
+                throw new Exception("Vytvoření konfigurace se nezdařilo.");
+            }
         }
     }
 }

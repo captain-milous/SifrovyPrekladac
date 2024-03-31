@@ -28,7 +28,7 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                 Console.WriteLine(Oddelovac);
                 Console.WriteLine("Vítejte v programu Šifrový Překladač!");
                 Console.WriteLine("Autor: Miloš Tesař C4b");
-                Console.WriteLine("Verze: 3.6");
+                Console.WriteLine("Verze: 3.7");
                 Console.WriteLine(Oddelovac);
                 Console.WriteLine("Zmáčkněte Enter pro start.");
                 Console.ReadLine();
