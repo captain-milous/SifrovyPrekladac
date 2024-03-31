@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Prohazené šifry.
     /// </summary>
     public static class SHU
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Prohazené šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {
             ProhazenaSifra shu = new ProhazenaSifra(text);
@@ -25,9 +25,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             SaveToFileUI.Start(shu.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Prohazené šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             ProhazenaSifra shu = new ProhazenaSifra(text, true);

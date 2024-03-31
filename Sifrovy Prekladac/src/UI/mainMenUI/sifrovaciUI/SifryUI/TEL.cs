@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Telefonní šifry.
     /// </summary>
     public static class TEL
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Telefonní šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {
             TelefonniSifra tel = new TelefonniSifra(text, "DEF");
@@ -41,9 +41,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             SaveToFileUI.Start(tel.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Telefonní šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             TelefonniSifra tel = new TelefonniSifra(text, "DEF", true);

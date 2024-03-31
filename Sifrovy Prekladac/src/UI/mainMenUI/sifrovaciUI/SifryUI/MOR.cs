@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Morseovy šifry.
     /// </summary>
     public static class MOR
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Morseovy šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {
             MorseovaSifra mor = new MorseovaSifra(text);
@@ -41,9 +41,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             SaveToFileUI.Start(mor.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Morseovy šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             //Console.WriteLine("Prozatím mimo provoz.");

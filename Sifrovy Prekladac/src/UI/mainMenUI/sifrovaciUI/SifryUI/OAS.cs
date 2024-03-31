@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Obrácené ABC šifry.
     /// </summary>
     public static class OAS
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Obrácené ABC šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {
             ObracenaAbcSifra oas = new ObracenaAbcSifra(text);
@@ -25,9 +25,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             SaveToFileUI.Start(oas.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Obrácené ABC šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             ObracenaAbcSifra oas = new ObracenaAbcSifra(text, true);

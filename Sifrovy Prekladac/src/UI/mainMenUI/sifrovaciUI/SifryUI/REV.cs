@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
     /// <summary>
-    /// 
+    /// Třída pro šifrování a dešifrování textu pomocí Reverzní šifry.
     /// </summary>
     public static class REV
     {
         /// <summary>
-        /// 
+        /// Zašifruje zadaný text pomocí Reverzní šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být zašifrován.</param>
         public static void Encrypt(string text)
         {
             ReverzniSifra rev = new ReverzniSifra(text);
@@ -25,9 +25,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             SaveToFileUI.Start(rev.EncText, false);
         }
         /// <summary>
-        /// 
+        /// Dešifruje zadaný text pomocí Reverzní šifry.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">Text, který má být dešifrován.</param>
         public static void Decrypt(string text)
         {
             ReverzniSifra rev = new ReverzniSifra(text, true);
