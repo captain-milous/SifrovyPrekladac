@@ -5,19 +5,4 @@
     <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
     <Role>Admin</Role>
   </User>
-  <User>
-    <Username>student</Username>
-    <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
-    <Role>User</Role>
-  </User>
-  <User>
-    <Username>milos</Username>
-    <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
-    <Role>User</Role>
-  </User>
-  <User>
-    <Username>ondra</Username>
-    <Password>2A543CE035C3E1DAD332EADF7F37037C7BCC8C66</Password>
-    <Role>User</Role>
-  </User>
 </ArrayOfUser>
