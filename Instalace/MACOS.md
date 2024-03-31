@@ -1,4 +1,4 @@
-## 1. Nainstalujte [DOTNET](https://dotnet.microsoft.com/en-us/download)
+## 1. Nainstalujte [DOTNET](https://dotnet.microsoft.com/en-us/download/dotnet/7.0/runtime)
 
 ## 2. Stáhněte si z repositáře [ZIP](https://github.com/captain-milous/SifrovyPrekladac.git) 
 
