@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
 {
     /// <summary>
-    /// 
+    /// Poskytuje uživatelské rozhraní pro načtení textu ze souboru nebo vstupu z příkazového řádku.
     /// </summary>
     public static class LoadInputUI
     {
         /// <summary>
-        /// 
+        /// Spustí uživatelské rozhraní pro výběr zdroje textu (soubor, příkazový řádek) pro zašifrování/dešifrování.
         /// </summary>
         public static void Start()
         {
@@ -52,7 +52,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Načte text z příkazového řádku a spustí zašifrování/dešifrování.
         /// </summary>
         public static void FromCMD()
         {
@@ -82,7 +82,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Načte text ze souboru a spustí zašifrování/dešifrování.
         /// </summary>
         public static void FromFile()
         {
@@ -153,10 +153,10 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Zkontroluje, zda je zadaný text správný.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Zadaný text.</param>
+        /// <returns>True, pokud je text správný; jinak false.</returns>
         static bool ChceckIfCorrect(string text)
         {
             Console.Clear();
@@ -183,10 +183,10 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Získá seznam textových souborů z daného adresáře.
         /// </summary>
-        /// <param name="Path"></param>
-        /// <returns></returns>
+        /// <param name="Path">Cesta k adresáři.</param>
+        /// <returns>Seznam textových souborů.</returns>
         static List<string> GetTxtFiles(string Path)
         {
             List<string> txtFiles = new List<string>();
@@ -208,9 +208,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             return txtFiles;
         }
         /// <summary>
-        /// 
+        /// Zobrazí uživateli možnosti zašifrování nebo dešifrování textu.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Řetězec označující zvolenou volbu (zašifrovat, dešifrovat, exit).</returns>
         static string ChooseSifXDesif()
         {
             Console.Clear();
