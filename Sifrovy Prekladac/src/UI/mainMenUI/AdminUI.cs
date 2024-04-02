@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
     /// <summary>
-    /// 
+    /// Poskytuje uživatelské rozhraní pro správu administrátorských funkcí.
     /// </summary>
     public static class AdminUI
     {
         /// <summary>
-        /// 
+        /// Zobrazí obsah systémového žurnálu.
         /// </summary>
         public static void Journal()
         {
@@ -33,7 +33,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                 LogHandler.Write("Nezdařily se přečíst logy.");
             }
         }
-
+        /// <summary>
+        /// Zobrazí seznam aktivních uživatelů.
+        /// </summary>
         public static void ActiveUsers()
         {
             try
