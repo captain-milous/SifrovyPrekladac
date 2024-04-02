@@ -44,16 +44,16 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
         /// </summary>
         public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
         {
-            { ActiveSifry.Caesarova_Sifra, "Posune všechna písmena o vámi zadaný počet v abecedě" },
-            { ActiveSifry.Klavesnicova_Sifra, "Popis" },
-            { ActiveSifry.Mezerova_Sifra, "Popis" },
-            { ActiveSifry.Morseova_Sifra, "Popis" },
+            { ActiveSifry.Caesarova_Sifra, "Posune všechna písmena o vámi zadaný počet v abecedě." },
+            { ActiveSifry.Klavesnicova_Sifra, "Změní jednotlivá písmena na dvojci písmen, které jsou vedle daného písmene na klávensnici." },
+            { ActiveSifry.Mezerova_Sifra, "Změní jednotlivá písmena na dvojci písmen, která jsou před a po něm v abecedě." },
+            { ActiveSifry.Morseova_Sifra, "Text je přeložen do morseovy abecedy." },
             { ActiveSifry.Numericka_Sifra, "Přemění písmena na čísla, dle jejich indexu v abecedě." },
             { ActiveSifry.Obracena_ABC_Sifra, "Změní písmena tak, aby A=Z, B=Y, atd." },
-            { ActiveSifry.Petronilka, "Popis" },
+            { ActiveSifry.Petronilka, "Za písmena v unikátním klíči dosadíme číslice." },
             { ActiveSifry.Prohazena_Sifra, "Přemění text tak ayste museli číst jak ze předu, tak zezadu." },
             { ActiveSifry.Reverzni_Sifra, "Převrátí text tak, aby jste ho museli číst odzadu." },
-            { ActiveSifry.Telefonni_Sifra, "Popis" }
+            { ActiveSifry.Telefonni_Sifra, "Jednotlivá písmena se přeloží na telefonní čísla." }
         };
         /// <summary>
         /// Oddělovač pro vizuální oddělení sekce.
