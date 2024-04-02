@@ -59,7 +59,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
         /// <param name="text">Text, který má být uložen do souboru.</param>
         private static void SaveToFile(string text)
         {
-            Console.Write("\nNapište název textového souboru: ");
+            Console.Write("\nNapište název souboru (i s koncovkou .pdf nebo .txt): ");
             while (true)
             {
                 string fileName = Console.ReadLine();
