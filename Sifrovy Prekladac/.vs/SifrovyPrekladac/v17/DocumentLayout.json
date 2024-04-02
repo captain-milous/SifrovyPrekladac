@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\checkstructure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\checkstructure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\Program.cs",
               "RelativeDocumentMoniker": "src\\Program.cs",
@@ -33,6 +37,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CheckStructure.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\CheckStructure.cs",
+              "RelativeDocumentMoniker": "src\\CheckStructure.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\CheckStructure.cs",
+              "RelativeToolTip": "src\\CheckStructure.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAgwGQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T09:48:43.73Z",
+              "EditorCaption": ""
             }
           ]
         }
