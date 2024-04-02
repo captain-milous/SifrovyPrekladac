@@ -97,7 +97,7 @@ namespace Sifrovy_Prekladac.src.sifry
         public NumerickaSifra(string rawText, string type) : base(typySifry, type)
         {
             DecText = TextMethods.SimplifyWithoutSpaces(rawText);
-            EncText = Encrypt(rawText);
+            EncText = Encrypt(DecText);
         }
         /// <summary>
         /// Inicializuje novou instanci NumerickaSifra s daným textem, typem šifry a volbou provést šifrování nebo dešifrování.
@@ -110,12 +110,12 @@ namespace Sifrovy_Prekladac.src.sifry
             if (!decypher)
             {
                 DecText = TextMethods.SimplifyWithoutSpaces(rawText);
-                EncText = Encrypt(rawText);
+                EncText = Encrypt(DecText);
             }
             else
             {
                 EncText = rawText;
-                DecText = Decrypt(rawText);
+                DecText = Decrypt(EncText);
             }
         }
         #endregion
