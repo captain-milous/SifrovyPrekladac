@@ -2,6 +2,7 @@
 *.vsidx
 *.log
 *.txt
+*.pdf
 /Sifrovy Prekladac/bin/Debug/net7.0/data
 /Sifrovy Prekladac/bin/Debug/net7.0/log
 /Sifrovy Prekladac/bin/Debug/net7.0/users
