@@ -29,6 +29,14 @@ namespace Sifrovy_Prekladac.src
             {
                 ConfigHandler.Load();
                 LogHandler.ChangeLogPath(ConfigHandler.Config.LogFilePath);
+                if (!Directory.Exists(ConfigHandler.Config.OutputFile))
+                {
+                    Directory.CreateDirectory(ConfigHandler.Config.OutputFile);
+                }
+                if (!Directory.Exists(ConfigHandler.Config.InputFile))
+                {
+                    Directory.CreateDirectory(ConfigHandler.Config.InputFile);
+                }
                 if (!Directory.Exists("users"))
                 {
                     Directory.CreateDirectory("users");
@@ -76,12 +84,12 @@ namespace Sifrovy_Prekladac.src
             Console.WriteLine("Konfigurace byla úspěšně načtena.");
         }
         /// <summary>
-        /// 
+        /// Vytvoří nový element s daným názvem a textovým obsahem.
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="elementName"></param>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="doc">XmlDocument instance, do které bude nový element přidán.</param>
+        /// <param name="elementName">Název nového elementu.</param>
+        /// <param name="text">Textový obsah nového elementu.</param>
+        /// <returns>XmlElement instance reprezentující nově vytvořený element.</returns>
         static XmlElement CreateElementWithText(XmlDocument doc, string elementName, string text)
         {
             XmlElement element = doc.CreateElement(elementName);
@@ -89,9 +97,9 @@ namespace Sifrovy_Prekladac.src
             return element;
         }
         /// <summary>
-        /// 
+        /// Vytvoří nový konfigurační soubor a uloží ho do adresáře aplikace.
         /// </summary>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">Vyjímka, která se vyvolá, pokud selže vytvoření konfiguračního souboru.</exception>
         private static void WriteNewConfig()
         {
             try
