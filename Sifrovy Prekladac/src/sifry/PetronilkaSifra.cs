@@ -95,12 +95,12 @@ namespace Sifrovy_Prekladac.src.sifry
                 if (!decypher)
                 {
                     DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-                    EncText = Encrypt(rawText);
+                    EncText = Encrypt(DecText);
                 }
                 else
                 {
                     EncText = rawText;
-                    DecText = Decrypt(rawText);
+                    DecText = Decrypt(EncText);
                 }
             }
             else
