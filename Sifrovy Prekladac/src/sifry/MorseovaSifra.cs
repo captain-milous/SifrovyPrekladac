@@ -37,7 +37,7 @@ namespace Sifrovy_Prekladac.src.sifry
         public MorseovaSifra(string rawText) : base(typyMorseovky, "DEF")
         {
             DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-            EncText = Encrypt(rawText);
+            EncText = Encrypt(DecText);
         }
         /// <summary>
         /// Konstruktor pro vytvoření instance Morseovy šifry s možností dešifrování.
@@ -49,12 +49,12 @@ namespace Sifrovy_Prekladac.src.sifry
             if (!decypher)
             {
                 DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-                EncText = Encrypt(rawText);
+                EncText = Encrypt(DecText);
             }
             else
             {
                 EncText = rawText;
-                DecText = Decrypt(rawText);
+                DecText = Decrypt(EncText);
             }
         }
         /// <summary>
