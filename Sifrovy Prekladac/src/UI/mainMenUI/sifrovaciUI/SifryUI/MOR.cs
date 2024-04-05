@@ -23,9 +23,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             MorseovaSifra mor = new MorseovaSifra(text);
             while (true)
             {
-                Console.WriteLine("Vyberte na jaká čísla chcete aby se text zašifrovat:");
-                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka); \n  ABC - Pomocí velkých a malých písmen;");
-                Console.Write("Vaše volba: ");
+                Print.VypisMorPodsifry(false);
                 string answer = Console.ReadLine().ToUpper();
                 if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
                 {
@@ -51,9 +49,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             MorseovaSifra mor = new MorseovaSifra(text, true);
             while (true)
             {
-                Console.WriteLine("\n" +text);
-                Console.WriteLine("  DEF - Klasický překlad morseovky; \n  REV - Obrácená (Tečky jsou čárky a naopak); \n  NUM - Pomocí čísel (0 = tečka, 1 = čárka); \n  ABC - Pomocí velkých a malých písmen;");
-                Console.Write("Vaše volba: ");
+                Print.VypisMorPodsifry(true);
                 string answer = Console.ReadLine().ToUpper();
                 if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
                 {

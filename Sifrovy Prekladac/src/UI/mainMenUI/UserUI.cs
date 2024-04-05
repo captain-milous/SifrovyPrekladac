@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.UserHandler;
+using System.Drawing;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
@@ -87,7 +90,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                     if (allLines.Length > 0)
                     {
                         string firstLine = allLines[0];
-                        Console.WriteLine("  " + File.GetCreationTime(hist) + ": " + firstLine);
+                        Console.Write("  " + File.GetCreationTime(hist) + ": ", Color.Blue);
+                        Console.WriteLine(firstLine);
                     }
                     else
                     {
@@ -97,7 +101,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
             }
             else
             {
-                Console.WriteLine("  Neprovedl jste zatím žádné šifrování.");
+                Console.WriteLine("  Neprovedl/a jste zatím žádné šifrování.");
             }
             Console.WriteLine();
         }

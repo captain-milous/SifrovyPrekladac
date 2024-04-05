@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
@@ -16,7 +19,7 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
         /// <summary>
         /// Oddělovač pro vizuální oddělení sekce.
         /// </summary>
-        public static string Oddelovac = "\n----------------------------------------------------------------------------------\n";
+        public static string Oddelovac = Print.Oddelovac;
         /// <summary>
         /// Spustí přihlašovací menu.
         /// </summary>
@@ -25,20 +28,13 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
         {
             if (run)
             {
-                Console.WriteLine(Oddelovac);
-                Console.WriteLine("Vítejte v programu Šifrový Překladač!");
-                Console.WriteLine("Autor: Miloš Tesař C4b");
-                Console.WriteLine("Verze: 3.7");
-                Console.WriteLine(Oddelovac);
-                Console.WriteLine("Zmáčkněte Enter pro start.");
-                Console.ReadLine();
+                Thread.Sleep(400);
+                Print.Introduction("3.8");
             }
             while (run)
             {
                 Console.Clear();
-                Console.WriteLine(Oddelovac);
-                Console.WriteLine("MENU\n1 - Přihlášení\n2 - Registrace\n3 - Anonymní režim\n4 - Konec");
-                Console.Write("Vyberte možnost: ");
+                Print.Initial();
                 int input = SelectOption(Console.ReadLine());
                 Console.WriteLine();
                 switch (input)
@@ -50,9 +46,6 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         RegistrationUI.Start();
                         break;
                     case 3:
-                        MainMenu.Start(new User());
-                        break;
-                    case 4:
                         Console.WriteLine("Ukončil/a jste program.");
                         Console.WriteLine(Oddelovac);
                         Thread.Sleep(1000);
@@ -84,13 +77,11 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                 { "pri", 2 },
                 { "log", 2 },
                 { "p", 2 },
-                { "anonym", 3 },
-                { "a", 3 },
-                { "konec", 4 },
-                { "kon", 4 },
-                { "k", 4 },
-                { "exit", 4 },
-                { "x", 4 },
+                { "konec", 3 },
+                { "kon", 3 },
+                { "k", 3 },
+                { "exit", 3 },
+                { "x", 3 },
             };
 
             try

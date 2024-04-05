@@ -37,3 +37,4 @@ C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\de\PdfSharp.resources.dll
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyPrekladac.csproj.AssemblyReference.cache
 C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\obj\Debug\net7.0\SifrovyP.C6599AF0.Up2Date
+C:\Users\milda\source\repos\TP\SifrovyPrekladac\Sifrovy Prekladac\bin\Debug\net7.0\Colorful.Console.dll

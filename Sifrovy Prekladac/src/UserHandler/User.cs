@@ -66,7 +66,7 @@ namespace Sifrovy_Prekladac.src.UserHandler
         /// <returns>Řetězec reprezentující uživatele</returns>
         public override string ToString()
         {
-            if (Role == Role.Anonymous)
+            if (Role == Role.Anonymous || Role == Role.Admin)
             {
                 return Role.ToString();
             }

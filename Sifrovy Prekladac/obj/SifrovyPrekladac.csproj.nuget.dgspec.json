@@ -51,6 +51,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Colorful.Console": {
+              "target": "Package",
+              "version": "[1.2.15, )"
+            },
             "PDFsharp": {
               "target": "Package",
               "version": "[6.0.0, )"

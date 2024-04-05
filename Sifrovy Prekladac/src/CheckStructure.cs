@@ -42,23 +42,19 @@ namespace Sifrovy_Prekladac.src
                     Directory.CreateDirectory("users");
                 }
                 ListOfUsers.LoadUsers();
-                if (ListOfUsers.GetAll().Count == 0)
-                {
-                    try
-                    {
-                        User admin = new User("Admin", ConfigHandler.Config.AdminPassword);
-                        admin.SetRole(Role.Admin);
-                        ListOfUsers.Add(admin);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception($"Chyba při vytváření administrátorské role. {ex.Message}");
-                    }
-                }
-                else if (ListOfUsers.GetAll().Count() > 0)
+                if (ListOfUsers.GetAll().Count() > 0)
                 {
                     foreach (User u in ListOfUsers.GetAll())
                     {
+                        u.SetUsername(u.Username.ToLower());
+                        if (u.Role == Role.Admin || u.Role == Role.Anonymous)
+                        {
+                            u.SetRole(Role.User);
+                        }
+                        if(u.Username == "admin" || u.Username == "administrator" || u.Username == "anonym" || u.Username == "anonymous")
+                        {
+                            throw new Exception("Neplatné uživatelské jméno: " +  u.Username);
+                        }
                         string uPath = "users\\" + u.Username;
                         if (!Directory.Exists(uPath))
                         {
@@ -69,10 +65,6 @@ namespace Sifrovy_Prekladac.src
                                 Directory.CreateDirectory(uPath + "\\favourites");
                                 LogHandler.Write($"Byla vytvořena složka pro uživatele {u.Username}");
                             }
-                        }
-                        if (u.Role == Role.Admin)
-                        {
-                            u.SetPassword(ConfigHandler.Config.AdminPassword);
                         }
                     }
                 }
@@ -111,9 +103,6 @@ namespace Sifrovy_Prekladac.src
                 root.AppendChild(comment1);
                 root.AppendChild(CreateElementWithText(doc, "LogFilePath", "log\\system.log"));
                 root.AppendChild(CreateElementWithText(doc, "ListOfUsersFilePath", "users\\ActiveUsers.xml"));
-                XmlComment comment2 = doc.CreateComment("Změna administrátorského helsa");
-                root.AppendChild(comment2);
-                root.AppendChild(CreateElementWithText(doc, "AdminPassword", "Heslo123*"));
                 XmlComment comment3 = doc.CreateComment("Změna složky pro import a export textových souborů. \nnapř.: <InputFile>C:\\Users\\username\\Desktop</InputFile>");
                 root.AppendChild(comment3);
                 root.AppendChild(CreateElementWithText(doc, "InputFile", "data"));

@@ -1,11 +1,13 @@
 ﻿using Sifrovy_Prekladac.src.conf;
 using Sifrovy_Prekladac.src.static_methods;
-using Sifrovy_Prekladac.src.UI.loginMenuUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
 {
@@ -19,37 +21,71 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// </summary>
         public static void Start()
         {
+            Console.Clear();
             bool run = true;
             while (run)
             {
+                Print.VolbaTextu();
+                int input = SelectOption(Console.ReadLine());
+                Console.WriteLine();
+                switch (input)
+                {
+                    case 1:
+                        FromCMD();
+                        run = false;
+                        break;
+                    case 2:
+                        FromFile();
+                        run = false;
+                        break;
+                    case 3:
+                        run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Vyberte prosím validní možnost!");
+                        Thread.Sleep(1000);
+                        break;
+                }
                 Console.Clear();
-                Console.WriteLine("Chcete použít pro zašifrování/rozšifrování text, který si načtete ze souboru, nebo který si napíšete sami?");
-                Console.WriteLine("(Soubor - Načtení textu ze souboru; CMD - Použití textu, který si napíšete sami; Exit - Zpět do hlavního menu)");
-                Console.Write("Vaše volba: ");
-                string answer = Console.ReadLine().ToLower();
-                if (answer.StartsWith("c"))
+            }
+        }
+        /// <summary>
+        /// Vybere možnost z textového vstupu.
+        /// </summary>
+        /// <param name="input">Textový vstup</param>
+        /// <returns>Číslo vybrané možnosti</returns>
+        private static int SelectOption(string input)
+        {
+            int output = -1;
+            Dictionary<string, int> options = new Dictionary<string, int>()
+            {
+                { "cmd", 1 },
+                { "c", 1 },
+                { "soubor", 2 },
+                { "sou", 2 },
+                { "s", 2 },
+                { "file", 2 },
+                { "back", 3 },
+                { "b", 3 }
+            };
+
+            try
+            {
+                output = Convert.ToInt32(input);
+            }
+            catch
+            {
+                input = input.ToLower().Replace(" ", "");
+                if (options.ContainsKey(input))
                 {
-                    Console.Clear();
-                    FromCMD();
-                    run = false;
-                }
-                else if (answer.StartsWith("s"))
-                {
-                    Console.Clear();
-                    FromFile();
-                    run = false;
-                }
-                else if (answer == "exit" || answer == "x")
-                {
-                    run = false;
+                    output = options[input];
                 }
                 else
                 {
-                    run = true;
-                    Console.WriteLine("Neplatná volba!");
+                    output = -1;
                 }
-                Console.WriteLine();
             }
+            return output;
         }
         /// <summary>
         /// Načte text z příkazového řádku a spustí zašifrování/dešifrování.
@@ -59,10 +95,13 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while (run)
             {
-                Console.Write("\nZadejte text, který chcete zašifrovat/dešifrovat: ");
+                Console.Write("Zadejte text: ");
                 string rawText = Console.ReadLine();
                 if (ChceckIfCorrect(rawText))
                 {
+                    Console.Clear();
+                    Print.VolbaSifDesif(rawText);
+                    Console.ReadLine();
                     string answer = ChooseSifXDesif();
                     switch (answer)
                     {
@@ -79,6 +118,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                             break;
                     }
                 }
+                Console.Clear();
+                Console.WriteLine();
             }
         }
         /// <summary>
@@ -159,13 +200,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         /// <returns>True, pokud je text správný; jinak false.</returns>
         static bool ChceckIfCorrect(string text)
         {
-            Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("'" + text + "'");
+            Console.WriteLine("'" + text + "'", Color.Green);
             while (true)
             {
-                Console.WriteLine("Je toto spravný text? (Ano/Ne)");
-                Console.Write("Vaše volba: ");
+                Console.Write("\nJe toto opravdu text, který chcete přeložit? (A/N)");
+                Console.Write("\nVaše volba: ");
                 string answer = Console.ReadLine().ToLower();
                 if (answer.StartsWith("n"))
                 {

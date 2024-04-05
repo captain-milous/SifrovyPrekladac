@@ -3,6 +3,11 @@ using Sifrovy_Prekladac.src.sifry;
 using Sifrovy_Prekladac.src.static_methods;
 using Sifrovy_Prekladac.src.UI.loginMenuUI;
 using Sifrovy_Prekladac.src.UserHandler;
+using System.Text;
+using System.Drawing;
+using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Sifrovy_Prekladac.src
 {

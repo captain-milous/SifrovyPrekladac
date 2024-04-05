@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\sifrovaciui\\savetofileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\mainmenui\\sifrovaciui\\savetofileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\print.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\print.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\help\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\help\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\sifrovaciui\\loadinputui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\mainmenui\\sifrovaciui\\loadinputui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\userui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\mainmenui\\userui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,11 +27,40 @@
       "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\loginmenuui\\initialmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43D72FF2-6937-45DD-B98C-1963B3168E58}|..\\Unit Test\\Unit Test.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\unit test\\tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\help\\helphandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\help\\helphandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\userhandler\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\userhandler\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\checkstructure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\checkstructure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\loginmenuui\\strikehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\loginmenuui\\strikehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\sifrovaciui\\sifryui\\mor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\mainmenui\\sifrovaciui\\sifryui\\mor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\mainmenui\\sifrovaciui\\sifrovaniui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\mainmenui\\sifrovaciui\\sifrovaniui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\loginmenuui\\loginui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\loginmenuui\\loginui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|c:\\users\\milda\\source\\repos\\tp\\sifrovyprekladac\\sifrovy prekladac\\src\\ui\\loginmenuui\\registrationui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0B6EBC2-16D2-48F5-800B-A49ACE5A55AE}|SifrovyPrekladac.csproj|solutionrelative:src\\ui\\loginmenuui\\registrationui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,20 +70,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\Program.cs",
               "RelativeDocumentMoniker": "src\\Program.cs",
               "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\Program.cs",
               "RelativeToolTip": "src\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-16T08:48:11.721Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -50,55 +92,184 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Tests.cs",
-              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Unit Test\\Tests.cs",
-              "RelativeDocumentMoniker": "..\\Unit Test\\Tests.cs",
-              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Unit Test\\Tests.cs",
-              "RelativeToolTip": "..\\Unit Test\\Tests.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAqwH0AAABDAAAA",
+              "DocumentIndex": 11,
+              "Title": "SifrovaniUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAQwEIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T10:13:30.47Z",
+              "WhenOpened": "2024-04-05T20:59:53.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InitialMenu.cs",
-              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\InitialMenu.cs",
-              "RelativeDocumentMoniker": "src\\UI\\loginMenuUI\\InitialMenu.cs",
-              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\InitialMenu.cs",
-              "RelativeToolTip": "src\\UI\\loginMenuUI\\InitialMenu.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "DocumentIndex": 10,
+              "Title": "MOR.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifryUI\\MOR.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\SifryUI\\MOR.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifryUI\\MOR.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifryUI\\MOR.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T18:34:54.004Z",
+              "WhenOpened": "2024-04-05T21:11:49.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Commands.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\help\\Commands.cs",
+              "RelativeDocumentMoniker": "src\\UI\\help\\Commands.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\help\\Commands.cs",
+              "RelativeToolTip": "src\\UI\\help\\Commands.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T21:32:43.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HelpHandler.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\help\\HelpHandler.cs",
+              "RelativeDocumentMoniker": "src\\UI\\help\\HelpHandler.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\help\\HelpHandler.cs",
+              "RelativeToolTip": "src\\UI\\help\\HelpHandler.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAiwBkAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T21:33:00.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\MainMenu.cs",
               "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\MainMenu.cs",
               "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\MainMenu.cs",
               "RelativeToolTip": "src\\UI\\mainMenUI\\MainMenu.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAQwC4AAABhAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAwwDwAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T18:35:24.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SaveToFileUI.cs",
-              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SaveToFileUI.cs",
-              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\SaveToFileUI.cs",
-              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SaveToFileUI.cs",
-              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SaveToFileUI.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAqwD0AAAAqAAAA",
+              "DocumentIndex": 13,
+              "Title": "LoginUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\LoginUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\loginMenuUI\\LoginUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\LoginUI.cs",
+              "RelativeToolTip": "src\\UI\\loginMenuUI\\LoginUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T18:38:50.788Z",
+              "WhenOpened": "2024-04-05T17:48:33.168Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadInputUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadInputUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadInputUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadInputUI.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadInputUI.cs",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAuwM4AAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T20:34:31.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Print.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\Print.cs",
+              "RelativeDocumentMoniker": "src\\UI\\Print.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\Print.cs",
+              "RelativeToolTip": "src\\UI\\Print.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAwwF4AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T18:19:31.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InitialMenu.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\InitialMenu.cs",
+              "RelativeDocumentMoniker": "src\\UI\\loginMenuUI\\InitialMenu.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\InitialMenu.cs",
+              "RelativeToolTip": "src\\UI\\loginMenuUI\\InitialMenu.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAgwD0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:34:54.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UserHandler\\User.cs",
+              "RelativeDocumentMoniker": "src\\UserHandler\\User.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UserHandler\\User.cs",
+              "RelativeToolTip": "src\\UserHandler\\User.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAIwEQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T22:01:39.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\UserUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\UserUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\UserUI.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\UserUI.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAGcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T22:08:49.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CheckStructure.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\CheckStructure.cs",
+              "RelativeDocumentMoniker": "src\\CheckStructure.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\CheckStructure.cs",
+              "RelativeToolTip": "src\\CheckStructure.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwDcAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T19:55:52.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StrikeHandler.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\StrikeHandler.cs",
+              "RelativeDocumentMoniker": "src\\UI\\loginMenuUI\\StrikeHandler.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\StrikeHandler.cs",
+              "RelativeToolTip": "src\\UI\\loginMenuUI\\StrikeHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T18:50:46.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegistrationUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\RegistrationUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\loginMenuUI\\RegistrationUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\loginMenuUI\\RegistrationUI.cs",
+              "RelativeToolTip": "src\\UI\\loginMenuUI\\RegistrationUI.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwBsAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T19:16:53.642Z"
             }
           ]
         }

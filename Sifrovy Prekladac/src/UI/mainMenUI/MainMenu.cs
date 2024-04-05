@@ -2,15 +2,16 @@
 using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.sifry.related;
 using Sifrovy_Prekladac.src.UI.help;
-using Sifrovy_Prekladac.src.UI.loginMenuUI;
 using Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI;
 using Sifrovy_Prekladac.src.UserHandler;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI
 {
@@ -20,45 +21,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
     public static class MainMenu
     {
         /// <summary>
-        /// Slovník obsahující zkratky pro příkazy.
-        /// </summary>
-        static Dictionary<string, string> Zkratky = new Dictionary<string, string>()
-        {
-            { "?", "help" },
-            { "he", "help" },
-            { "x", "exit" },
-            { "ex", "exit" },
-            { "exi", "exit" },
-            { "out", "logout" },
-            { "s", "sifrovani" },
-            { "sif", "sifrovani" },
-            { "fav", "favourites" },
-            { "his", "historie" },
-            { "jor", "journal" },
-            { "as", "activesifry" },
-            { "au", "activeusers" },
-            { "act", "activeusers" },
-        };
-        /// <summary>
-        /// Slovník obsahující popisy aktivních šifer této verze programu.
-        /// </summary>
-        public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
-        {
-            { ActiveSifry.Caesarova_Sifra, "Posune všechna písmena o vámi zadaný počet v abecedě." },
-            { ActiveSifry.Klavesnicova_Sifra, "Změní jednotlivá písmena na dvojci písmen, které jsou vedle daného písmene na klávensnici." },
-            { ActiveSifry.Mezerova_Sifra, "Změní jednotlivá písmena na dvojci písmen, která jsou před a po něm v abecedě." },
-            { ActiveSifry.Morseova_Sifra, "Text je přeložen do morseovy abecedy." },
-            { ActiveSifry.Numericka_Sifra, "Přemění písmena na čísla, dle jejich indexu v abecedě." },
-            { ActiveSifry.Obracena_ABC_Sifra, "Změní písmena tak, aby A=Z, B=Y, atd." },
-            { ActiveSifry.Petronilka, "Za písmena v unikátním klíči dosadíme číslice." },
-            { ActiveSifry.Prohazena_Sifra, "Přemění text tak ayste museli číst jak ze předu, tak zezadu." },
-            { ActiveSifry.Reverzni_Sifra, "Převrátí text tak, aby jste ho museli číst odzadu." },
-            { ActiveSifry.Telefonni_Sifra, "Jednotlivá písmena se přeloží na telefonní čísla." }
-        };
-        /// <summary>
         /// Oddělovač pro vizuální oddělení sekce.
         /// </summary>
-        private static string Oddelovac = InitialMenu.Oddelovac;
+        private static string Oddelovac = Print.Oddelovac;
         /// <summary>
         /// Přihlášený uživatel
         /// </summary>
@@ -78,34 +43,25 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
             Console.Clear();
             if (LoggedInUser.Role != Role.Anonymous)
             {
-                Console.WriteLine(LoggedInUser + " se přihlásil!\n");
+                string welcome = LoggedInUser + " se přihlásil!\n";
+                Console.WriteLine(welcome, Color.Green);
+                Thread.Sleep(1000);
             }
-            Console.WriteLine("Napište 'help' pro nápovědu.");
-            Console.WriteLine(Oddelovac);
+            Console.Clear();
+            Console.Write("Napište 'help' pro nápovědu.", Color.Green);
+            Console.WriteLine(Oddelovac, Color.Green);
             bool run = true;
             while (run)
             {
                 #region Input from user
                 string lineStartText = user + "> ";
                 Console.Write(lineStartText);
-                string input = Console.ReadLine().ToLower();
-                Console.WriteLine();
-                if (input.Length < 4)
-                {
-                    if (Zkratky.TryGetValue(input, out string hodnota))
-                    {
-                        input = hodnota;
-                    }
-                }
-                Commands userCommand = Commands.def;
-                try
-                {
-                    userCommand = (Commands)Enum.Parse(typeof(Commands), input, true);
-                }
-                catch
+                Commands userCommand = TryGetCommand(Console.ReadLine().ToLower());
+                if(userCommand == Commands.def)
                 {
                     LogHandler.Write($"{user.Username} použil neexistující příkaz.");
                 }
+                Console.WriteLine();
                 #endregion
                 switch (userCommand)
                 {
@@ -118,7 +74,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         if (LoggedInUser.Role != Role.Admin)
                         {
                             LoadInputUI.Start();
-                            Console.Clear() ;
+                            Console.Clear();
+                            Console.Write("Napište 'help' pro nápovědu.", Color.Green);
+                            Console.WriteLine(Oddelovac, Color.Green);
                         }
                         else
                         {
@@ -133,9 +91,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                             Console.WriteLine("Seznam aktivních šifer: \n");
                             foreach (ActiveSifry sifra in ActveSifry.Keys)
                             {
-                                Console.WriteLine("  - " + sifra + ": " + ActveSifry[sifra]);
+                                WriteActiveSifra(sifra);
                             }
-                            Console.WriteLine("\nPodrobný popis každé z těchto šifer můžeš nalézt v dokumentaci.\n");
+                            Console.WriteLine("\nPodrobný popis každé z těchto šifer můžeš nalézt v dokumentaci.\n", Color.Blue);
                         }
                         else
                         {
@@ -194,6 +152,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                     case Commands.clear:
                         // Vyčištění commandů
                         Console.Clear();
+                        Console.Write("Napište 'help' pro nápovědu.", Color.Green);
+                        Console.WriteLine(Oddelovac, Color.Green);
                         break;
                     case Commands.logout:
                         // Odhlášení uživatele
@@ -212,11 +172,66 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         break;
                     default:
                         // neplatný příkaz
-                        Console.Write("Neplatný příkaz. ");
-                        Console.WriteLine("Napište 'help' pro nápovědu.\n");
+                        Console.WriteLine("Neplatný příkaz. Napište 'help' pro nápovědu.\n");
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Vybere možnost z textového vstupu.
+        /// </summary>
+        /// <param name="input">Textový vstup</param>
+        /// <returns>Číslo vybrané možnosti</returns>
+        private static Commands TryGetCommand(string input)
+        {
+            Commands output = Commands.def;
+            try
+            {
+                foreach (Commands command in HelpHandler.Zkratky.Keys)
+                {
+                    if (HelpHandler.Zkratky[command] == input || command.ToString() == input)
+                    {
+                        output = command;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return output;
+        }
+        /// <summary>
+        /// Slovník obsahující popisy aktivních šifer této verze programu.
+        /// </summary>
+        public static Dictionary<ActiveSifry, string> ActveSifry = new Dictionary<ActiveSifry, string>()
+        {
+            { ActiveSifry.Caesarova_Sifra, "Posune všechna písmena o vámi zadaný počet v abecedě." },
+            { ActiveSifry.Klavesnicova_Sifra, "Změní jednotlivá písmena na dvojci písmen, které jsou vedle daného písmene na klávensnici." },
+            { ActiveSifry.Mezerova_Sifra, "Změní jednotlivá písmena na dvojci písmen, která jsou před a po něm v abecedě." },
+            { ActiveSifry.Morseova_Sifra, "Text je přeložen do morseovy abecedy." },
+            { ActiveSifry.Numericka_Sifra, "Přemění písmena na čísla, dle jejich indexu v abecedě." },
+            { ActiveSifry.Obracena_ABC_Sifra, "Změní písmena tak, aby A=Z, B=Y, atd." },
+            { ActiveSifry.Petronilka, "Za písmena v unikátním klíči dosadíme číslice." },
+            { ActiveSifry.Prohazena_Sifra, "Přemění text tak ayste museli číst jak ze předu, tak zezadu." },
+            { ActiveSifry.Reverzni_Sifra, "Převrátí text tak, aby jste ho museli číst odzadu." },
+            { ActiveSifry.Telefonni_Sifra, "Jednotlivá písmena se přeloží na telefonní čísla." }
+        };
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sifra"></param>
+        private static void WriteActiveSifra(ActiveSifry sifra)
+        {
+            int pocMez = 20 - sifra.ToString().Length;
+            Console.Write("  " + sifra + ": ");
+            while(pocMez > 0)
+            {
+                Console.Write(" ");
+                pocMez--;
+            }
+            Console.WriteLine(ActveSifry[sifra], Color.Green);
         }
     }
 }

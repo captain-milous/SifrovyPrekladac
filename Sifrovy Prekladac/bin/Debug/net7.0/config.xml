@@ -9,7 +9,7 @@
   
   <!-- Změna složky pro import a export textových souborů. -->
   <!-- např.: <InputFile>C:\Users\username\Desktop</InputFile> -->
-  <InputFile>data</InputFile>
-  <OutputFile>data</OutputFile>
+  <InputFolder>Environment.GetFolderPath(Environment.SpecialFolder.Desktop)</InputFolder>
+  <OutputFolder>Environment.GetFolderPath(Environment.SpecialFolder.Desktop)</OutputFolder>
   
 </Configuration>

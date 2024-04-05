@@ -5,7 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
+using StrikeHandler = Sifrovy_Prekladac.src.UI.loginMenuUI.StrikeHandler;
 
 namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
@@ -20,25 +24,26 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
         public static void Start()
         {
             Console.Clear();
-            Console.WriteLine("Pro vrácení do hlavní nabídky napište exit.");
-            Console.WriteLine(InitialMenu.Oddelovac);
+            Console.WriteLine("Nápověda: ", Color.Green);
+            Console.Write("Pro vrácení do hlavní nabídky napište: back.", Color.Green);
+            Console.WriteLine(InitialMenu.Oddelovac, Color.Green);
             Console.WriteLine("Registrace nového uživatele:\n");
 
             string input = string.Empty;
-            int strike = 0;
-            int maxStrike = 3;
+            StrikeHandler.MaxStrike = 3;
             bool mainRun = true;
             User newUser = new User();
             newUser.SetRole(Role.User);
             while (mainRun)
             {
+                bool exit = false;
                 Console.Write("Zadejte uživatelské jméno: ");
                 input = Console.ReadLine().ToLower().Replace(" ", "");
                 bool userExists = false;
-                if (input == "exit")
+                if (input == "back")
                 {
+                    exit = true;
                     userExists = true;
-                    mainRun = false;
                 }
                 foreach (User u in ListOfUsers.GetAll())
                 {
@@ -47,7 +52,7 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         userExists = true;
                     }
                 }
-                if (!userExists && input != "anonymous" && !string.IsNullOrEmpty(input))
+                if (!userExists && input != "anonymous" && input != "admin" && input != "administrator" && !string.IsNullOrEmpty(input))
                 {
                     newUser.SetUsername(input);
                     bool run = true;
@@ -76,57 +81,28 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("\n  Chyba: " + ex.Message);
-                            strike++;
-                            if (strike < maxStrike)
-                            {
-                                Console.Write("  Máte " + strike + "/" + maxStrike + " striků. ");
-                                Console.WriteLine("Zadejte validní uživatelské jméno!\n");
-                            }
-                            else
-                            {
-                                Console.WriteLine("  Dosáhli jste " + strike + " striků.\n");
-                                run = false;
-                                strike = 0;
-                            }
+                            StrikeHandler.AddStrike();
+                            run = StrikeHandler.GetResult(ex.Message, "Zadejte validní heslo!");
                         }
                     }
-
+                    StrikeHandler.Reset();
+                }
+                else if (exit)
+                {
+                    mainRun = false;
                 }
                 else if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("\n  Chyba: Uživatelské jméno nesmí být prázdné!");
-                    strike++;
-                    if (strike < maxStrike)
-                    {
-                        Console.Write("  Máte " + strike + "/" + maxStrike + " striků. ");
-                        Console.WriteLine("Zadejte validní uživatelské jméno!\n");
-                    }
-                    else
-                    {
-                        Console.WriteLine("  Dosáhli jste " + strike + " striků.");
-                        mainRun = false;
-                        Thread.Sleep(1000);
-                    }
+                    StrikeHandler.AddStrike();
+                    mainRun = StrikeHandler.GetResult("Uživatelské jméno nesmí být prázdné.", "Zadejte validní uživatelské jméno!");
                 }
                 else
                 {
-                    Console.WriteLine("\n  Chyba: Uživatel s tímto uživatelským jménem již existuje!");
-                    strike++;
-                    if (strike < maxStrike)
-                    {
-                        Console.Write("  Máte " + strike + "/" + maxStrike + " striků. ");
-                        Console.WriteLine("Zadejte validní uživatelské jméno!\n");
-                    }
-                    else
-                    {
-                        Console.WriteLine("  Dosáhli jste " + strike + " striků.");
-                        mainRun = false;
-                        Thread.Sleep(1000);
-                    }
+                    StrikeHandler.AddStrike();
+                    mainRun = StrikeHandler.GetResult("Uživatel s tímto uživatelským jménem již existuje.", "Zadejte validní uživatelské jméno!");
                 }
             }
-
+            StrikeHandler.Reset();
         }
     }
 }

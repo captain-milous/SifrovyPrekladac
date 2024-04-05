@@ -17,6 +17,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
     /// </summary>
     public static class SifrovaniUI
     {
+
         /// <summary>
         /// Slovník obsahující zkratky pro různé aktivní šifry.
         /// </summary>
@@ -40,13 +41,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         public static void Start(string InputText, bool decypher)
         {
             Console.Clear();
-            Console.WriteLine();
-            Console.WriteLine("Seznam aktivních šifer: \n");
-            Console.WriteLine("Zkratka   Šifra");
-            foreach (ActiveSifry sifra in ZkratkySifer.Keys)
-            {
-                Console.WriteLine("  (" + ZkratkySifer[sifra] + ") " + sifra);
-            }
+            Print.VypisZkratekASifer(ZkratkySifer, InputText);
+            Console.WriteLine("Váš text: " + InputText);
             ActiveSifry Sifra = ActiveSifry.Morseova_Sifra;
             bool run = true;
             while(run)
@@ -54,11 +50,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 Console.WriteLine();
                 if (!decypher)
                 {
-                    Console.Write("Vyberte jakou šifrou chcete Váš text zašifrovat, tím že zadáte její zkratku: ");
+                    Console.Write("Vyberte zkratku šifry, kterou budete šifrovat: ");
                 }
                 else
                 {
-                    Console.Write("Vyberte jakou šifrou chcete Váš text dešifrovat, tím že zadáte její zkratku: ");
+                    Console.Write("Vyberte zkratku šifry, kterou budete dešifrovat: ");
                 }
                 string answer = Console.ReadLine().ToUpper();
                 if (ZkratkySifer.ContainsValue(answer))
@@ -68,7 +64,8 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 }
                 else
                 {
-                    Console.WriteLine("Zadaná zkratka neodpovídá žádné sifře.");
+                    Console.WriteLine("\nVyberte prosím validní možnost!");
+                    Thread.Sleep(1000);
                 }
             }
             switch (Sifra)
