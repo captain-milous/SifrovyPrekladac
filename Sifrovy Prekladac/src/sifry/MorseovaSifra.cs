@@ -1,4 +1,5 @@
-﻿using Sifrovy_Prekladac.src.sifry.related;
+﻿using Microsoft.Extensions.Primitives;
+using Sifrovy_Prekladac.src.sifry.related;
 using Sifrovy_Prekladac.src.static_methods;
 using System;
 using System.Collections.Generic;
@@ -68,12 +69,12 @@ namespace Sifrovy_Prekladac.src.sifry
             if (!decypher)
             {
                 DecText = TextMethods.WithoutDiacriticsToUpper(rawText);
-                EncText = Encrypt(rawText);
+                EncText = Encrypt(DecText);
             }
             else
             {
                 EncText = rawText;
-                DecText = Decrypt(rawText);
+                DecText = Decrypt(EncText);
             }
         }
         #endregion
@@ -104,9 +105,14 @@ namespace Sifrovy_Prekladac.src.sifry
                             encryptedText.Remove(encryptedText.Length - 1, 1);
                             encryptedText.Append("| ");
                         }
+                        else if (c == '.' || c == '!' || c == '?' || c == ',')
+                        {
+                            encryptedText.Remove(encryptedText.Length - 1, 1);
+                            encryptedText.Append("| ");
+                        }
                     }
                     encryptedText.Remove(encryptedText.Length - 1, 1);
-                    encryptedText.Append("|| ");
+                    encryptedText.Append("| ");
 
                     return encryptedText.ToString();
                 case "REV":
@@ -194,14 +200,20 @@ namespace Sifrovy_Prekladac.src.sifry
             switch (TypeOfEnc)
             {
                 case "DEF":
-                    string[] words = text.Split(new string[] { "||" }, StringSplitOptions.None);
-                    foreach (string word in words)
+                    // Zbavíme se všech mezer mezer, které jsou pro přehlednost
+                    text = text.Replace(" ", "");
+                    // Změníme znaménko pro konce vět
+                    text = text.Replace("|||", "*");
+                    // změníme znaménko pro mezery
+                    text = text.Replace("||", "+");
+                    string[] sentences = text.Split('*');
+                    foreach(string sentence in sentences)
                     {
-                        string[] letters = word.Split(new string[] { "| " }, StringSplitOptions.None);
-                        foreach (string letter in letters)
+                        string[] words = sentence.Split("+");
+                        foreach (string word in words)
                         {
-                            string[] codes = letter.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-                            foreach (string code in codes)
+                            string[] codes = word.Split("|");
+                            foreach(string code in codes)
                             {
                                 foreach (KeyValuePair<char, string> kvp in MorseABC)
                                 {
@@ -214,11 +226,11 @@ namespace Sifrovy_Prekladac.src.sifry
                             }
                             decryptedText.Append(" ");
                         }
-                        decryptedText.Remove(decryptedText.Length - 1, 1); // Odstranění poslední mezery za slovem
-                        decryptedText.Append(" ");
+                        decryptedText.Remove(decryptedText.Length - 1, 1);
+                        decryptedText.Append(". ");
                     }
-                    decryptedText.Remove(decryptedText.Length - 1, 1); // Odstranění poslední mezery za větou
 
+                    decryptedText.Remove(decryptedText.Length - 2, 1);
                     return decryptedText.ToString();
                 case "REV":
                     foreach (char c in text)
