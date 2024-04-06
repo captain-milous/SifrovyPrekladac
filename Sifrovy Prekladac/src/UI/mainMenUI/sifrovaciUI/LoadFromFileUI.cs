@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
 {
     /// <summary>
-    /// 
+    /// Třída obsahující metody pro načítání textu ze souboru a spuštění zašifrování/dešifrování.
     /// </summary>
     public static class LoadFromFileUI
     {
         /// <summary>
-        /// Načte text ze souboru a spustí zašifrování/dešifrování.
+        /// Metoda pro spuštění načítání textu ze souboru a zašifrování/dešifrování.
         /// </summary>
         public static void Start()
         {
@@ -102,10 +102,10 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
             }
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr souboru.
         /// </summary>
-        /// <param name="availableFiles"></param>
-        /// <returns></returns>
+        /// <param name="availableFiles">Dostupné soubory.</param>
+        /// <returns>Číslo vybraného souboru.</returns>
         static int ChooseFile(List<string> availableFiles)
         {
             int output = -1;
@@ -132,9 +132,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
             return output;
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr složky.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Číslo vybrané složky.</returns>
         static int ChooseFolder()
         {
             int output = -1;
