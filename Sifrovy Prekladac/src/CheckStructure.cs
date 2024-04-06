@@ -99,10 +99,9 @@ namespace Sifrovy_Prekladac.src
                 root.AppendChild(comment1);
                 root.AppendChild(CreateElementWithText(doc, "LogFilePath", "log\\system.log"));
                 root.AppendChild(CreateElementWithText(doc, "ListOfUsersFilePath", "users\\ActiveUsers.xml"));
-                XmlComment comment3 = doc.CreateComment("Změna složky pro import a export textových souborů. \nnapř.: <InputFile>C:\\Users\\username\\Desktop</InputFile>");
+                XmlComment comment3 = doc.CreateComment("Změna mojí vlastní složky pro import a export textových souborů. \nnapř.: <CustomFolder>C:\\Users\\username\\Desktop</CustomFolder>");
                 root.AppendChild(comment3);
-                root.AppendChild(CreateElementWithText(doc, "InputFile", "data"));
-                root.AppendChild(CreateElementWithText(doc, "OutputFile", "data"));
+                root.AppendChild(CreateElementWithText(doc, "CustomFolder", "Preklad_Sifer"));
                 doc.Save("config.xml");
             } 
             catch 

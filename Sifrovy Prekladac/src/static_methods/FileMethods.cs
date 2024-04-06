@@ -86,6 +86,36 @@ namespace Sifrovy_Prekladac.src.static_methods
                 throw new Exception($"Chyba při čtení ze souboru: {ex.Message}");
             }
         }
+        public static string Read(string fullFilePath)
+        {
+            try
+            {
+                if (!fullFilePath.EndsWith(".txt"))
+                {
+                    throw new Exception("Nepodporovaný typ souboru.");
+                }
+                if (!File.Exists(fullFilePath))
+                {
+                    throw new FileNotFoundException("Soubor neexistuje.", fullFilePath);
+                }
+                if (!HasReadPermission(fullFilePath))
+                {
+                    throw new UnauthorizedAccessException("Nemáte oprávnění ke čtení souboru.");
+                }
+
+                string text = File.ReadAllText(fullFilePath);
+                if (string.IsNullOrEmpty(text))
+                {
+                    throw new Exception("Soubor je prázdný.");
+                }
+                return text;
+            }
+            catch (Exception ex)
+            {
+                LogHandler.Write($"Chyba při čtení ze souboru: {ex.Message}");
+                throw new Exception($"Chyba při čtení ze souboru: {ex.Message}");
+            }
+        }
         /// <summary>
         /// Zkontroluje, zda má aktuální uživatel oprávnění ke čtení zadaného souboru.
         /// </summary>

@@ -73,7 +73,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                         // UI pro zašifrovaní/rozšifrovaní textu
                         if (LoggedInUser.Role != Role.Admin)
                         {
-                            LoadInputUI.Start();
+                            GetInputUI.Start();
                             Console.Clear();
                             Console.Write("Napište 'help' pro nápovědu.", Color.Green);
                             Console.WriteLine(Oddelovac, Color.Green);

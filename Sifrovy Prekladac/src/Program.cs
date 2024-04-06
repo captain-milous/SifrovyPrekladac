@@ -34,6 +34,7 @@ namespace Sifrovy_Prekladac.src
                 LogFileWriter.WriteEmergancy();
                 run = false;
             }
+            //Sifrovy_Prekladac.src.UI.mainMenUI.MainMenu.Start(new User());
             InitialMenu.Start(run);
         }
     }

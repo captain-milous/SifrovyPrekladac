@@ -30,7 +30,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
             while (run)
             {
                 Console.Clear();
-                Console.WriteLine(InitialMenu.Oddelovac);
                 if (!decypher)
                 {
                     Console.WriteLine("Zašifrovaný text: " + text, Color.Green);
@@ -39,6 +38,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
                 {
                     Console.WriteLine("Dešifrovaný text: " + text, Color.Green);
                 }
+                Console.WriteLine(InitialMenu.Oddelovac, Color.Green);
                 Print.WhereToSave();
                 int input = SelectOption(Console.ReadLine());
                 Console.WriteLine();
@@ -81,9 +81,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
                         break;
                     default:
                         Console.WriteLine("Vyberte prosím validní možnost!");
-                        Thread.Sleep(1000);
                         break;
                 }
+                Thread.Sleep(1000);
             }
         }
         /// <summary>
@@ -130,7 +130,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
         /// <param name="text">Text, který má být uložen do souboru.</param>
         private static void SaveToFile(string text, string path)
         {
-            Console.WriteLine("\nNázev souboru musí obsahovat i koncovkou (.pdf nebo .txt).",Color.Green);
+            Console.Clear();
+            Console.WriteLine("Název souboru musí obsahovat i koncovkou (.pdf nebo .txt).",Color.Green);
+            Console.Write(Print.Oddelovac, Color.Green);
             Console.Write("\nNapište název: ");
             while (true)
             {
@@ -149,18 +151,19 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI
                         {
                             PdfMethods.SaveToPDF(path, fileName, text);
                         }
+                        Console.WriteLine("\nSoubor se úspěšně podařilo uložit.", Color.Green);
                         LogHandler.Write($"{MainMenu.LoggedInUser.Username} uložil svůj překlad do {fileName}");
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Tento soubor již existuje!");
+                        Console.WriteLine("\nTento soubor již existuje!", Color.DarkRed);
                         Console.Write("\nNapište znovu název: ");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Tento typ souboru není podporován! (Název musí mít koncovku '.pdf' nebo '.txt')");
+                    Console.WriteLine("\nTento typ souboru není podporován! (Název musí mít koncovku '.pdf' nebo '.txt')", Color.DarkRed);
                     Console.Write("\nNapište znovu název: ");
                 }
                 

@@ -42,7 +42,7 @@ namespace Sifrovy_Prekladac.src.sifry
                             assistValue -= TextMethods.Abeceda.Length;
                         }
                     }
-                    Console.WriteLine(assistValue);
+                    _posun = assistValue;
                 }
             }
         }
