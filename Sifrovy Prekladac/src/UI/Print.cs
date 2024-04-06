@@ -99,7 +99,11 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("3", "Zahodit text");
             Console.Write("\nVaše volba: ");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ZkratkySifer"></param>
+        /// <param name="InputText"></param>
         public static void VypisZkratekASifer(Dictionary<ActiveSifry, string> ZkratkySifer, string InputText)
         {
             Console.WriteLine(Oddelovac);
@@ -114,7 +118,10 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("Váš text: ", Color.Blue);
             Console.WriteLine(InputText);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="decypher"></param>
         public static void MorPodsifry(bool decypher)
         {
             string SifDesif = "zašifruje";
@@ -132,7 +139,10 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("ABC", "Pomocí velkých a malých písmen");
             Console.Write("\nVaše volba: ");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="decypher"></param>
         public static void KlaPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -147,7 +157,10 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("CZ", "České (QWERTZ)");
             Console.Write("\nVaše volba: ");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="decypher"></param>
         public static void NumPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -168,7 +181,10 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("HEX", "Hexadecimální čísla");
             Console.Write("\nVaše volba: ");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="decypher"></param>
         public static void TelPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -184,15 +200,50 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("  ");
             Console.Write("\nVaše volba: ");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static void WhereToSave()
         {
-            Console.WriteLine("\nKam chcete přeložený text uložit?");
+            Console.WriteLine("\nKam chcete přeložený text uložit?\n");
             PrintMenuItem("1", "Na plochu");
             PrintMenuItem("2", "Do dokumentů");
             PrintMenuItem("3", "Do vaší složky");
             PrintMenuItem("4", "Neukládat text");
             Console.Write("\nVaše volba: ");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void ImportFromFolder()
+        {
+            Console.WriteLine("Odkud chcete soubor načíst?");
+            PrintMenuItem("1", "Z plochy");
+            PrintMenuItem("2", "Z dokumentů");
+            PrintMenuItem("3", "Z vaší složky");
+            PrintMenuItem("4", "Vrátit se zpět");
+            Console.Write("\nVaše volba: ");
+        }
+        
+        public static void AvailableFiles(string folderPath, List<string> availableFiles)
+        {
+            if (availableFiles.Count > 0)
+            {
+                Console.WriteLine("\nZ kterého souboru budete chtít načíst?");
+                int j = 1;
+                foreach (string filePath in availableFiles)
+                {
+                    string[] fullPath = filePath.Split('\\');
+                    string fileName = fullPath[fullPath.Length - 1];
+                    PrintMenuItem(j.ToString(), fileName);
+                    j++;
+                }
+                Console.Write("\nVaše volba: ");
+            }
+            else
+            {
+                throw new Exception("\nSložka neobsahuje žadný textový soubor.");
+            }
         }
     }
 }
