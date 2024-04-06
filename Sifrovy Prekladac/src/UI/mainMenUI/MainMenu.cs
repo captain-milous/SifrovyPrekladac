@@ -177,7 +177,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
                 }
             }
         }
-
         /// <summary>
         /// Vybere možnost z textového vstupu.
         /// </summary>
@@ -219,9 +218,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI
             { ActiveSifry.Telefonni_Sifra, "Jednotlivá písmena se přeloží na telefonní čísla." }
         };
         /// <summary>
-        /// 
+        /// Metoda pro výpis popisu aktivní šifry.
         /// </summary>
-        /// <param name="sifra"></param>
+        /// <param name="sifra">Aktivní šifra.</param>
         private static void WriteActiveSifra(ActiveSifry sifra)
         {
             int pocMez = 20 - sifra.ToString().Length;
