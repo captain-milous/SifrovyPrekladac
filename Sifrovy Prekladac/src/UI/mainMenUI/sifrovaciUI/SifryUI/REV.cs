@@ -15,40 +15,15 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
     public static class REV
     {
         /// <summary>
-        /// Zahájí proces zašifrování nebo dešifrování zadaného textu.
+        /// Zahájí proces zašifrování nebo dešifrování zadaného textu pomocí Reverzní šifry.
         /// </summary>
         /// <param name="text">Text k zašifrování nebo dešifrování.</param>
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            if (!decypher)
-            {
-                Encrypt(text);
-            }
-            else
-            {
-                Decrypt(text);
-            }
-        }
-        /// <summary>
-        /// Zašifruje zadaný text pomocí Reverzní šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být zašifrován.</param>
-        public static void Encrypt(string text)
-        {
-            ReverzniSifra rev = new ReverzniSifra(text);
+            ReverzniSifra rev = new ReverzniSifra(text, decypher);
             HistoryHandler.Write(MainMenu.LoggedInUser, rev.ToString(), ActiveSifry.Reverzni_Sifra);
-            SaveToFileUI.Start(rev.EncText, false);
-        }
-        /// <summary>
-        /// Dešifruje zadaný text pomocí Reverzní šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být dešifrován.</param>
-        public static void Decrypt(string text)
-        {
-            ReverzniSifra rev = new ReverzniSifra(text, true);
-            HistoryHandler.Write(MainMenu.LoggedInUser, rev.ToString(), ActiveSifry.Reverzni_Sifra);
-            SaveToFileUI.Start(rev.DecText, true);
+            SaveToFileUI.Start(rev.DecText, decypher);
         }
     }
 }

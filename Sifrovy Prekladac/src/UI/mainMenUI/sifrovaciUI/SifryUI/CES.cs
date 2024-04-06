@@ -16,31 +16,16 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
     public static class CES
     {
         /// <summary>
-        /// Zahájí proces zašifrování nebo dešifrování zadaného textu.
+        /// Zahájí proces zašifrování nebo dešifrování zadaného textu pomocí Caesarovy šifry.
         /// </summary>
         /// <param name="text">Text k zašifrování nebo dešifrování.</param>
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            if (!decypher)
-            {
-                Encrypt(text);
-            }
-            else
-            {
-                Decrypt(text);
-            }
-        } 
-        /// <summary>
-        /// Zašifruje zadaný text pomocí Caesarovy šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být zašifrován.</param>
-        public static void Encrypt(string text)
-        {   
             int input = 0;
             while (true)
             {
-                Console.Write("Napište o kolik písmenek dopředu se má text posunout: ");
+                Console.Write("\nZadejte o kolik písmenek se má text posunout: ");
                 try
                 {
                     input = Convert.ToInt32(Console.ReadLine());
@@ -51,34 +36,9 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                     Console.WriteLine("Zadaná Hodnota musí být integer!");
                 }
             }
-            CaesarovaSifra ces = new CaesarovaSifra(text, input);
-            HistoryHandler.Write(MainMenu.LoggedInUser , ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            SaveToFileUI.Start(ces.EncText, false);
-            Thread.Sleep(10000);
-        }
-        /// <summary>
-        /// Dešifruje zadaný text pomocí Caesarovy šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být dešifrován.</param>
-        public static void Decrypt(string text)
-        {
-            int input = 0;
-            while (true)
-            {
-                Console.Write("Napište o kolik písmenek dozadu se má text posunout: ");
-                try
-                {
-                    input = Convert.ToInt32(Console.ReadLine());
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine("Zadaná Hodnota musí být integer!");
-                }
-            }
-            CaesarovaSifra ces = new CaesarovaSifra(text, input, true);
+            CaesarovaSifra ces = new CaesarovaSifra(text, input, decypher);
             HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            SaveToFileUI.Start(ces.DecText, true);
-        }
+            SaveToFileUI.Start(ces.EncText, decypher);
+        } 
     }
 }

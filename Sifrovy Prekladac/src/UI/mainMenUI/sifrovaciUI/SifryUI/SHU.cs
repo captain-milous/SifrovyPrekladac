@@ -15,41 +15,15 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
     public static class SHU
     {
         /// <summary>
-        /// Zahájí proces zašifrování nebo dešifrování zadaného textu.
+        /// Zahájí proces zašifrování nebo dešifrování zadaného textu pomocí Prohazené šifry.
         /// </summary>
         /// <param name="text">Text k zašifrování nebo dešifrování.</param>
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            if (!decypher)
-            {
-                Encrypt(text);
-            }
-            else
-            {
-                Decrypt(text);
-            }
-        }
-        /// <summary>
-        /// Zašifruje zadaný text pomocí Prohazené šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být zašifrován.</param>
-        public static void Encrypt(string text)
-        {
-            ProhazenaSifra shu = new ProhazenaSifra(text);
+            ProhazenaSifra shu = new ProhazenaSifra(text, decypher);
             HistoryHandler.Write(MainMenu.LoggedInUser, shu.ToString(), ActiveSifry.Prohazena_Sifra);
-            SaveToFileUI.Start(shu.EncText, false);
-        }
-        /// <summary>
-        /// Dešifruje zadaný text pomocí Prohazené šifry.
-        /// </summary>
-        /// <param name="text">Text, který má být dešifrován.</param>
-        public static void Decrypt(string text)
-        {
-            ProhazenaSifra shu = new ProhazenaSifra(text, true);
-            HistoryHandler.Write(MainMenu.LoggedInUser, shu.ToString(), ActiveSifry.Prohazena_Sifra);
-            SaveToFileUI.Start(shu.DecText, true);
-
+            SaveToFileUI.Start(shu.DecText, decypher);
         }
     }
 }
