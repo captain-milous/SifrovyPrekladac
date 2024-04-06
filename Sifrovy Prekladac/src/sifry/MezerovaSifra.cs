@@ -128,7 +128,6 @@ namespace Sifrovy_Prekladac.src.sifry
 
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
