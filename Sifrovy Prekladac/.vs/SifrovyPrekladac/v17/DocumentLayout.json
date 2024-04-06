@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
@@ -99,32 +99,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SifrovaniUI.cs",
-              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
-              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
-              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
-              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
-              "ViewState": "AQIAAHkAAAAAAAAAAAAgwIMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:52:01.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoadFromFileUI.cs",
-              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
-              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
-              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
-              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T12:48:30.181Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -241,6 +215,32 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2024-04-06T15:13:13.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoadFromFileUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadFromFileUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T12:48:30.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SifrovaniUI.cs",
+              "DocumentMoniker": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "RelativeDocumentMoniker": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "ToolTip": "C:\\Users\\milda\\source\\repos\\TP\\SifrovyPrekladac\\Sifrovy Prekladac\\src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAgwIMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T09:52:01.216Z",
               "EditorCaption": ""
             },
             {
