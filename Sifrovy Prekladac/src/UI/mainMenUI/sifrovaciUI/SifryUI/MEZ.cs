@@ -26,7 +26,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             {
                 MezerovaSifra mez = new MezerovaSifra(text, decypher);
                 HistoryHandler.Write(MainMenu.LoggedInUser, mez.ToString(), ActiveSifry.Mezerova_Sifra);
-                SaveToFileUI.Start(mez.DecText, decypher);
+                string output = mez.EncText;
+                if (decypher)
+                {
+                    output = mez.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch
             {

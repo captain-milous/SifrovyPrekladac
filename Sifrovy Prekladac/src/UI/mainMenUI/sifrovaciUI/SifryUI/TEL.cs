@@ -40,7 +40,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                     }
                 }
                 HistoryHandler.Write(MainMenu.LoggedInUser, tel.ToString(), ActiveSifry.Telefonni_Sifra);
-                SaveToFileUI.Start(tel.DecText, decypher);
+                string output = tel.EncText;
+                if (decypher)
+                {
+                    output = tel.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch
             {

@@ -26,7 +26,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             {
                 ProhazenaSifra shu = new ProhazenaSifra(text, decypher);
                 HistoryHandler.Write(MainMenu.LoggedInUser, shu.ToString(), ActiveSifry.Prohazena_Sifra);
-                SaveToFileUI.Start(shu.DecText, decypher);
+                string output = shu.EncText;
+                if (decypher)
+                {
+                    output = shu.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch
             {

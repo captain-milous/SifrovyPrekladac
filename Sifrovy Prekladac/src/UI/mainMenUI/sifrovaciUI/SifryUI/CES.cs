@@ -40,7 +40,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                 }
                 CaesarovaSifra ces = new CaesarovaSifra(text, input, decypher);
                 HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
-                SaveToFileUI.Start(ces.EncText, decypher);
+                string output = ces.EncText;
+                if (decypher)
+                {
+                    output = ces.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch 
             {

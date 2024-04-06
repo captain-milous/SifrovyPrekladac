@@ -53,7 +53,11 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                     }
                 }
                 HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
-                string output = pet.DecText + "\n" + pet.KlicSlovo;
+                string output = pet.EncText + "\n" + pet.KlicSlovo;
+                if (decypher)
+                {
+                    output = pet.DecText + "\n" + pet.KlicSlovo;
+                }
                 SaveToFileUI.Start(output, decypher);
             }
             catch

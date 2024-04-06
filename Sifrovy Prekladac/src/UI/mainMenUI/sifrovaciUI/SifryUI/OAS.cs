@@ -26,7 +26,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             {
                 ObracenaAbcSifra oas = new ObracenaAbcSifra(text, decypher);
                 HistoryHandler.Write(MainMenu.LoggedInUser, oas.ToString(), ActiveSifry.Obracena_ABC_Sifra);
-                SaveToFileUI.Start(oas.EncText, decypher);
+                string output = oas.EncText;
+                if (decypher)
+                {
+                    output = oas.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch
             {

@@ -41,7 +41,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
                     }
                 }
                 HistoryHandler.Write(MainMenu.LoggedInUser, kla.ToString(), ActiveSifry.Klavesnicova_Sifra);
-                SaveToFileUI.Start(kla.EncText, decypher);
+                string output = kla.EncText;
+                if (decypher)
+                {
+                    output = kla.DecText;
+                }
+                SaveToFileUI.Start(output, decypher);
             }
             catch
             {
