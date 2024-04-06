@@ -184,5 +184,15 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("  ");
             Console.Write("\nVaše volba: ");
         }
+
+        public static void WhereToSave()
+        {
+            Console.WriteLine("\nKam chcete přeložený text uložit?");
+            PrintMenuItem("1", "Na plochu");
+            PrintMenuItem("2", "Do dokumentů");
+            PrintMenuItem("3", "Do vaší složky");
+            PrintMenuItem("4", "Neukládat text");
+            Console.Write("\nVaše volba: ");
+        }
     }
 }
