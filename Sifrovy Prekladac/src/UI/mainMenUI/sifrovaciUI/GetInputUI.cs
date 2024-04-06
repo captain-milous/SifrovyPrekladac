@@ -72,7 +72,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 { "back", 3 },
                 { "b", 3 }
             };
-
             try
             {
                 output = Convert.ToInt32(input);
@@ -109,9 +108,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 Console.Clear();
                 Console.WriteLine();
             }
-        }
-        
-
+        }        
         /// <summary>
         /// Zkontroluje, zda je zadaný text správný.
         /// </summary>
@@ -140,7 +137,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 }
                 Console.WriteLine();
             }
-        }
-        
+        }     
     }
 }
