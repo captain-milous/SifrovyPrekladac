@@ -129,7 +129,6 @@ namespace Sifrovy_Prekladac.src.sifry
             switch (TypeOfEnc)
             {
                 case "DEF":
-
                     foreach (char c in text)
                     {
                         string eChar = Telephone[c];
@@ -137,7 +136,6 @@ namespace Sifrovy_Prekladac.src.sifry
                         encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
-
                 case "BTR":
 
                     foreach (char c in text)
@@ -147,10 +145,8 @@ namespace Sifrovy_Prekladac.src.sifry
                         encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
@@ -175,9 +171,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         decryptedText.Append(originalChar);
                     }
                     return decryptedText.ToString();
-
                 case "BTR":
-
                     encryptedChars = text.Trim().Split(' ');
                     foreach (string eChar in encryptedChars)
                     {
@@ -185,13 +179,10 @@ namespace Sifrovy_Prekladac.src.sifry
                         decryptedText.Append(originalChar);
                     }
                     return decryptedText.ToString();
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
-
     }
 }
