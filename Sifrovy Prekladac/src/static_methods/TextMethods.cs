@@ -18,7 +18,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// </summary>
         public static char[] Abeceda = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         /// <summary>
-        /// Odstraní diakritiku
+        /// Odstraní diakritiku na písmenky
         /// </summary>
         /// <param name="text">Vstupní text.</param>
         /// <returns>Text bez diakritiky</returns>
@@ -114,10 +114,10 @@ namespace Sifrovy_Prekladac.src.static_methods
             return WithoutSpecialChar(WithoutDiacriticsToUpper(text));
         }
         /// <summary>
-        /// 
+        /// Zjednoduší text odstraněním diakritiky, převedením na velká písmena, odstraněním speciálních znaků a odstraní mezery.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Vstupní text.</param>
+        /// <returns>Zjednodušený text.</returns>
         public static string SimplifyWithoutSpaces(string text)
         {
             return WithoutSpaces(Simplify(text));
