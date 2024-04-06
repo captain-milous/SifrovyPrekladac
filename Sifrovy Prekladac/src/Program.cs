@@ -23,9 +23,9 @@ namespace Sifrovy_Prekladac.src
         static void Main(string[] args)
         {
             bool run = true;
-            // configurace
             try
             {
+                // Načtení konfigurace
                 CheckStructure.Start();
             }
             catch (Exception ex)
@@ -34,7 +34,7 @@ namespace Sifrovy_Prekladac.src
                 LogFileWriter.WriteEmergancy();
                 run = false;
             }
-            //Sifrovy_Prekladac.src.UI.mainMenUI.MainMenu.Start(new User());
+            // Start aplikace, pokud je konfigurace načtená
             InitialMenu.Start(run);
         }
     }
