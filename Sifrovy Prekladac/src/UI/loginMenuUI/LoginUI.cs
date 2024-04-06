@@ -31,7 +31,6 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
             Console.Write("Pro vrácení do přihlašovací nabídky napište: back.", Color.Green);
             Console.WriteLine(InitialMenu.Oddelovac, Color.Green);
             Console.WriteLine("Přihlášení již existujícího uživatele:\n");
-
             string input = string.Empty;
             StrikeHandler.MaxStrike = 3;
             bool mainRun = true;
@@ -103,7 +102,6 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         mainRun = StrikeHandler.GetResult("Tento uživatel neexistuje.", "Zadejte validní uživatelské jméno!");
                     }
                 }
-
                 if (exit)
                 {
                     mainRun = false;
