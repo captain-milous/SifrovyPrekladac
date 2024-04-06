@@ -127,7 +127,6 @@ namespace Sifrovy_Prekladac.src.sifry
                             output += c;
                         }
                     }
-
                     return output;
                 case "NUM":
                     def = new MorseovaSifra(text);
@@ -151,9 +150,7 @@ namespace Sifrovy_Prekladac.src.sifry
                             output += c;
                         }
                     }
-
                     return output;
-
                 case "ABC":
                     def = new MorseovaSifra(text);
                     morseText = def.EncText;
@@ -177,9 +174,7 @@ namespace Sifrovy_Prekladac.src.sifry
                             output += c;
                         }
                     }
-
                     return output;
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
@@ -200,7 +195,6 @@ namespace Sifrovy_Prekladac.src.sifry
             {
                 case "DEF":
                     string[] words = text.Split(new string[] { "||" }, StringSplitOptions.None);
-
                     foreach (string word in words)
                     {
                         string[] letters = word.Split(new string[] { "| " }, StringSplitOptions.None);
@@ -226,7 +220,6 @@ namespace Sifrovy_Prekladac.src.sifry
                     decryptedText.Remove(decryptedText.Length - 1, 1); // Odstranění poslední mezery za větou
 
                     return decryptedText.ToString();
-
                 case "REV":
                     foreach (char c in text)
                     {
@@ -244,9 +237,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     MorseovaSifra def = new MorseovaSifra(output, true);
-
-                    return def.DecText;
-                    
+                    return def.DecText;                 
                 case "NUM":
                     foreach (char c in text)
                     {
@@ -268,9 +259,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     def = new MorseovaSifra(output, true);
-
                     return def.DecText;
-
                 case "ABC":
                     foreach (char c in text)
                     {
@@ -297,9 +286,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         }
                     }
                     def = new MorseovaSifra(output, true);
-
                     return def.DecText;
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
             }
