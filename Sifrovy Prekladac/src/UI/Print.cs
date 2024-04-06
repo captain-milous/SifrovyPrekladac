@@ -115,7 +115,7 @@ namespace Sifrovy_Prekladac.src.UI
             Console.WriteLine(InputText);
         }
 
-        public static void VypisMorPodsifry(bool decypher)
+        public static void MorPodsifry(bool decypher)
         {
             string SifDesif = "zašifruje";
             if (decypher) {
@@ -129,7 +129,59 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("  ");
             PrintMenuItem("NUM", "Pomocí čísel (0 = tečka, 1 = čárka)");
             Console.Write("  ");
-            PrintMenuItem("ABC", "Pomocí velkých a malých písmen;");
+            PrintMenuItem("ABC", "Pomocí velkých a malých písmen");
+            Console.Write("\nVaše volba: ");
+        }
+
+        public static void KlaPodsifry(bool decypher)
+        {
+            string SifDesif = "zašifrovat";
+            if (decypher)
+            {
+                SifDesif = "dešifrovat";
+            }
+            Console.WriteLine("\nVyberte pomocí jakého rozpoložení klávesnice chcete " + SifDesif +":\n");
+            Console.Write("  ");
+            PrintMenuItem("EN", "Anglické (QWERTY)");
+            Console.Write("  ");
+            PrintMenuItem("CZ", "České (QWERTZ)");
+            Console.Write("\nVaše volba: ");
+        }
+
+        public static void NumPodsifry(bool decypher)
+        {
+            string SifDesif = "zašifrovat";
+            if (decypher)
+            {
+                SifDesif = "dešifrovat";
+            }
+            Console.WriteLine("\nVyberte na jaká čísla chcete aby se text " + SifDesif + ":\n");
+            Console.Write("  ");
+            PrintMenuItem("DEF", "Základní (Dle pořadí v abecedě)");
+            Console.Write("  ");
+            PrintMenuItem("BTR", "Lepší (čísla 1 - 9, mají před sebou 0)");
+            Console.Write("  ");
+            PrintMenuItem("SPI", "Spirálové šifrování (čisla 1 - 99)");
+            Console.Write("  ");
+            PrintMenuItem("ROM", "Římské číslice");
+            Console.Write("  ");
+            PrintMenuItem("HEX", "Hexadecimální čísla");
+            Console.Write("\nVaše volba: ");
+        }
+
+        public static void TelPodsifry(bool decypher)
+        {
+            string SifDesif = "zašifrovat";
+            if (decypher)
+            {
+                SifDesif = "dešifrovat";
+            }
+            Console.WriteLine("\nVyberte jakým způsobem chcete text " + SifDesif + ":\n");
+            Console.Write("  ");
+            PrintMenuItem("DEF", "Zakladní (Stará telefonní klávesnice)");
+            Console.Write("  ");
+            PrintMenuItem("BTR", "Přehlednější (Dvojice čísel)");
+            Console.Write("  ");
             Console.Write("\nVaše volba: ");
         }
     }
