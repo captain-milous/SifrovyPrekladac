@@ -10,38 +10,38 @@ using Console = Colorful.Console;
 namespace Sifrovy_Prekladac.src.UI.loginMenuUI
 {
     /// <summary>
-    /// 
+    /// Spravuje počet a manipulaci se striky.
     /// </summary>
     public static class StrikeHandler
     {
         /// <summary>
-        /// 
+        /// Počet aktuálních striků.
         /// </summary>
         public static int Strike = 0;
         /// <summary>
-        /// 
+        /// Maximální povolený počet striků.
         /// </summary>
         public static int MaxStrike { get; set; }
         /// <summary>
-        /// 
+        /// Přidá jeden strike.
         /// </summary>
         public static void AddStrike()
         {
             Strike++;
         }
         /// <summary>
-        /// 
+        /// Resetuje počet striků na nulu.
         /// </summary>
         public static void Reset()
         {
             Strike = 0;
-        } 
+        }
         /// <summary>
-        /// 
+        /// Vrátí výsledek podle aktuálního stavu striků.
         /// </summary>
-        /// <param name="errorMessage"></param>
-        /// <param name="suggestion"></param>
-        /// <returns></returns>
+        /// <param name="errorMessage">Chybová zpráva.</param>
+        /// <param name="suggestion">Návrh na řešení.</param>
+        /// <returns>True, pokud je počet striků menší než maximální povolený počet, jinak false.</returns>
         public static bool GetResult(string errorMessage, string suggestion)
         {
             string message = "\n  Chyba: " + errorMessage + "\n  Máte " + Strike + "/" + MaxStrike + " striků. " + suggestion + "\n";
@@ -59,6 +59,5 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                 return false;
             }
         }
-
     }
 }
