@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using Colorful;
 using Console = Colorful.Console;
+using Sifrovy_Prekladac.src.logs;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
@@ -24,34 +25,43 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            PetronilkaSifra pet = new PetronilkaSifra(text, "PETRONILKA", true);
-            Console.WriteLine("\nPokud chcete použít klíč 'PETRONILKA', zmáčkněte Enter.", Color.Green);
-            while (true)
+            try
             {
-                string SifDesif = "zašifrování";
-                if (decypher)
+                PetronilkaSifra pet = new PetronilkaSifra(text, "PETRONILKA", true);
+                Console.WriteLine("\nPokud chcete použít klíč 'PETRONILKA', zmáčkněte Enter.", Color.Green);
+                while (true)
                 {
-                    SifDesif = "dešifrování";
-                }
-                Console.Write("\nZadejte desetimístný klíč pro " + SifDesif + ": ");
-                try
-                {
-                    string key = Console.ReadLine().ToUpper();
-                    if (string.IsNullOrEmpty(key))
+                    string SifDesif = "zašifrování";
+                    if (decypher)
                     {
-                        key = "PETRONILKA";
+                        SifDesif = "dešifrování";
                     }
-                    pet = new PetronilkaSifra(text, key, decypher);
-                    break;
+                    Console.Write("\nZadejte desetimístný klíč pro " + SifDesif + ": ");
+                    try
+                    {
+                        string key = Console.ReadLine().ToUpper();
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            key = "PETRONILKA";
+                        }
+                        pet = new PetronilkaSifra(text, key, decypher);
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Chyba: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Chyba: " + ex.Message);
-                }
+                HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
+                string output = pet.DecText + "\n" + pet.KlicSlovo;
+                SaveToFileUI.Start(output, decypher);
             }
-            HistoryHandler.Write(MainMenu.LoggedInUser, pet.ToString(), ActiveSifry.Petronilka);
-            string output = pet.DecText + "\n" + pet.KlicSlovo;
-            SaveToFileUI.Start(output, decypher);
+            catch
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

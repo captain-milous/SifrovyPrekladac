@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sifrovy_Prekladac.src.logs;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
@@ -21,24 +22,33 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            NumerickaSifra num = new NumerickaSifra(text, "DEF", true);
-            while (true)
+            try
             {
-                bool wrong = false;
-                Print.NumPodsifry(decypher);
-                string answer = Console.ReadLine().ToUpper();
-                if (answer == "DEF" || answer == "BTR" || answer == "ROM" || answer == "SPI" || answer == "HEX")
+                NumerickaSifra num = new NumerickaSifra(text, "DEF", true);
+                while (true)
                 {
-                    num = new NumerickaSifra(text, answer, decypher);
-                    break;
+                    bool wrong = false;
+                    Print.NumPodsifry(decypher);
+                    string answer = Console.ReadLine().ToUpper();
+                    if (answer == "DEF" || answer == "BTR" || answer == "ROM" || answer == "SPI" || answer == "HEX")
+                    {
+                        num = new NumerickaSifra(text, answer, decypher);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Neplatná volba.");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Neplatná volba.");
-                }
+                HistoryHandler.Write(MainMenu.LoggedInUser, num.ToString(), ActiveSifry.Numericka_Sifra);
+                SaveToFileUI.Start(num.DecText, decypher);
             }
-            HistoryHandler.Write(MainMenu.LoggedInUser, num.ToString(), ActiveSifry.Numericka_Sifra);
-            SaveToFileUI.Start(num.DecText, decypher);
+            catch
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

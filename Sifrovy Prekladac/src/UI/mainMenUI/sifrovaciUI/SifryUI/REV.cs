@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sifrovy_Prekladac.src.logs;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
@@ -21,9 +22,18 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            ReverzniSifra rev = new ReverzniSifra(text, decypher);
-            HistoryHandler.Write(MainMenu.LoggedInUser, rev.ToString(), ActiveSifry.Reverzni_Sifra);
-            SaveToFileUI.Start(rev.DecText, decypher);
+            try
+            {
+                ReverzniSifra rev = new ReverzniSifra(text, decypher);
+                HistoryHandler.Write(MainMenu.LoggedInUser, rev.ToString(), ActiveSifry.Reverzni_Sifra);
+                SaveToFileUI.Start(rev.DecText, decypher);
+            }
+            catch
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

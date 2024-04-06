@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sifrovy_Prekladac.src.logs;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
@@ -21,23 +22,37 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            MorseovaSifra mor = new MorseovaSifra(text);
-            while (true)
+            try
             {
-                Print.MorPodsifry(decypher);
-                string answer = Console.ReadLine().ToUpper();
-                if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
+                MorseovaSifra mor = new MorseovaSifra(text, decypher);
+                while (true)
                 {
-                    mor = new MorseovaSifra(text, answer, decypher);
-                    break;
+                    Print.MorPodsifry(decypher);
+                    string answer = Console.ReadLine().ToUpper();
+                    if (answer == "DEF" || answer == "REV" || answer == "NUM" || answer == "ABC")
+                    {
+                        mor = new MorseovaSifra(text, answer, decypher);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Neplatná volba.");
+                    }
                 }
-                else
+                HistoryHandler.Write(MainMenu.LoggedInUser, mor.ToString(), ActiveSifry.Morseova_Sifra);
+                string output = mor.EncText;
+                if (decypher)
                 {
-                    Console.WriteLine("Neplatná volba.");
+                    output = mor.DecText;
                 }
+                SaveToFileUI.Start(output, decypher);
             }
-            HistoryHandler.Write(MainMenu.LoggedInUser, mor.ToString(), ActiveSifry.Morseova_Sifra);
-            SaveToFileUI.Start(mor.EncText, decypher);
+            catch
+            {
+                Console.WriteLine("\n  Chyba: "+ text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

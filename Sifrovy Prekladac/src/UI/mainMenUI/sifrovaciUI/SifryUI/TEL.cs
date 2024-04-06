@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sifrovy_Prekladac.src.logs;
 
 namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
 {
@@ -21,23 +22,32 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            TelefonniSifra tel = new TelefonniSifra(text, "DEF", true);
-            while (true)
+            try
             {
-                Print.TelPodsifry(decypher);
-                string answer = Console.ReadLine().ToUpper();
-                if (answer == "DEF" || answer == "BTR")
+                TelefonniSifra tel = new TelefonniSifra(text, "DEF", true);
+                while (true)
                 {
-                    tel = new TelefonniSifra(text, answer, decypher);
-                    break;
+                    Print.TelPodsifry(decypher);
+                    string answer = Console.ReadLine().ToUpper();
+                    if (answer == "DEF" || answer == "BTR")
+                    {
+                        tel = new TelefonniSifra(text, answer, decypher);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Neplatná volba.");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Neplatná volba.");
-                }
+                HistoryHandler.Write(MainMenu.LoggedInUser, tel.ToString(), ActiveSifry.Telefonni_Sifra);
+                SaveToFileUI.Start(tel.DecText, decypher);
             }
-            HistoryHandler.Write(MainMenu.LoggedInUser, tel.ToString(), ActiveSifry.Telefonni_Sifra);
-            SaveToFileUI.Start(tel.DecText, decypher);
+            catch
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

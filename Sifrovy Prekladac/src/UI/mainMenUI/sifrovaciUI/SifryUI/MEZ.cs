@@ -1,4 +1,5 @@
 ﻿using Sifrovy_Prekladac.src.historie;
+using Sifrovy_Prekladac.src.logs;
 using Sifrovy_Prekladac.src.sifry;
 using Sifrovy_Prekladac.src.sifry.related;
 using System;
@@ -21,9 +22,18 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            MezerovaSifra mez = new MezerovaSifra(text, decypher);
-            HistoryHandler.Write(MainMenu.LoggedInUser, mez.ToString(), ActiveSifry.Mezerova_Sifra);
-            SaveToFileUI.Start(mez.DecText, decypher);
+            try
+            {
+                MezerovaSifra mez = new MezerovaSifra(text, decypher);
+                HistoryHandler.Write(MainMenu.LoggedInUser, mez.ToString(), ActiveSifry.Mezerova_Sifra);
+                SaveToFileUI.Start(mez.DecText, decypher);
+            }
+            catch
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         }
     }
 }

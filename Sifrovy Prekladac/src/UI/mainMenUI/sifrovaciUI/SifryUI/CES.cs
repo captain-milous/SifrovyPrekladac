@@ -22,23 +22,32 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
         /// <param name="decypher">True, pokud se má provést dešifrování; jinak false pro zašifrování.</param>
         public static void Start(string text, bool decypher)
         {
-            int input = 0;
-            while (true)
+            try
             {
-                Console.Write("\nZadejte o kolik písmenek se má text posunout: ");
-                try
+                int input = 0;
+                while (true)
                 {
-                    input = Convert.ToInt32(Console.ReadLine());
-                    break;
+                    Console.Write("\nZadejte o kolik písmenek se má text posunout: ");
+                    try
+                    {
+                        input = Convert.ToInt32(Console.ReadLine());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Zadaná Hodnota musí být integer!");
+                    }
                 }
-                catch
-                {
-                    Console.WriteLine("Zadaná Hodnota musí být integer!");
-                }
+                CaesarovaSifra ces = new CaesarovaSifra(text, input, decypher);
+                HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
+                SaveToFileUI.Start(ces.EncText, decypher);
             }
-            CaesarovaSifra ces = new CaesarovaSifra(text, input, decypher);
-            HistoryHandler.Write(MainMenu.LoggedInUser, ces.ToString(), ActiveSifry.Caesarova_Sifra);
-            SaveToFileUI.Start(ces.EncText, decypher);
+            catch 
+            {
+                Console.WriteLine("\n  Chyba: " + text + " nelze zašifrovat/dešifrovat touto šifrou.");
+                LogHandler.Write("Nastala chyba při šifraci/dešifraci textu: " + text);
+                Thread.Sleep(1000);
+            }
         } 
     }
 }
