@@ -19,7 +19,6 @@ namespace Sifrovy_Prekladac.src.logs
         /// Cesta k hlavnímu souboru, kam budou ukládány systémové logy.
         /// </summary>
         public static string LogPath = "log\\system.log";
-
         /// <summary>
         /// Zapíše zprávu do hlavního logovacího souboru.
         /// </summary>
@@ -39,7 +38,6 @@ namespace Sifrovy_Prekladac.src.logs
                 WriteEmergancy();
             }
         }
-
         /// <summary>
         /// Zápis mimořádné události do odděleného souboru, změna cesty logu a ukončení programu.
         /// </summary>

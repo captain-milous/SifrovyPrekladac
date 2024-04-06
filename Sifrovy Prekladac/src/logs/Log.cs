@@ -54,6 +54,5 @@ namespace Sifrovy_Prekladac.src.logs
         {
             return LogDate + " (" + Author + "): " + Message + "\n";
         }
-
     }
 }
