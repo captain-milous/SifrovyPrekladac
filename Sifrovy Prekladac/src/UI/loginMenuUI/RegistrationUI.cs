@@ -28,7 +28,6 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
             Console.Write("Pro vrácení do hlavní nabídky napište: back.", Color.Green);
             Console.WriteLine(InitialMenu.Oddelovac, Color.Green);
             Console.WriteLine("Registrace nového uživatele:\n");
-
             string input = string.Empty;
             StrikeHandler.MaxStrike = 3;
             bool mainRun = true;
