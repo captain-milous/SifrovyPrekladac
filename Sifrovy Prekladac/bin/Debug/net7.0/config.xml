@@ -4,12 +4,8 @@
   <LogFilePath>log\system.log</LogFilePath>
   <ListOfUsersFilePath>users\ActiveUsers.xml</ListOfUsersFilePath>
   
-  <!-- Změna administrátorského helsa -->
-  <AdminPassword>Heslo123*</AdminPassword>
-  
-  <!-- Změna složky pro import a export textových souborů. -->
-  <!-- např.: <InputFile>C:\Users\username\Desktop</InputFile> -->
-  <InputFolder>Environment.GetFolderPath(Environment.SpecialFolder.Desktop)</InputFolder>
-  <OutputFolder>Environment.GetFolderPath(Environment.SpecialFolder.Desktop)</OutputFolder>
+  <!-- Změna mojí vlastní složky pro import a export textových souborů. -->
+  <!-- např.: <CustomFolder>C:\Users\username\Desktop</CustomFolder> -->
+  <CustomFolder>Preklad_Sifer</CustomFolder>
   
 </Configuration>

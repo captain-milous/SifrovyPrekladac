@@ -29,13 +29,9 @@ namespace Sifrovy_Prekladac.src
             {
                 ConfigHandler.Load();
                 LogHandler.ChangeLogPath(ConfigHandler.Config.LogFilePath);
-                if (!Directory.Exists(ConfigHandler.Config.OutputFile))
+                if (!Directory.Exists(ConfigHandler.Config.UserFolder))
                 {
-                    Directory.CreateDirectory(ConfigHandler.Config.OutputFile);
-                }
-                if (!Directory.Exists(ConfigHandler.Config.InputFile))
-                {
-                    Directory.CreateDirectory(ConfigHandler.Config.InputFile);
+                    Directory.CreateDirectory(ConfigHandler.Config.UserFolder);
                 }
                 if (!Directory.Exists("users"))
                 {

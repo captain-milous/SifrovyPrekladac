@@ -29,8 +29,7 @@ namespace Sifrovy_Prekladac.src.conf
                 XDocument doc = XDocument.Load(filePath);
                 newConfig.LogFilePath = GetValueFromXml(doc, "LogFilePath");
                 newConfig.ListOfUsersFilePath = GetValueFromXml(doc, "ListOfUsersFilePath");
-                newConfig.InputFile = GetValueFromXml(doc, "InputFolder");
-                newConfig.OutputFile = GetValueFromXml(doc, "OutputFolder");
+                newConfig.UserFolder = GetValueFromXml(doc, "CustomFolder");
             }
             catch (Exception ex)
             {

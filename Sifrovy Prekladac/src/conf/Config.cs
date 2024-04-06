@@ -13,8 +13,7 @@ namespace Sifrovy_Prekladac.src.conf
     {
         public string LogFilePath { get; set; }
         public string ListOfUsersFilePath { get; set; }
-        public string InputFile { get; set; }
-        public string OutputFile { get; set; }
+        public string UserFolder { get; set; }
 
         /// <summary>
         /// Inicializuje novou instanci třídy Config bez parametrů.
