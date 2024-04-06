@@ -14,6 +14,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <summary>
         /// Zapíše zadaný text do PDF souboru.
         /// </summary>
+        /// <param name="folderPath">Cesta ke složce.</param>
         /// <param name="fileName">Název souboru, do kterého se má zapisovat text.</param>
         /// <param name="text">Text, který se má zapsat do souboru.</param>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při zápisu do souboru.</exception>
