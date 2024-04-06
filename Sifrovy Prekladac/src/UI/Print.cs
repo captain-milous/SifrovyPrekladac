@@ -11,12 +11,12 @@ using Sifrovy_Prekladac.src.sifry.related;
 namespace Sifrovy_Prekladac.src.UI
 {
     /// <summary>
-    /// 
+    /// Třída pro výpis zpráv a uživatelských rozhraní.
     /// </summary>
     public static class Print
     {
         /// <summary>
-        /// 
+        /// ASCII umění sifrového překladu.
         /// </summary>
         public static string SifrovyPrekladac = @"
  _\_/   _   __                      __                
@@ -37,10 +37,10 @@ namespace Sifrovy_Prekladac.src.UI
         /// </summary>
         public static string Oddelovac = "\n----------------------------------------------------------------------------------\n";
         /// <summary>
-        /// 
+        /// Metoda pro zobrazení jednoho položky menu.
         /// </summary>
-        /// <param name="prefix"></param>
-        /// <param name="message"></param>
+        /// <param name="prefix">Prefix pro položku.</param>
+        /// <param name="message">Zpráva položky.</param>
         private static void PrintMenuItem(string prefix, string message)
         {
             Console.Write("[");
@@ -48,9 +48,9 @@ namespace Sifrovy_Prekladac.src.UI
             Console.WriteLine("] " + message);
         }
         /// <summary>
-        /// 
+        /// Metoda pro zobrazení uvítacího rozhraní.
         /// </summary>
-        /// <param name="version"></param>
+        /// <param name="version">Verze aplikace.</param>
         public static void Introduction(string version)
         {
             Console.Clear();
@@ -64,7 +64,7 @@ namespace Sifrovy_Prekladac.src.UI
             Console.ReadLine();
         }
         /// <summary>
-        /// 
+        /// Metoda pro výpis nabídky po úvodu aplikace.
         /// </summary>
         public static void Initial()
         {
@@ -75,7 +75,9 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("3", "Ukončit program");
             Console.Write("\nVyberte možnost: ");
         }
-
+        /// <summary>
+        /// Metoda pro výpis volby typu textu.
+        /// </summary>
         public static void VolbaTextu()
         {
             Console.WriteLine(Oddelovac);
@@ -88,7 +90,7 @@ namespace Sifrovy_Prekladac.src.UI
         /// <summary>
         /// Zobrazí uživateli možnosti zašifrování nebo dešifrování textu.
         /// </summary>
-        /// <returns>Řetězec označující zvolenou volbu (zašifrovat, dešifrovat, exit).</returns>
+        /// <param name="text">Text</param>
         public static void VolbaSifDesif(string text)
         {
             Console.WriteLine(Oddelovac);
@@ -100,10 +102,10 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
+        /// Metoda pro výpis dostupných šifer a zkratek.
         /// </summary>
-        /// <param name="ZkratkySifer"></param>
-        /// <param name="InputText"></param>
+        /// <param name="ZkratkySifer">Dictionary obsahující zkratky šifer.</param>
+        /// <param name="InputText">Vstupní text.</param>
         public static void VypisZkratekASifer(Dictionary<ActiveSifry, string> ZkratkySifer, string InputText)
         {
             Console.WriteLine(Oddelovac);
@@ -119,9 +121,9 @@ namespace Sifrovy_Prekladac.src.UI
             Console.WriteLine(InputText);
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr typu Morseovy šifry.
         /// </summary>
-        /// <param name="decypher"></param>
+        /// <param name="decypher">Určuje, zda se jedná o zašifrování nebo dešifrování.</param>
         public static void MorPodsifry(bool decypher)
         {
             string SifDesif = "zašifruje";
@@ -140,9 +142,9 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr rozložení klávesnice pro šifrování.
         /// </summary>
-        /// <param name="decypher"></param>
+        /// <param name="decypher">Určuje, zda se jedná o zašifrování nebo dešifrování.</param>
         public static void KlaPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -158,9 +160,9 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr způsobu reprezentace čísel pro šifrování.
         /// </summary>
-        /// <param name="decypher"></param>
+        /// <param name="decypher">Určuje, zda se jedná o zašifrování nebo dešifrování.</param>
         public static void NumPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -182,9 +184,9 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr typu telefonní šifry.
         /// </summary>
-        /// <param name="decypher"></param>
+        /// <param name="decypher">Určuje, zda se jedná o zašifrování nebo dešifrování.</param>
         public static void TelPodsifry(bool decypher)
         {
             string SifDesif = "zašifrovat";
@@ -201,8 +203,8 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
-        /// </summary>
+        /// Metoda pro výběr umístění pro uložení textu.
+        /// </summary
         public static void WhereToSave()
         {
             Console.WriteLine("\nKam chcete přeložený text uložit?\n");
@@ -213,7 +215,7 @@ namespace Sifrovy_Prekladac.src.UI
             Console.Write("\nVaše volba: ");
         }
         /// <summary>
-        /// 
+        /// Metoda pro výběr umístění pro import souboru.
         /// </summary>
         public static void ImportFromFolder()
         {
@@ -224,7 +226,12 @@ namespace Sifrovy_Prekladac.src.UI
             PrintMenuItem("4", "Vrátit se zpět");
             Console.Write("\nVaše volba: ");
         }
-        
+        /// <summary>
+        /// Metoda pro výpis dostupných souborů v zadaném adresáři.
+        /// </summary>
+        /// <param name="folderPath">Cesta k adresáři.</param>
+        /// <param name="availableFiles">Seznam dostupných souborů.</param>
+        /// <exception cref="Exception">Vyjímka při neexistenci souborů v adresáři.</exception>
         public static void AvailableFiles(string folderPath, List<string> availableFiles)
         {
             if (availableFiles.Count > 0)
