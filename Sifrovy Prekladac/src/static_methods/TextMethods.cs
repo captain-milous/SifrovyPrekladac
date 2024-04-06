@@ -18,24 +18,43 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// </summary>
         public static char[] Abeceda = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         /// <summary>
+        /// Odstraní diakritiku
+        /// </summary>
+        /// <param name="text">Vstupní text.</param>
+        /// <returns>Text bez diakritiky</returns>
+        public static string WithoutDiacritics(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return text;
+            }
+            Dictionary<char, char> diacriticsMap = new Dictionary<char, char>
+            {
+                {'á', 'a'}, {'č', 'c'}, {'ď', 'd'}, {'é', 'e'}, {'ě', 'e'},
+                {'í', 'i'}, {'ň', 'n'}, {'ó', 'o'}, {'ř', 'r'}, {'š', 's'},
+                {'ť', 't'}, {'ú', 'u'}, {'ů', 'u'}, {'ý', 'y'}, {'ž', 'z'},
+                {'Á', 'A'}, {'Č', 'C'}, {'Ď', 'D'}, {'É', 'E'}, {'Ě', 'E'},
+                {'Í', 'I'}, {'Ň', 'N'}, {'Ó', 'O'}, {'Ř', 'R'}, {'Š', 'S'},
+                {'Ť', 'T'}, {'Ú', 'U'}, {'Ů', 'U'}, {'Ý', 'Y'}, {'Ž', 'Z'}
+            };
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in text)
+            {
+                if (diacriticsMap.ContainsKey(c))
+                    sb.Append(diacriticsMap[c]);
+                else
+                    sb.Append(c);
+            }
+            return sb.ToString();
+        }
+        /// <summary>
         /// Odstraní diakritiku a převede text na velká písmena.
         /// </summary>
         /// <param name="text">Vstupní text.</param>
         /// <returns>Text bez diakritiky v uppercase.</returns>
         public static string WithoutDiacriticsToUpper(string text)
         {
-            text = text.ToUpper();
-            string normalizedString = text.Normalize(NormalizationForm.FormD);
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < normalizedString.Length; i++)
-            {
-                if (CharUnicodeInfo.GetUnicodeCategory(normalizedString[i]) != UnicodeCategory.NonSpacingMark)
-                {
-                    stringBuilder.Append(normalizedString[i]);
-                }
-            }
-
-            return stringBuilder.ToString();
+            return WithoutDiacritics(text).ToUpper();
         }
         /// <summary>
         /// Odstraní speciální znaky z textu.
