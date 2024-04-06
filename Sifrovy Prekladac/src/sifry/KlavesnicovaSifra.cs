@@ -129,7 +129,6 @@ namespace Sifrovy_Prekladac.src.sifry
             switch (TypeOfEnc)
             {
                 case "CZK":
-
                     foreach (char c in text)
                     {
                         string eChar = CzKeyboard[c];
@@ -137,9 +136,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
-
                 case "ENK":
-
                     foreach (char c in text)
                     {
                         string eChar = EnKeyboard[c];
@@ -147,10 +144,8 @@ namespace Sifrovy_Prekladac.src.sifry
                         encryptedText.Append(' ');
                     }
                     return encryptedText.ToString();
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
@@ -167,7 +162,6 @@ namespace Sifrovy_Prekladac.src.sifry
             switch (TypeOfEnc)
             {
                 case "CZK":
-
                     string[] encryptedChars = text.Trim().Split(' ');
                     foreach (string eChar in encryptedChars)
                     {
@@ -175,9 +169,7 @@ namespace Sifrovy_Prekladac.src.sifry
                         decryptedText.Append(originalChar);
                     }
                     return decryptedText.ToString();
-
                 case "ENK":
-
                     encryptedChars = text.Trim().Split(' ');
                     foreach (string eChar in encryptedChars)
                     {
@@ -185,10 +177,8 @@ namespace Sifrovy_Prekladac.src.sifry
                         decryptedText.Append(originalChar);
                     }
                     return decryptedText.ToString();
-
                 default:
                     throw new Exception("Nepodporovaný typ šifrování.");
-
             }
         }
         #endregion
