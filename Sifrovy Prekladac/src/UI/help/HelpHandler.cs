@@ -66,6 +66,7 @@ namespace Sifrovy_Prekladac.src.UI.help
         /// <summary>
         /// Zobrazí nápovědu obsahující popisy jednotlivých příkazů.
         /// </summary>
+        /// <param name="user">Uživatel pro kterého se bude nápověda zobrazovat</param>
         public static void Start(User user)
         {
             Console.WriteLine("Příkazy, které můžete použít:\n");
@@ -96,9 +97,9 @@ namespace Sifrovy_Prekladac.src.UI.help
             Console.WriteLine();
         }
         /// <summary>
-        /// 
+        /// Vytiskne příkaz spolu s jeho popisem a zkratkou.
         /// </summary>
-        /// <param name="command"></param>
+        /// <param name="command">Příkaz k vytisknutí.</param>
         private static void PrintCommand(Commands command)
         {
             int delkaZkr = Zkratky[command].Length;
