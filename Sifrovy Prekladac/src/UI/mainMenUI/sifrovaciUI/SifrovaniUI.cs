@@ -17,7 +17,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
     /// </summary>
     public static class SifrovaniUI
     {
-
         /// <summary>
         /// Slovník obsahující zkratky pro různé aktivní šifry.
         /// </summary>
@@ -42,7 +41,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
         {
             Console.Clear();
             Print.VypisZkratekASifer(ZkratkySifer, InputText);
-            Console.WriteLine("Váš text: " + InputText);
             ActiveSifry Sifra = ActiveSifry.Morseova_Sifra;
             bool run = true;
             while(run)
@@ -56,10 +54,10 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 {
                     Console.Write("Vyberte zkratku šifry, kterou budete dešifrovat: ");
                 }
-                string answer = Console.ReadLine().ToUpper();
-                if (ZkratkySifer.ContainsValue(answer))
+                string input = Console.ReadLine().ToUpper();
+                if (ZkratkySifer.ContainsValue(input))
                 {
-                    Sifra = ZkratkySifer.FirstOrDefault(x => x.Value == answer).Key;
+                    Sifra = ZkratkySifer.FirstOrDefault(x => x.Value == input).Key;
                     run = false;
                 }
                 else
@@ -71,104 +69,34 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             switch (Sifra)
             {
                 case ActiveSifry.Morseova_Sifra:
-                    if (!decypher)
-                    {
-                        MOR.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        MOR.Decrypt(InputText);
-                    }
+                    MOR.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Caesarova_Sifra:
-                    if (!decypher)
-                    {
-                        CES.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        CES.Decrypt(InputText);
-                    }
+                    CES.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Petronilka:
-                    if (!decypher)
-                    {
-                        PET.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        PET.Decrypt(InputText);
-                    }
+                    PET.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Mezerova_Sifra:
-                    if (!decypher)
-                    {
-                        MEZ.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        MEZ.Decrypt(InputText);
-                    }
+                    MEZ.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Klavesnicova_Sifra:
-                    if (!decypher)
-                    {
-                        KLA.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        KLA.Decrypt(InputText);
-                    }
+                    KLA.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Telefonni_Sifra:
-                    if (!decypher)
-                    {
-                        TEL.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        TEL.Decrypt(InputText);
-                    }
+                    TEL.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Numericka_Sifra:
-                    if (!decypher)
-                    {
-                        NUM.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        NUM.Decrypt(InputText);
-                    }
+                    NUM.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Reverzni_Sifra:
-                    if (!decypher)
-                    {
-                        REV.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        REV.Decrypt(InputText);
-                    }
+                    REV.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Obracena_ABC_Sifra:
-                    if (!decypher)
-                    {
-                        OAS.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        OAS.Decrypt(InputText);
-                    }
+                    OAS.Start(InputText, decypher);
                     break;
                 case ActiveSifry.Prohazena_Sifra:
-                    if (!decypher)
-                    {
-                        SHU.Encrypt(InputText);
-                    }
-                    else
-                    {
-                        SHU.Decrypt(InputText);
-                    }
+                    SHU.Start(InputText, decypher);
                     break;
                 default:
                     Console.WriteLine("Nevybrali jste žádnou šifru.. Tohle by nikdy nemělo nastat.");

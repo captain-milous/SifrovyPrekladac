@@ -83,8 +83,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-16T08:48:11.721Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifrovaniUI.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAQwEIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T20:59:53.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T20:59:53.866Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\SifryUI\\MOR.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T21:11:49.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T21:11:49.448Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "src\\UI\\help\\Commands.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T21:32:43.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T21:32:43.955Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "src\\UI\\help\\HelpHandler.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAiwBkAAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T21:33:00.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T21:33:00.219Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "src\\UI\\mainMenUI\\MainMenu.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAwwDwAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T18:35:24.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T18:35:24.023Z"
             },
             {
               "$type": "Document",
@@ -165,8 +159,7 @@
               "RelativeToolTip": "src\\UI\\loginMenuUI\\LoginUI.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T17:48:33.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T17:48:33.168Z"
             },
             {
               "$type": "Document",
@@ -178,8 +171,7 @@
               "RelativeToolTip": "src\\UI\\mainMenUI\\sifrovaciUI\\LoadInputUI.cs",
               "ViewState": "AQIAAM4AAAAAAAAAAAAuwM4AAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T20:34:31.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T20:34:31.368Z"
             },
             {
               "$type": "Document",
@@ -204,8 +196,7 @@
               "RelativeToolTip": "src\\UI\\loginMenuUI\\InitialMenu.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAgwD0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T18:34:54.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T18:34:54.004Z"
             },
             {
               "$type": "Document",
@@ -217,8 +208,7 @@
               "RelativeToolTip": "src\\UserHandler\\User.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAIwEQAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T22:01:39.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T22:01:39.382Z"
             },
             {
               "$type": "Document",
@@ -230,8 +220,7 @@
               "RelativeToolTip": "src\\UI\\mainMenUI\\UserUI.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAGcAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T22:08:49.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T22:08:49.622Z"
             },
             {
               "$type": "Document",
@@ -243,8 +232,7 @@
               "RelativeToolTip": "src\\CheckStructure.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAiwDcAAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T19:55:52.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T19:55:52.444Z"
             },
             {
               "$type": "Document",
@@ -256,8 +244,7 @@
               "RelativeToolTip": "src\\UI\\loginMenuUI\\StrikeHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T18:50:46.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T18:50:46.165Z"
             },
             {
               "$type": "Document",
