@@ -15,7 +15,6 @@ namespace Sifrovy_Prekladac.src.conf
         /// Globální instance konfigurace.
         /// </summary>
         public static Config Config = new Config();
-
         /// <summary>
         /// Načte konfiguraci z externího zdroje a aktualizuje globální instanci konfigurace.
         /// </summary>

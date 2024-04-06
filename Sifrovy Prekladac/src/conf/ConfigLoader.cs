@@ -16,7 +16,6 @@ namespace Sifrovy_Prekladac.src.conf
         /// Výchozí cesta k XML souboru s konfigurací.
         /// </summary>
         private static string filePath = "config.xml";
-
         /// <summary>
         /// Načte konfiguraci z XML souboru a vrátí ji jako objekt třídy Config.
         /// </summary>
@@ -38,7 +37,6 @@ namespace Sifrovy_Prekladac.src.conf
             }
             return newConfig;
         }
-
         /// <summary>
         /// Získá hodnotu elementu z XML dokumentu.
         /// </summary>
