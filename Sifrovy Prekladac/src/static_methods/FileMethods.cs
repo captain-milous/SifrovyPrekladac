@@ -16,6 +16,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <summary>
         /// Zapíše zadaný text do souboru.
         /// </summary>
+        /// <param name="folderPath">Cesta ke složce.</param>
         /// <param name="fileName">Název souboru, do kterého se má zapisovat text.</param>
         /// <param name="text">Text, který se má zapsat do souboru.</param>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při zápisu do souboru.</exception>
@@ -52,6 +53,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <summary>
         /// Načte textová data ze zadaného souboru.
         /// </summary>
+        /// <param name="folderPath">Cesta ke složce.</param>
         /// <param name="fileName">Název souboru, ze kterého se má číst text.</param>
         /// <returns>Načtený text ze souboru.</returns>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při čtení ze souboru.</exception>
@@ -86,6 +88,12 @@ namespace Sifrovy_Prekladac.src.static_methods
                 throw new Exception($"Chyba při čtení ze souboru: {ex.Message}");
             }
         }
+        /// <summary>
+        /// Načte textová data ze zadaného souboru.
+        /// </summary>
+        /// <param name="fullFilePath">Úplná cesta k souboru</param>
+        /// <returns>Načtený text ze souboru.</returns>
+        /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při čtení ze souboru.</exception>
         public static string Read(string fullFilePath)
         {
             try
@@ -135,6 +143,5 @@ namespace Sifrovy_Prekladac.src.static_methods
                 return false;
             }
         }
-
     }
 }
