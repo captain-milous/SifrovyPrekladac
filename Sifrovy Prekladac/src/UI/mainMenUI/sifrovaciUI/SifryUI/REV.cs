@@ -26,7 +26,6 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.sifrovaciUI.SifryUI
             {
                 ReverzniSifra rev = new ReverzniSifra(text, decypher);
                 HistoryHandler.Write(MainMenu.LoggedInUser, rev.ToString(), ActiveSifry.Reverzni_Sifra);
-                SaveToFileUI.Start(rev.DecText, decypher);
                 string output = rev.EncText;
                 if (decypher)
                 {
