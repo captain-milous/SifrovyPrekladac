@@ -19,7 +19,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <param name="fileName">Název souboru, do kterého se má zapisovat text.</param>
         /// <param name="text">Text, který se má zapsat do souboru.</param>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při zápisu do souboru.</exception>
-        public static void Write(string fileName, string text)
+        public static void Write(string folderPath, string fileName, string text)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace Sifrovy_Prekladac.src.static_methods
                 {
                     fileName += ".txt";
                 }
-                string filePath = ConfigHandler.Config.OutputFile + "\\" + fileName;
+                string filePath = folderPath + "\\" + fileName;
                 if (File.Exists(filePath))
                 {
                     using (StreamWriter writer = File.AppendText(filePath))
@@ -55,7 +55,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <param name="fileName">Název souboru, ze kterého se má číst text.</param>
         /// <returns>Načtený text ze souboru.</returns>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při čtení ze souboru.</exception>
-        public static string Read(string fileName)
+        public static string Read(string folderPath, string fileName)
         {
             try
             {
@@ -63,10 +63,7 @@ namespace Sifrovy_Prekladac.src.static_methods
                 {
                     throw new Exception("Nepodporovaný typ souboru.");
                 }
-                string filePath = ConfigHandler.Config.OutputFile + "\\" + fileName;
-                Console.WriteLine();
-                Console.WriteLine(filePath);
-                Console.WriteLine();
+                string filePath = folderPath + "\\" + fileName;
                 if (!File.Exists(filePath))
                 {
                     throw new FileNotFoundException("Soubor neexistuje.", filePath);

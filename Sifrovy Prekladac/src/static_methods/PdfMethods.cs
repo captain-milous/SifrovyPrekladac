@@ -17,7 +17,7 @@ namespace Sifrovy_Prekladac.src.static_methods
         /// <param name="fileName">Název souboru, do kterého se má zapisovat text.</param>
         /// <param name="text">Text, který se má zapsat do souboru.</param>
         /// <exception cref="Exception">Výjimka, která může být vyvolána při chybě při zápisu do souboru.</exception>
-        public static void SaveToPDF(string fileName, string text)
+        public static void SaveToPDF(string folderPath, string fileName, string text)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace Sifrovy_Prekladac.src.static_methods
                     fileName += ".pdf";
                 }
 
-                string filePath = ConfigHandler.Config.OutputFile + "\\" + fileName;
+                string filePath = folderPath + "\\" + fileName;
                 Document document = new Document();
                 PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
                 document.Open();

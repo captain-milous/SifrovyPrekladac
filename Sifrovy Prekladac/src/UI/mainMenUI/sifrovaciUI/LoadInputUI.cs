@@ -131,7 +131,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
             bool run = true;
             while (run)
             {
-                availableFiles = GetTxtFiles(ConfigHandler.Config.InputFile);
+                availableFiles = GetTxtFiles(ConfigHandler.Config.UserFolder);
                 if (availableFiles.Count > 0)
                 {
                     string fileName = string.Empty;
@@ -148,12 +148,12 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                     {
                         fileName += ".txt";
                     }
-                    string path = ConfigHandler.Config.InputFile + "\\" + fileName;
+                    string path = ConfigHandler.Config.UserFolder + "\\" + fileName;
                     if (availableFiles.Contains(path))
                     {
                         try
                         {
-                            string rawText = FileMethods.Read(fileName);
+                            string rawText = FileMethods.Read(ConfigHandler.Config.UserFolder, fileName);
                             if (ChceckIfCorrect(rawText))
                             {
                                 string answer = ChooseSifXDesif();
@@ -187,7 +187,7 @@ namespace Sifrovy_Prekladac.src.UI.mainMenUI.SifrovaciUI
                 }
                 else
                 {
-                    Console.Write("  Chyba: V " + ConfigHandler.Config.InputFile + " není žádný podporovaný soubor.");
+                    Console.Write("  Chyba: V " + ConfigHandler.Config.UserFolder + " není žádný podporovaný soubor.");
                     Console.WriteLine("(Zkontrulujte zda je Váš soubor ve adresáři, který je uvedený v konfiguračním souboru, tedy zda je cesta k souborům správně. Pokud ne, vložte soubor do příslušného adresáře, nebo ukončete program, změňte cestu v konfiguračním souboru a znovu program zapněte.)");
                     run = false;
                 }
