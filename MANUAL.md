@@ -25,6 +25,15 @@ Po úspěšné instalaci a spuštění můžete používat Šifrový Překladač
    - Výsledek bude okamžitě zobrazen v přehledném výstupním poli.
    - Máte také možnost uložit si tento výsledek do textového souboru.
 
+
+## Použité knihovny
+
+- Colorful.Console
+
+- iTextSharp
+
+- PDFsharp 
+
 ## Podpora
 
 V případě potřeby podpory nebo pokud máte jakékoliv dotazy ohledně použití Šifrového Překladače, neváhejte nás kontaktovat prostřednictvím [emailu](mailto:milos@ltpaprsek.cz) nebo vytvořte [issue](https://github.com/captain-milous/SifrovyPrekladac/issues) na GitHubu.
