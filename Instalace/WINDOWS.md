@@ -1,4 +1,4 @@
-Video tutoriál [zde](https://youtu.be/-x59Ajcgqkc)
+# [Video tutoriál](https://youtu.be/-x59Ajcgqkc)
 
 
 ## 1. Nainstalujte [DOTNET](https://dotnet.microsoft.com/en-us/download/dotnet/7.0/runtime) pro konzolové aplikace
