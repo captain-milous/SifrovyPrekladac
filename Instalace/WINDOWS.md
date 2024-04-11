@@ -3,6 +3,8 @@ Video tutoriál [zde](https://youtu.be/-x59Ajcgqkc)
 
 ## 1. Nainstalujte [DOTNET](https://dotnet.microsoft.com/en-us/download/dotnet/7.0/runtime) pro konzolové aplikace
 
+![Download zip](img/DOTNET.png)
+
 ## 2. Stáhněte si z repositáře [ZIP](https://github.com/captain-milous/SifrovyPrekladac.git) 
 
 ![Download zip](img/DownloadZIP.png)
@@ -13,8 +15,12 @@ Video tutoriál [zde](https://youtu.be/-x59Ajcgqkc)
 
 Cesta ke konfiguračnímu souboru: *VAS_ZVOLENY_ADRESAR\\SifrovyPrekladac\\Sifrovy Prekladac\\bin\\Debug\\net7.0\\config.xml*
 
-## *(Nepovinný krok)* Vytvořit zástupce
+![Download zip](img/config.png)
 
 ## 5. Spustit aplikaci
 
 Cesta ke spuštění: *VAS_ZVOLENY_ADRESAR\\SifrovyPrekladac\\Sifrovy Prekladac\\bin\\Debug\\net7.0\\SifrovyPrekladac.exe*
+
+![Download zip](img/aplikace.png)
+
+## *(Nepovinný krok)* Vytvořit zástupce na plochu
