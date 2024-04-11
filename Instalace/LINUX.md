@@ -13,7 +13,7 @@ sudo apt-get install git
 git clone https://github.com/captain-milous/SifrovyPrekladac.git
 ```
 ## 3. Nainstalujte [DOTNET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install)
-
+```
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 
 chmod +x ./dotnet-install.sh
@@ -23,13 +23,13 @@ chmod +x ./dotnet-install.sh
 export DOTNET_ROOT=$(pwd)/.dotnet
 
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
-
-export DOTNET_ROOT=$HOME/.dotnet
-
+```
 # 4. Spusťte aplikaci
+```
+export PATH="$PATH:$HOME/.dotnet"
 
 cd SifrovyPrekladac/Sifrovy\ Prekladac/bin/Debug/net7.0/
 
 dontnet SifrovyPrekladac.dll
-
+```
 
