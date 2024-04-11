@@ -23,8 +23,19 @@ chmod +x ./dotnet-install.sh
 export DOTNET_ROOT=$(pwd)/.dotnet
 
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
+export PATH="$PATH:$HOME/.dotnet"
 ```
-# 4. Spusťte aplikaci
+
+## 4. Založte složku pro ukládání souborů
+```
+cd SifrovyPrekladac/Sifrovy\ Prekladac/bin/Debug/net7.0/
+
+sudo mkdir Preklad_Sifer
+
+sudo chmod 777 Preklad_Sifer
+```
+## 5. Spusťte aplikaci
 ```
 export PATH="$PATH:$HOME/.dotnet"
 
@@ -32,4 +43,3 @@ cd SifrovyPrekladac/Sifrovy\ Prekladac/bin/Debug/net7.0/
 
 dontnet SifrovyPrekladac.dll
 ```
-
