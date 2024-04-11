@@ -1,0 +1,1 @@
+Tato složka slouží k defaultnímu uložení. Pokud změníte v konfiguraci *CustomFolder*, tak je tato složka zbytečná.
