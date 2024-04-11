@@ -37,7 +37,7 @@ sudo chmod 777 Preklad_Sifer
 ```
 ## 5. Spusťte aplikaci
 ```
-dontnet SifrovyPrekladac.dll
+sudo dontnet SifrovyPrekladac.dll
 ```
 
 # Spuštění již nainstalované aplikace po restartu zařízení
@@ -46,5 +46,5 @@ export PATH="$PATH:$HOME/.dotnet"
 
 cd SifrovyPrekladac/Sifrovy\ Prekladac/bin/Debug/net7.0/
 
-dontnet SifrovyPrekladac.dll
+sudo dontnet SifrovyPrekladac.dll
 ```
