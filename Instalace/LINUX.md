@@ -1,17 +1,17 @@
 # Instalace Šifrového Překladače na Linux
 
 ## 1. Nainstalujte [GIT](https://www.atlassian.com/git/tutorials/install-git)
-
+```
 sudo apt-get update 
 
 sudo apt-get upgrade
 
 sudo apt-get install git
-
+```
 ## 2. Naklonujte si ropositoř
-
+```
 git clone https://github.com/captain-milous/SifrovyPrekladac.git
-
+```
 ## 3. Nainstalujte [DOTNET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install)
 
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
