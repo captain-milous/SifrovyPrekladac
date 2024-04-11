@@ -70,13 +70,13 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
             int output = -1;
             Dictionary<string, int> options = new Dictionary<string, int>()
             {
-                { "registrace", 1 },
-                { "reg", 1 },
-                { "r", 1 },
-                { "prihlaseni", 2 },
-                { "pri", 2 },
-                { "log", 2 },
-                { "p", 2 },
+                { "registrace", 2 },
+                { "reg", 2 },
+                { "r", 2 },
+                { "prihlaseni", 1 },
+                { "pri", 1 },
+                { "log", 1 },
+                { "p", 1 },
                 { "konec", 3 },
                 { "kon", 3 },
                 { "k", 3 },
