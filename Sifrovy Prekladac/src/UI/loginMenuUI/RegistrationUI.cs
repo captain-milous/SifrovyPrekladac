@@ -37,7 +37,17 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
             {
                 bool exit = false;
                 Console.Write("Zadejte uživatelské jméno: ");
-                input = Console.ReadLine().ToLower().Replace(" ", "");
+                try
+                {
+                    input = GetFromCmdUI.GetUsername();
+                    input = input.ToLower().Replace(" ", "");
+                }
+                catch (Exception ex)
+                {
+                    input = "INVALID";
+                    StrikeHandler.AddStrike();
+                    mainRun = StrikeHandler.GetResult(ex.Message, "Zadejte validní uživatelské jméno!");
+                }
                 bool userExists = false;
                 if (input == "back")
                 {
@@ -51,19 +61,19 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         userExists = true;
                     }
                 }
-                if (!userExists && input != "anonymous" && input != "admin" && input != "administrator" && !string.IsNullOrEmpty(input))
+                if (!userExists && input != "anonymous" && input != "admin" && input != "administrator" && !string.IsNullOrEmpty(input) && input != "INVALID")
                 {
                     newUser.SetUsername(input);
                     bool run = true;
                     while (run)
                     {
                         Console.Write("Zadejte heslo: ");
-                        string pass1 = Console.ReadLine();
+                        string pass1 = GetFromCmdUI.GetPassword();
                         try
                         {
                             newUser.SetPassword(pass1);
                             Console.Write("Znovu heslo: ");
-                            string pass2 = Console.ReadLine();
+                            string pass2 = GetFromCmdUI.GetPassword();
                             if (pass1 != pass2)
                             {
                                 throw new Exception("Hesla se neshodují.");
@@ -95,6 +105,7 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                     StrikeHandler.AddStrike();
                     mainRun = StrikeHandler.GetResult("Uživatelské jméno nesmí být prázdné.", "Zadejte validní uživatelské jméno!");
                 }
+                else if (input == "INVALID") { }
                 else
                 {
                     StrikeHandler.AddStrike();

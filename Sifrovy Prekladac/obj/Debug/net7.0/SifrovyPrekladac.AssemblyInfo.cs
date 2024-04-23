@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SifrovyPrekladac")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+821f91e474c0f635367a86902253c2972ca68ea8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d7e7a75bc0d9636d972e9f21a1aa4449a79cd3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SifrovyPrekladac")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SifrovyPrekladac")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

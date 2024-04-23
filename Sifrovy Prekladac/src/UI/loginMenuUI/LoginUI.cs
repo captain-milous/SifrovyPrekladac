@@ -75,7 +75,7 @@ namespace Sifrovy_Prekladac.src.UI.loginMenuUI
                         while (run)
                         {
                             Console.Write("Vaše heslo: ");
-                            input = Console.ReadLine();
+                            input = GetFromCmdUI.GetPassword();
                             using (SHA1 sha1 = SHA1.Create())
                             {
                                 byte[] hashBytes = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
